@@ -37,7 +37,7 @@
         <header class="masthead" >
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7"> -->
+                    <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="post-heading">
                             <h1>Accessibility Tests Analysis</h1>
                             <p class="subheading">Analyzing the ability of automated accessibility checkers to detect problems on websites</p>
@@ -58,31 +58,28 @@
 <p>[category] [google result] [wave result] [sortsite result] [aslint result] [test description]</p>
 <p>The category and test results for each checker are all a single "word". The test description is of variable length.&nbsp;</p>
 <p>The test results will be one of six "words":</p>
-<ul>
-    <li>error = the issue was properly found</li>
-    <li>error_paid = the issue was properly found in the paid version</li>
-    <li>warning = the tool only gave a warning</li>
-    <li>manual = the tool required the user to check</li>
-    <li>identified = The tool noticed the issue, but didn't give a warning</li>
-    <li>notfound = The tool did not identify the issue</li>
-</ul>
+<ol>
+    <li><code>error</code> = the issue was properly found</li>
+    <li><code>error_paid</code> = the issue was properly found in the paid version</li>
+    <li><code>warning</code> = the tool only gave a warning</li>
+    <li><code>manual</code> = the tool required the user to check</li>
+    <li><code>identified</code> = The tool noticed the issue, but didn't give a warning</li>
+    <li><code>notfound</code> = The tool did not identify the issue</li>
+</ol>
 <p>This homework will have you write code to read in the test results list and then use them to display different information about the tests.</p>
 <h3>Part 1: AccessibilityTest</h3>
-<p>You are to design and implement a class named <code>AccessibilityTest</code>, which stores the the category and description of the test and the results of the test for the four checkers. The constructor for the class should take all 6 pieces of information as parameters and store those values in fields. It should have accessor methods for each value, e.g., <code>getCategory</code>, <code>getDescription</code>, <code>getGoogleResult</code>, etc. It should also have a method toString method which presents a readable format of the results of the test.
+<p>You are to design and implement a class named <code>AccessibilityTest</code>, which stores the category and description of the test and the results of the test for the four checkers. The constructor for the class should take all 6 pieces of information as parameters and store those values in fields. It should have accessor methods for each value, e.g., <code>getCategory</code>, <code>getDescription</code>, <code>getGoogleResult</code>, etc. It should also have a method toString method which presents a readable format of the results of the test.
 </p>
 <h3>Part 2: AccessibilityResults</h3>
 <p>
     <p>The file a11yCheckersResults.txt 
-    as been provided for you, which contains the information about tests used by the UK Government Digital Services to evaluate accessibility checkers.Each line in the file contains the information about a single test organized as:
+    as been provided for you, which contains the information about tests used by the UK Government Digital Services to evaluate accessibility checkers. Each line in the file contains the information about a single test organized as:
 </p>
 <p>
     <span style="font-size: 1rem;">[category] [google result] [wave result] [sortsite result] [aslint result] [test description]</span>
 </p>
 <p>
-    <span>For instance, the line for the test that is used to see if a person can visually determine which element has keyboard focus looks like this:</span>
-</p>
-<p>
-    <span style="font-size: 1rem;">Keyboard notfound notfound error error Keyboard focus is not indicated visually</span>
+    <span>For instance, the line for the test that is used to see if a person can visually determine which element has keyboard focus looks like this:</span><pre>Keyboard notfound notfound error error Keyboard focus is not indicated visually</pre>
 </p>
 <p>
     <span>This line indicates that the test is in the Keyboard category of tests, the error was not detected by the Google or WAVE result, but was detected by SortSite and ASLint.</span>
@@ -100,67 +97,56 @@
         <br />
     </li>
     <li><strong>showTestResults:</strong>
-        <span>&nbsp;</span>This method takes test details (or a portion of the test details) as a parameter, and displays the&nbsp;test information of all tests that match (or contain) that detail (should be case insensitive). As before, the number of matching&nbsp;tests should be displayed at the end. For example,&nbsp;if the information from <code>
+        <span>&nbsp;</span>This method takes test details (or a portion of the test details) as a parameter, and displays the&nbsp;test information of all tests that match (or contain) that detail (should be case insensitive). Additionally, the number of matching&nbsp;tests should be displayed at the end. For example,&nbsp;if the information from <code>
             <span>a11yCheckersResults.txt</span>
         </code>&nbsp;was read in and stored in a<span> <code>AccessibilityResults</code></span>
-        <span>&nbsp;object&nbsp;</span>named<span>&nbsp;</span><code>a11y</code>, then<span>&nbsp;</span><code>a11y.showTestResults("Colour")&nbsp;</code>should display the following:
-        <blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;">Colour/Contrast: Colour alone is used to convey content Google: notfound WAVE: notfound SortSite: notfound ASLint: manual
-            <br />
-            <span style="font-size: 1rem;">Links: Identifying links by colour alone Google: notfound WAVE: notfound SortSite: notfound ASLint: notfound
-                <br />Forms: Errors identified by colour only Google: notfound WAVE: notfound SortSite: notfound ASLint: manual
-                <br />Forms: Errors identified with a poor colour contrast Google: warning WAVE: error SortSite: error ASLint: error
-                <br />HTML: Inline style adds colour Google: notfound WAVE: notfound SortSite: notfound ASLint: notfound
-                <br />
-                <br />
-            </span>
-            <span style="font-size: 1rem;">Total tests matching: 5
-                <br />
-                <br />
-            </span>
-        </blockquote>
+        <span>&nbsp;object&nbsp;</span>named<span>&nbsp;</span><code>a11y</code>, then<span>&nbsp;</span><code>a11y.showTestResults("Colour")&nbsp;</code>should display the following:<br>
+        <pre>
+Colour/Contrast: Colour alone is used to convey content Google: notfound WAVE: notfound SortSite: notfound ASLint: manual
+Colour/Contrast: Small text does not have a contrast ratio of at least 4.5:1 so does not meet AA Google: error WAVE: error SortSite: error_paid ASLint: notfound
+Colour/Contrast: Large text does not have a contrast ratio of at least 3:1 so does not meet AA Google: error WAVE: error SortSite: error_paid ASLint: notfound
+Colour/Contrast: Small text does not have a contrast ratio of at least 7:1 so does not meet AAA Google: error WAVE: error SortSite: error_paid ASLint: notfound
+Colour/Contrast: Large text does not have a contrast ratio of at least 4.5:1 so does not meet AAA Google: error WAVE: error SortSite: error_paid ASLint: notfound
+Colour/Contrast: Focus not visible Google: notfound WAVE: notfound SortSite: notfound ASLint: notfound
+Links: Identifying links by colour alone Google: notfound WAVE: notfound SortSite: notfound ASLint: notfound
+Forms: Errors identified by colour only Google: notfound WAVE: notfound SortSite: notfound ASLint: manual
+Forms: Errors identified with a poor colour contrast Google: warning WAVE: error SortSite: error ASLint: error
+HTML: Inline style adds colour Google: notfound WAVE: notfound SortSite: notfound ASLint: notfound
+
+Total tests matching: 10</pre>
     </li>
     <li><strong>showByCategory:</strong>
         <span>&nbsp;</span>
         <span>This method takes a category (or a portion of the category) as a parameter, and displays the&nbsp;test information of all tests that match (or contain) that category (should be case insensitive). As before, the number of matching&nbsp;tests should be displayed at the end.&nbsp;</span>For example,&nbsp;if the information from <code>
             <span>a11yCheckersResults.txt</span>
         </code>&nbsp;was read in and stored in a<span> <code>AccessibilityResults</code></span>
-        <span>&nbsp;object&nbsp;</span>named<span>&nbsp;</span><code>a11y</code>, then<span>&nbsp;</span><code>a11y.showByCategory("keyboard")&nbsp;</code>and&nbsp;<code>a11y.showByCategory("Key")</code>should display the following:
-        <blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;">
-            <br />Keyboard: Alert shows for a short time Google: notfound WAVE: notfound SortSite: notfound ASLint: notfound
-            <br />
-            <span style="font-size: 1rem;">Keyboard: Lightbox - close button doesn't receive focus Google: notfound WAVE: notfound SortSite: notfound ASLint: notfound
-                <br />Keyboard: Focus order in wrong order Google: notfound WAVE: notfound SortSite: notfound ASLint: notfound
-                <br />...
-                <br />Keyboard: Fake button is not keyboard accessible Google: notfound WAVE: notfound SortSite: notfound ASLint: notfound
-                <br />
-                <br />Total tests in category: 16
-                <br />
-                <br />
-            </span>
-        </blockquote>
+        <span>&nbsp;object&nbsp;</span>named<span>&nbsp;</span><code>a11y</code>, then<span>&nbsp;</span><code>a11y.showByCategory("navigation")&nbsp;</code>and&nbsp;<code>a11y.showByCategory("nav")</code>should display the following:
+        <pre>
+Navigation: Inadequately-sized clickable targets found Google: notfound WAVE: notfound SortSite: notfound ASLint: notfound 
+
+Total tests matching: 1</pre>
+        Note: the expected output for this case <em>does not include:</em><pre>
+Keyboard: Dropdown navigation - only the top level items receive focus Google: notfound WAVE: notfound SortSite: notfound ASLint: notfound</pre>
     </li>
     <li><strong>showAllFailed:</strong>
-        <span>&nbsp;</span>This method takes no parameters, and&nbsp;<span>displays the tests that all checkers failed (i.e. a test is only shown if Google, WAVE, ASLint, and SortSite failed it and if even one of the checkers passed the test, it is not shown) and the number of tests that all failed</span>. A failed test is the result "notfound". For example,&nbsp;if the information from <code>
+        <span>&nbsp;</span>This method takes no parameters, and&nbsp;<span>displays the tests that all checkers failed (i.e. a test is only shown if Google, WAVE, ASLint, and SortSite failed it and if even one of the checkers passed the test, it is not shown) and the number of tests that all failed</span>. A failed test is the result <code>notfound</code>. For example,&nbsp;if the information from <code>
             <span>a11yCheckersResults.txt</span>
         </code>&nbsp;was read in and stored in a<span> <code>AccessibilityResults</code></span>
-        <span>&nbsp;object&nbsp;</span>named<span>&nbsp;</span><code>a11y</code>, then<span>&nbsp;</span><code>a11y.showAllFailed()&nbsp;</code>should display the following:
-        <blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;">Content: Content identified by location Google: notfound WAVE: notfound SortSite: notfound ASLint: notfound
-            <br />...
-            <br />HTML: Inline style adds colour Google: notfound WAVE: notfound SortSite: notfound ASLint: notfound
-            <br />HTML: PRE element without CODE element inside it Google: notfound WAVE: notfound SortSite: notfound ASLint: notfound
-            <br />
-            <br />Total tests failed: 51
-            <br />
-            <br />
-        </blockquote>
+        <span>&nbsp;object&nbsp;</span>named<span>&nbsp;</span><code>a11y</code>, then<span>&nbsp;</span><code>a11y.showAllFailed()&nbsp;</code>should display the following:<pre>
+Content: Content identified by location Google: notfound WAVE: notfound SortSite: notfound ASLint: notfound
+...
+HTML: Inline style adds colour Google: notfound WAVE: notfound SortSite: notfound ASLint: notfound
+HTML: PRE element without CODE element inside it Google: notfound WAVE: notfound SortSite: notfound ASLint: notfound
+
+Total tests failed: 51</pre>
     </li>
     <li><strong>numPass:</strong>
-        <span>&nbsp;</span>This method takes two parameters of the checker name and category and returns the number tests that had a result of either error or error_paid. (Note this method should work with a partial checker name or partial category name and should be case insensitive). For example, if the information from <code>
+        <span>&nbsp;</span>This method takes two parameters, the checker name and category, and returns the number tests that had a result of either <code>error</code> or <code>error_paid</code>. (Note this method should work with a partial checker name or partial category name and should be case insensitive). For example, if the information from <code>
             <span>a11yCheckersResults.txt</span>
         </code>&nbsp;was read in and stored in a<span>&nbsp;</span><code>
             <span>AccessibilityResults</span>
         </code>
-        <span>&nbsp;object&nbsp;</span>named<span>&nbsp;</span><code>a11y</code>, then<span>&nbsp;</span><code>a11y.numPass("Goog","") </code>should both return 23 and <code>a11y.numPass("lint","htm") </code>should return 2.
+        <span>&nbsp;object&nbsp;</span>named<span>&nbsp;</span><code>a11y</code>, then<span>&nbsp;</span><code>a11y.numPass("Goog","") </code>should return <code>23</code> and <code>a11y.numPass("lint","htm") </code>should return <code>2</code>.
     </li>
 </ul>
 <p>Be sure to include javadoc comments in your classes, including your name in the top comment block. Avoid redundancy and be conservative in your use of fields - if a data value does not need to persist over the life of the object, declare it to be local to the method that needs it.</p>
@@ -591,11 +577,16 @@
                         <p>&nbsp;</p>
                     </td>
                 </tr>
-           
         </table>
     </li>
-    <li>Which category/categories are the accessibility checkers best at identifying errors for (e.g. have the highest ratio of errors found to errors possible)? Which category/categories are the accessibility checkers worst at identifying errors for (e.g. have the lowest ratio of errors found to errors possible)? Describe the general theme of the tests in each of the best and worst categories (e.g. why are these tests in the same group)?</li>
-    <li>Select one of the tests that is shown in the showAllFailed and describe what the issues is and how it can affect a person with a disability.</li>
+    <li>Analyze:
+        <ol>
+            <li>Which category/categories are the accessibility checkers best at identifying errors for (e.g. have the highest ratio of errors found to errors possible)?</li>
+            <li>Which category/categories are the accessibility checkers worst at identifying errors for (e.g. have the lowest ratio of errors found to errors possible)?</li>
+            <li>Describe the general theme of the tests in each of the best and worst categories (e.g. why are these tests in the same group)?</li>
+        </ol>
+    </li>
+    <li>Select one of the tests that is shown in the showAllFailed and describe what the issue is and how it can affect a person with a disability.</li>
     <li>Reflect: How does this assignment shape your understanding of computer science?</li>
 </ol>
                     </div>
