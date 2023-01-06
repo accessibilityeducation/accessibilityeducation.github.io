@@ -68,7 +68,7 @@
 </ol>
 <p>This homework will have you write code to read in the test results list and then use them to display different information about the tests.</p>
 <h3>Part 1: AccessibilityTest</h3>
-<p>You are to design and implement a class named <code>AccessibilityTest</code>, which stores the category and description of the test and the results of the test for the four checkers. The constructor for the class should take all 6 pieces of information as parameters and store those values in fields. It should have accessor methods for each value, e.g., <code>getCategory</code>, <code>getDescription</code>, <code>getGoogleResult</code>, etc. It should also have a method toString method which presents a readable format of the results of the test.
+<p>You are to design and implement a class named <code>AccessibilityTest</code>, which stores the category and description of the test and the results of the test for the four checkers. The constructor for the class should take all 6 pieces of information as parameters and store those values in fields. It should have accessor methods for each value, e.g., <code>getCategory</code>, <code>getDescription</code>, <code>getGoogleResult</code>, etc. It should also have a <code>toString</code> method which presents a readable format of the results of the test.
 </p>
 <h3>Part 2: AccessibilityResults</h3>
 <p>
@@ -79,7 +79,8 @@
     <span style="font-size: 1rem;">[category] [google result] [wave result] [sortsite result] [aslint result] [test description]</span>
 </p>
 <p>
-    <span>For instance, the line for the test that is used to see if a person can visually determine which element has keyboard focus looks like this:</span><pre>Keyboard notfound notfound error error Keyboard focus is not indicated visually</pre>
+    <span>For instance, the line for the test that is used to see if a person can visually determine which element has keyboard focus looks like this:</span>
+                        <pre>Keyboard notfound notfound error error Keyboard focus is not indicated visually</pre>
 </p>
 <p>
     <span>This line indicates that the test is in the Keyboard category of tests, the error was not detected by the Google or WAVE result, but was detected by SortSite and ASLint.</span>
@@ -583,7 +584,7 @@ Total tests failed: 51</pre>
         <ol>
             <li>Which category/categories are the accessibility checkers best at identifying errors for (e.g. have the highest ratio of errors found to errors possible)?</li>
             <li>Which category/categories are the accessibility checkers worst at identifying errors for (e.g. have the lowest ratio of errors found to errors possible)?</li>
-            <li>Describe the general theme of the tests in each of the best and worst categories (e.g. why are these tests in the same group)?</li>
+            <li>Describe the general properties the tests in each of the best and worst categories are attempting to test (e.g. why are these tests in the same group)?</li>
         </ol>
     </li>
     <li>Select one of the tests that is shown in the showAllFailed and describe what the issue is and how it can affect a person with a disability.</li>
