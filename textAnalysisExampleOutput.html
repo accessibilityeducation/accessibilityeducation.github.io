@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Braille TTY Assignment</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">Including A11y in CS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header-->
+    <header class="masthead">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="post-heading">
+                        <h1>Braille on Ubuntu</h1>
+                        <p class="subheading">Creating a bash script to analyze a Braille TTY configuration file</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Post Content-->
+    <article class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7"></div>
+            </div>
+        </div>
+    </article>
+    <p>My tests:
+            <br/>
+            <br/>
+-------------------------------------
+            <br/>
+Testing braille_dictionary contents:
+            <br/>
+key value
+            <br/>
+     [0, 0, 0, 0, 0, 0]
+            <br/>
+1    [1, 0, 0, 0, 0, 0]
+            <br/>
+2    [1, 1, 0, 0, 0, 0]
+            <br/>
+3    [1, 0, 0, 1, 0, 0]
+            <br/>
+4    [1, 0, 0, 1, 1, 0]
+            <br/>
+5    [1, 0, 0, 0, 1, 0]
+            <br/>
+6    [1, 1, 0, 1, 0, 0]
+            <br/>
+7    [1, 1, 0, 1, 1, 0]
+            <br/>
+8    [1, 1, 0, 0, 1, 0]
+            <br/>
+9    [0, 1, 0, 1, 0, 0]
+            <br/>
+0    [0, 1, 0, 1, 1, 0]
+            <br/>
+a    [1, 0, 0, 0, 0, 0]
+            <br/>
+b    [1, 1, 0, 0, 0, 0]
+            <br/>
+c    [1, 0, 0, 1, 0, 0]
+            <br/>
+d    [1, 0, 0, 1, 1, 0]
+            <br/>
+e    [1, 0, 0, 0, 1, 0]
+            <br/>
+f    [1, 1, 0, 1, 0, 0]
+            <br/>
+g    [1, 1, 0, 1, 1, 0]
+            <br/>
+h    [1, 1, 0, 0, 1, 0]
+            <br/>
+i    [0, 1, 0, 1, 0, 0]
+            <br/>
+j    [0, 1, 0, 1, 1, 0]
+            <br/>
+k    [1, 0, 1, 0, 0, 0]
+            <br/>
+l    [1, 1, 1, 0, 0, 0]
+            <br/>
+m    [1, 0, 1, 1, 0, 0]
+            <br/>
+n    [1, 0, 1, 1, 1, 0]
+            <br/>
+o    [1, 0, 1, 0, 1, 0]
+            <br/>
+p    [1, 1, 1, 1, 0, 0]
+            <br/>
+q    [1, 1, 1, 1, 1, 0]
+            <br/>
+r    [1, 1, 1, 0, 1, 0]
+            <br/>
+s    [0, 1, 1, 1, 0, 0]
+            <br/>
+t    [0, 1, 1, 1, 1, 0]
+            <br/>
+u    [1, 0, 1, 0, 0, 1]
+            <br/>
+v    [1, 1, 1, 0, 0, 1]
+            <br/>
+x    [1, 0, 1, 1, 0, 1]
+            <br/>
+y    [1, 0, 1, 1, 1, 1]
+            <br/>
+z    [1, 0, 1, 0, 1, 1]
+            <br/>
+w    [0, 1, 0, 1, 1, 1]
+        </p>
+        <p>but   [1, 0, 0, 0, 0, 0]
+            <br/>
+can      [1, 0, 0, 1, 0, 0]
+            <br/>
+do   [1, 0, 0, 1, 1, 0]
+            <br/>
+every    [1, 0, 0, 0, 1, 0]
+            <br/>
+from     [1, 1, 0, 1, 0, 0]
+            <br/>
+go   [1, 1, 0, 1, 1, 0]
+            <br/>
+have     [1, 1, 0, 0, 1, 0]
+            <br/>
+just     [0, 1, 0, 1, 1, 0]
+            <br/>
+knowledge    [1, 0, 1, 0, 0, 0]
+            <br/>
+like     [1, 1, 1, 0, 0, 0]
+            <br/>
+more     [1, 0, 1, 1, 0, 0]
+            <br/>
+not      [1, 0, 1, 1, 1, 0]
+            <br/>
+people   [1, 1, 1, 1, 0, 0]
+            <br/>
+quite    [1, 1, 1, 1, 1, 0]
+            <br/>
+rather   [1, 1, 1, 0, 1, 0]
+            <br/>
+so   [0, 1, 1, 1, 0, 0]
+            <br/>
+that     [0, 1, 1, 1, 1, 0]
+            <br/>
+us   [1, 0, 1, 0, 0, 1]
+            <br/>
+very     [1, 1, 1, 0, 0, 1]
+            <br/>
+it   [1, 0, 1, 1, 0, 1]
+            <br/>
+you      [1, 0, 1, 1, 1, 1]
+            <br/>
+as   [1, 0, 1, 0, 1, 1]
+            <br/>
+will     [0, 1, 0, 1, 1, 1]
+            <br/>
+            <br/>
+-------------------------------------
+            <br/>
+Testing translator():
+            <br/>
+the quick brown fox jumps over the lazy dog
+            <br/>
+[[[0, 1, 1, 1, 1, 0], [1, 1, 0, 0, 1, 0], [1, 0, 0, 0, 1, 0]], [[1, 1, 1, 1, 1, 0], [1, 0, 1, 0, 0, 1], [0, 1, 0, 1, 0, 0], [1, 0, 0, 1, 0, 0], [1, 0, 1, 0, 0, 0]], [[1, 1, 0, 0, 0, 0], [1, 1, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 1, 1], [1, 0, 1, 1, 1, 0]], [[1, 1, 0, 1, 0, 0], [1, 0, 1, 0, 1, 0], [1, 0, 1, 1, 0, 1]], [[0, 1, 0, 1, 1, 0], [1, 0, 1, 0, 0, 1], [1, 0, 1, 1, 0, 0], [1, 1, 1, 1, 0, 0], [0, 1, 1, 1, 0, 0]], [[1, 0, 1, 0, 1, 0], [1, 1, 1, 0, 0, 1], [1, 0, 0, 0, 1, 0], [1, 1, 1, 0, 1, 0]], [[0, 1, 1, 1, 1, 0], [1, 1, 0, 0, 1, 0], [1, 0, 0, 0, 1, 0]], [[1, 1, 1, 0, 0, 0], [1, 0, 0, 0, 0, 0], [1, 0, 1, 0, 1, 1], [1, 0, 1, 1, 1, 1]], [[1, 0, 0, 1, 1, 0], [1, 0, 1, 0, 1, 0], [1, 1, 0, 1, 1, 0]]]
+            <br/>
+            <br/>
+do it as you will
+            <br/>
+[[1, 0, 0, 1, 1, 0], [1, 0, 1, 1, 0, 1], [1, 0, 1, 0, 1, 1], [1, 0, 1, 1, 1, 1], [0, 1, 0, 1, 1, 1]]
+            <br/>
+            <br/>
+from every corner of the planet, people go and seek more knowledge
+            <br/>
+[[1, 1, 0, 1, 0, 0], [1, 0, 0, 0, 1, 0], [[1, 0, 0, 1, 0, 0], [1, 0, 1, 0, 1, 0], [1, 1, 1, 0, 1, 0], [1, 0, 1, 1, 1, 0], [1, 0, 0, 0, 1, 0], [1, 1, 1, 0, 1, 0]], [[1, 0, 1, 0, 1, 0], [1, 1, 0, 1, 0, 0]], [[0, 1, 1, 1, 1, 0], [1, 1, 0, 0, 1, 0], [1, 0, 0, 0, 1, 0]], [[1, 1, 1, 1, 0, 0], [1, 1, 1, 0, 0, 0], [1, 0, 0, 0, 0, 0], [1, 0, 1, 1, 1, 0], [1, 0, 0, 0, 1, 0], [0, 1, 1, 1, 1, 0]], [1, 1, 1, 1, 0, 0], [1, 1, 0, 1, 1, 0], [[1, 0, 0, 0, 0, 0], [1, 0, 1, 1, 1, 0], [1, 0, 0, 1, 1, 0]], [[0, 1, 1, 1, 0, 0], [1, 0, 0, 0, 1, 0], [1, 0, 0, 0, 1, 0], [1, 0, 1, 0, 0, 0]], [1, 0, 1, 1, 0, 0], [1, 0, 1, 0, 0, 0]]
+            <br/>
+            <br/>
+It's possible we can do more with just very little.
+            <br/>
+[[[0, 1, 0, 1, 0, 0], [0, 1, 1, 1, 1, 0], [0, 1, 1, 1, 0, 0]], [[1, 1, 1, 1, 0, 0], [1, 0, 1, 0, 1, 0], [0, 1, 1, 1, 0, 0], [0, 1, 1, 1, 0, 0], [0, 1, 0, 1, 0, 0], [1, 1, 0, 0, 0, 0], [1, 1, 1, 0, 0, 0], [1, 0, 0, 0, 1, 0]], [[0, 1, 0, 1, 1, 1], [1, 0, 0, 0, 1, 0]], [1, 0, 0, 1, 0, 0], [1, 0, 0, 1, 1, 0], [1, 0, 1, 1, 0, 0], [[0, 1, 0, 1, 1, 1], [0, 1, 0, 1, 0, 0], [0, 1, 1, 1, 1, 0], [1, 1, 0, 0, 1, 0]], [0, 1, 0, 1, 1, 0], [1, 1, 1, 0, 0, 1], [[1, 1, 1, 0, 0, 0], [0, 1, 0, 1, 0, 0], [0, 1, 1, 1, 1, 0], [0, 1, 1, 1, 1, 0], [1, 1, 1, 0, 0, 0], [1, 0, 0, 0, 1, 0]]]
+            <br/>
+            <br/>
+I have quite the conundrum that may come back to bite us.
+            <br/>
+[[0, 1, 0, 1, 0, 0], [1, 1, 0, 0, 1, 0], [1, 1, 1, 1, 1, 0], [[0, 1, 1, 1, 1, 0], [1, 1, 0, 0, 1, 0], [1, 0, 0, 0, 1, 0]], [[1, 0, 0, 1, 0, 0], [1, 0, 1, 0, 1, 0], [1, 0, 1, 1, 1, 0], [1, 0, 1, 0, 0, 1], [1, 0, 1, 1, 1, 0], [1, 0, 0, 1, 1, 0], [1, 1, 1, 0, 1, 0], [1, 0, 1, 0, 0, 1], [1, 0, 1, 1, 0, 0]], [0, 1, 1, 1, 1, 0], [[1, 0, 1, 1, 0, 0], [1, 0, 0, 0, 0, 0], [1, 0, 1, 1, 1, 1]], [[1, 0, 0, 1, 0, 0], [1, 0, 1, 0, 1, 0], [1, 0, 1, 1, 0, 0], [1, 0, 0, 0, 1, 0]], [[1, 1, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0], [1, 0, 0, 1, 0, 0], [1, 0, 1, 0, 0, 0]], [[0, 1, 1, 1, 1, 0], [1, 0, 1, 0, 1, 0]], [[1, 1, 0, 0, 0, 0], [0, 1, 0, 1, 0, 0], [0, 1, 1, 1, 1, 0], [1, 0, 0, 0, 1, 0]], [[1, 0, 1, 0, 0, 1], [0, 1, 1, 1, 0, 0]]]
+            <br/>
+            <br/>
+We have to do this so that racoons don't come back again.
+            <br/>
+[[[0, 1, 0, 1, 1, 1], [1, 0, 0, 0, 1, 0]], [1, 1, 0, 0, 1, 0], [[0, 1, 1, 1, 1, 0], [1, 0, 1, 0, 1, 0]], [1, 0, 0, 1, 1, 0], [[0, 1, 1, 1, 1, 0], [1, 1, 0, 0, 1, 0], [0, 1, 0, 1, 0, 0], [0, 1, 1, 1, 0, 0]], [0, 1, 1, 1, 0, 0], [0, 1, 1, 1, 1, 0], [[1, 1, 1, 0, 1, 0], [1, 0, 0, 0, 0, 0], [1, 0, 0, 1, 0, 0], [1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0], [1, 0, 1, 1, 1, 0], [0, 1, 1, 1, 0, 0]], [[1, 0, 0, 1, 1, 0], [1, 0, 1, 0, 1, 0], [1, 0, 1, 1, 1, 0], [0, 1, 1, 1, 1, 0]], [[1, 0, 0, 1, 0, 0], [1, 0, 1, 0, 1, 0], [1, 0, 1, 1, 0, 0], [1, 0, 0, 0, 1, 0]], [[1, 1, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0], [1, 0, 0, 1, 0, 0], [1, 0, 1, 0, 0, 0]], [[1, 0, 0, 0, 0, 0], [1, 1, 0, 1, 1, 0], [1, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 0], [1, 0, 1, 1, 1, 0]]]
+            <br/>
+            <br/>
+But rather then start over, why not be more like her and never give up?
+            <br/>
+[[1, 0, 0, 0, 0, 0], [1, 1, 1, 0, 1, 0], [[0, 1, 1, 1, 1, 0], [1, 1, 0, 0, 1, 0], [1, 0, 0, 0, 1, 0], [1, 0, 1, 1, 1, 0]], [[0, 1, 1, 1, 0, 0], [0, 1, 1, 1, 1, 0], [1, 0, 0, 0, 0, 0], [1, 1, 1, 0, 1, 0], [0, 1, 1, 1, 1, 0]], [[1, 0, 1, 0, 1, 0], [1, 1, 1, 0, 0, 1], [1, 0, 0, 0, 1, 0], [1, 1, 1, 0, 1, 0]], [[0, 1, 0, 1, 1, 1], [1, 1, 0, 0, 1, 0], [1, 0, 1, 1, 1, 1]], [1, 0, 1, 1, 1, 0], [[1, 1, 0, 0, 0, 0], [1, 0, 0, 0, 1, 0]], [1, 0, 1, 1, 0, 0], [1, 1, 1, 0, 0, 0], [[1, 1, 0, 0, 1, 0], [1, 0, 0, 0, 1, 0], [1, 1, 1, 0, 1, 0]], [[1, 0, 0, 0, 0, 0], [1, 0, 1, 1, 1, 0], [1, 0, 0, 1, 1, 0]], [[1, 0, 1, 1, 1, 0], [1, 0, 0, 0, 1, 0], [1, 1, 1, 0, 0, 1], [1, 0, 0, 0, 1, 0], [1, 1, 1, 0, 1, 0]], [[1, 1, 0, 1, 1, 0], [0, 1, 0, 1, 0, 0], [1, 1, 1, 0, 0, 1], [1, 0, 0, 0, 1, 0]], [[1, 0, 1, 0, 0, 1], [1, 1, 1, 1, 0, 0]]]
+        </p>
+<p>Testing print_braille_word() function:</p>
+<p>Input: 'hello'</p>
+<p>Output: ⠓⠑⠇⠇⠕</p>
+<p>Input: 'world'</p>
+<p>Output: ⠺⠕⠗⠇⠙</p>
+<p>Input: '123'</p>
+<p>Output: ⠼⠂⠆</p>
+<p>Input: 'braille'</p>
+<p>Output: ⠃⠗⠁⠊⠇⠑</p>
+<hr>
+
+
+<p>End of tests.</p>
+
+    </body>
+    </html>
+    
