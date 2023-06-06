@@ -73,11 +73,6 @@
         of Accessibility Scores for streets within a specified region. These scores are determined based on a comprehensive scoring model that takes into account the number of accessibility issues present. The 
         score ranges from 0 to 1, where 0 indicates inadequate accessibility and 1 denotes full accessibility. In the dataset, street segments are represented as a <a href="https://datatracker.ietf.org/doc/html/rfc7946#section-3.3">Feature Collection</a>
         of <a href="https://datatracker.ietf.org/doc/html/rfc7946#appendix-A.2">LineString features</a>, with each LineString having an array of coordinate positions. 
-    </p>
-    <center><img src="assets/img/LineString-features.png" alt="An array of coordinates."></center>
-    <p>
-        (Figure 1) An example of a LineString array.
-    </p>
     <p>
         For easier data manipulation, the dataset has been extracted into a CSV file. More about this later.
     </p>
@@ -174,7 +169,42 @@
             </li>
         </ol>
     </p>
-
+<h2>Advice</h2>
+    <p>
+        <ul>
+            <li>You should test your code using both the JUnit test cases provided and the command line program implemented in the main method.</li>
+            <li>Three simple graphs (Simple0.txt, Simple1.txt, Simple2.txt) are provided. Run the algorithm by hand to determine the correct answers for these graphs and verify that your implementation arrives at the correct
+                paths and path lengths.
+            </li>
+            <li><b>The sample graphs given are not sufficient to test you algorithm's correctness</b>. It's your responsibility to write tests that cover all possible cases that the algorithm could encounter.</li>
+            <li>Make sure your algorithm handles edge cases correctly, including behaving as specified when the destination node is unreachable. Test this using the simplest possible test cases
+                <ul>
+                    <li>For example, this edge case could be tested using a two-node graph with only an edge from destination to origin.</li>
+                </ul>
+            </li>
+            <li>The <i>BasicParser</i> class parses a simple edge list from a text file, such as Simple1.txt and Simple2.txt. The DBParser class parses a CSV file, such as DBCrop.csv. Feel free to write and test 
+            using additional graph files in these formats. You may get more CSV files from the Sidewalk API. You provide lat/lng bounds for the ares that you want to query.</li>
+            <li>Some cleaning will be needed for the new CSV files.
+                <ol>
+                    <li>Split the coordinates in the "coordinates" column to extract "origin" and "destination". Consider the first coordinate as the "origin", the second coordinate as the "destination", and ignore any 
+                        extra coordinates. 
+                    </li>
+                    <li>Rename the column headers accordingly. The below steps will be useful:
+                        <ol type="a">
+                            <li>Select the cell or column that contains the text you want to split</li>
+                            <li>Select Data > Text to Columns</li>
+                            <li>In the Convert Text to Columns Wizard, select Delimited > Next</li>
+                            <li>Select the Delimiters for your data. Use ')' as a delimiter</li>
+                            <li>Select Next</li>
+                            <li>Select the Destination in your worksheet which is where you want the split data to appear</li>
+                        </ol>
+                    </li>
+                    <li>Select the accessibility attribute you want to consider as the "distance" for your shortest path algorithm.</li>
+                    <li>Rename your selected column as "distance". In the CSV sample file given to you, "distance" is considered to be the access score.</li>
+                </ol>
+            </li>
+        </ul>
+    </p>
 
 <h2>Project Plan and Reflection</h2>
     <p>
