@@ -68,12 +68,25 @@
         accessibility data through crowdsourcing, involving both volunteers and paid workers. Its primary function is to enable users to annotate "street segments" with valuable sidewalk accessibility
         information, including details about curb ramps, missing or present, obstacles, surface problems, and the absence of sidewalks.
     </p>
+    <p>
+        To facilitate easy access to the collected dataset, Project Sidewalk provides an <a href="https://sidewalk-sea.cs.washington.edu/api">API</a>. This allows users to retrieve the dataset, which consists
+        of Accessibility Scores for streets within a specified region. These scores are determined based on a comprehensive scoring model that takes into account the number of accessibility issues present. The 
+        score ranges from 0 to 1, where 0 indicates inadequate accessibility and 1 denotes full accessibility. In the dataset, street segments are represented as a <a href="https://datatracker.ietf.org/doc/html/rfc7946#section-3.3">Feature Collection</a>
+        of <a href="https://datatracker.ietf.org/doc/html/rfc7946#appendix-A.2">LineString features</a>, with each LineString having an array of coordinate positions. 
+    </p>
+    <center><img src="assets/img/LineString-features.png" alt="An array of coordinates."></center>
+    <p>
+        (Figure 1) An example of a LineString array.
+    </p>
+    <p>
+        For easier data manipulation, the dataset has been extracted into a CSV file. More about this later.
+    </p>
 
 <h2>Dijkstra's Shortest Path Algorithm</h2>
-    <img src="assets/img/Dijkstra Algorithm.png" alt="A graph with nodes and directed edges, visualizing the process of Dijkstra's shortest path algorithm from node A to other nodes, highlighting the
-    the visited nodes and the shortest path found." style="width:700px;height: 334px;">
+    <center><img src="assets/img/Dijkstra-Alg.jpeg" alt="A graph with nodes and directed edges, visualizing the process of Dijkstra's shortest path algorithm from node A to other nodes, highlighting the
+        the visited nodes and the shortest path found." style="width:700px;height: 334px;"></center>
     <p>
-        (Figure 1) Dijkstra's Shortest Path Algorithm, from <a href="https://levelup.gitconnected.com/finding-the-shortest-path-in-javascript-dijkstras-algorithm-8d16451eea34">Medium</a>.
+        (Figure 2) Dijkstra's Shortest Path Graph.
     </p>
     <p>
         Dijkstra's shortest path algorithm is a method used to find the shortest path between two nodes in a graph. Imagine you have a map with multiple locations and you want to determine the most
@@ -97,20 +110,71 @@
 
 <h2>Assignment</h2>
     <p>
-        In this assignment, your task is to implement Dijkstra's Single-Source Shortest Paths algorithm using a Graph class provided to you. Specifically, you will be working on the ShortestPaths class,
-        where you will write methods to execute Dijkstra's algorithm, reconstruct the shortest paths once the algorithm has run, and develop a command-line program capable of computing the shortest paths
-        on a graph read from a test file.
+        In this assignment, your task is to implement Dijkstra's Single-Source Shortest Paths algorithm using a Graph class provided to you. Below is a walkthrough of the six classes to get a
+        better understanding of the assignment. Some of these have been completed for you and some of them have skeleton code to help you get started. 
     </p>
+
+    <h3>1. BasicParser</h3>
     <p>
-        The main method in the ShortestPaths class has the ability to read directed graphs from two types of text files: "basic" and "db". When a "db" file is provided, the DBParser class will parse a Graph
-        from a CSV file containing the actual coordinates of sidewalks (origin and destination) along with their corresponding accessibility scores (distance). In this context, a shortest path indicates the
-        path with the lowest number of accessibility barriers.  
+        This class represents a basic parser for sidewalk information. Its purpose is to parse a text file containing street data and create a graph representation of that data. The class follows a specific
+        format where each line represents a street and contains the following information separated by a single space: ORIG, DEST, and DISTANCE. The ORIG and DEST are parsed as Strings, and DISTANCE is parsed
+        as a double. Any content after DISTANCE on each line is ignored. This class has been completed for you.
+    </p>
+    <h3>2. DBParser</h3>
+    <p>
+        This class is a parser specifically designed to parse CSV files for street information. Its purpose is to read a CSV file containing street data and create a graph representation of that data. It utilizes
+        a Scanner class to read the file, maps CSV headers to column indices, and constructs a graph representation of the data by creating 'Sidewalk' objects and adding edges between nodes. This class has been 
+        completed for you.
     </p>
     <img src="assets/img/DBCrop.png" alt="A screenshot of an excel spreadsheet. There are three columns, orig, dest, and distance. The orig and dest column have coordinates and the distance is the 
     accessibility score for the two points." style="width: 600px;height: 334px;">
     <p>
-        (Figure 2) An example of what the CSV file looks like</a>.
+        (Figure 3) An example of what the CSV file looks like</a>.
+    </p> 
+    
+    <h3>3. Graph</h3>
+    <p>
+        This class represents a graph data structure. It allows for the creation of nodes. addition of edges, retrieval of nodes and their neighbors, and reporting of graph statistics. The graph is implemented
+        using an adjacency-list style format, where each node maintains a list of its neighbors. This class has been completed for you.
     </p>
+    <h3>4. GraphParser</h3>
+    <p>
+        This class serves as a blueprint for creating specific graph parsers by defining the required methods for opening a file a parsing its contents into a graph representation. By extending this class and 
+        implementing the 'open()' and 'parse()' methods, you can create parsers for different file formats and customize the parsing logic according to their needs.
+    </p>
+    <h3>5. Node</h3>
+    <p>
+        This class is used in the adjacency-list representation of a graph. It defines a node in a graph with a unique identifier and stores its neighboring nodes along with the weights of the edges connecting them.
+        This class has been completed for you.
+    </p>
+    <h3>6. ShortestPaths</h3>
+    <p>
+        This class provides an implementation of Dijkstra's Single-Source Shortest Paths algorithm. It allows computing the shortest path from a given node to all other nodes in a graph and provides methods to retrieve
+        the shortest path length and path itself. This code includes several TODO comments that indicate tasks to be completed:
+        <ol>
+            <li>
+                Implement Dijkstra's algorithm to fill the paths HashMap with the shortest-path data for each node reachable from the origin. Dijkstra's algorithm is used to find the shortest paths in a weighted
+                graph.
+            </li>
+            <li>
+                Implement the shortestPathLength method to fetch the shortest path length from the paths data computed earlier.
+            </li>
+            <li>
+                Implement the shortestPath method to reconstruct the sequence of nodes along the shortest path from the origin to the specified destination using the paths data computed earlier.
+            </li>
+            <li>
+                Create a ShortestPaths object and use it to compute the shortest paths data from the origin node by origCode.
+            </li>
+            <li>
+                This TODO is located inside the main method and if destCode was not given as a command line argument, it needs to print each reachable node followed by the length of the shortest path to it from the origin.
+            </li>
+            <li>
+                This TODO is also located inside the main method and if destCode was given as a command line argument, it should print the nodes in the path from origCode and destCode, followed by the total path length. If 
+                no path exists, print a message indicating that no path is found.
+            </li>
+        </ol>
+    </p>
+
 
 <h2>Project Plan and Reflection</h2>
     <p>
