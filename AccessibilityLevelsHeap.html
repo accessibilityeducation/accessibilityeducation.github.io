@@ -78,13 +78,36 @@
         </p>
 
         <h3>2. Phases</h3>
+        <p>
+            Below is a list of phases that will help guide you to the completion of this assignment. There is a small introduction and several TODOs that need to be successfully implemented to get a working project. 
+        </p>
 
         <h4>Phase 1</h4>
         <p>
-            This involves completing the implementation of a min-heap in the Heap.java file provided in the skeleton repository. 
-        </p>
-        <p>
-            Find the Phase 1 ToDo's in the documentation provided with the assignment.
+            This phase involves completing the implementation of a min-heap in the Heap.java file that has been provided in the skeleton repository.
+            <h5>TODOs</h5>
+            <ol>
+                <li>
+                    Read and understand the class invariant specified in the comment at the top of the class. This will help you understand the properties that the Heap must satisfy. Remember, all 
+                    public methods are responsible for ensuring that the class invariants are true before the method returns.
+                </li>
+                <li>
+                    Implement the <b>add</b> method by using the <b>bubbleUp</b> helper method, which will be used in both bubbling routines.
+                </li>
+                <li>
+                    Implement the <b>swap</b> helper method, which will be used in both bubbling routines.
+                </li>
+                <li>
+                    Implement the <b>peek</b> method, which should return the minimum element without modifying the heap.
+                </li>
+                <li>
+                    Implement the <b>poll</b> using <b>bubbleDown</b>, which you will implement next.
+                </li>
+                <li>
+                    Implement the <b>bubbleDown</b> method. It is highly recommended to use on or more helper methods to keep the code clean. A suggested private method, <b>smallerChild</b>, has
+                    already been included. Along with its specification, that was used in our solution.
+                </li>
+            </ol>
         </p>
 
         <h4>Phase 2</h4>
@@ -97,19 +120,48 @@
             instance, the first guideline is 1.1.1, followed by 1.1.2, and so on. The title provides a description of the contents. The conformance level, indicated by A, AA, or AAA, specifies the extent
             to which meeting the guideline would enhance a website's accessibility. Level A indicates the minimum level of accessibility, while level AAA indicates the highest level of excellence.
         </p>
+        <center><img src="assets/img/Conformance-level-table.png" alt="A table containing three columns: Index, Title, and Conformance Level Rating. There are five rows in the table, each one containing an example of
+        what the AccessibilityGuidelines.txt file will contain." style="width:585px;height: 302px;"></center>
         <p>
-            The code to obtain these data points is already given in the <b>getAccessibilityGuidelines</b> function. It will return a 2D array and your task is to take the given data and apply it to your heap.
+            (Figure 1) A sample of the data contained in AccessibilityGuidelines.txt.
         </p>
         <p>
-            Find the Phase 2 ToDo's in the documentation provided with the assignment.
+            The code to obtain these data points is already given in the <b>getAccessibilityGuidelines</b> function. It will return a 2D array and your task is to take the given data and apply it to your heap.
+            <h5>TODOs</h5>
+            <ol>
+                <li>Read and understand what <b>getAccessibilityGuidelines</b> does and returns.</li>
+                <li>Uncomment the <b>getAccessibilityGuidelines</b> function call in main in HeapTester.java. This will read the data from AccessibilityGuidelines.txt.</li>
+                <li>Specify the file path of AccessibilityGuidelines.txt as an argument for the <b>getAccessibilityGuidelines</b> function. You can find the path by right clicking on the text file in the file
+                explorer and copying it into your code. Alternatively, if the text file is in the same folder as your terminal, you can use its name directly. </li>
+                <li>Use the 2D string array returned by <b>getAccessibilityGuidelines</b> to create a heap.</li>
+                <li>Initialize a heap data structure to store the string array.</li>
+                <li>Create a loop in the main function to iterate through the 2D array.</li>
+            </ol>
         </p>
 
         <h4>Phase 3</h4>
         <p>
             This phase will utilize your heap to quickly access WCAG data.
-        </p>
-        <p>
-            Find the Phase 3 ToDo's in the documentation provided with the assignment.
+            <h5>TODOs</h5>
+            <ol>
+                <li>Check the invariants 3 - 5 and make sure they are completed. You will be updated methods: <b>add</b>, <b>swap</b>, and <b>poll</b>.
+                <ul>
+                    <li>Invariant 3: The tree cannot contain duplicate <i>values</i>; note that duplicate <i>priorities</i> are still allowed.</li>
+                    <li>Invariant 4: Map contains one entry for each element of the heap, so map.size() == c.size(). (Done in <b>contains</b>).</li>
+                    <li>Invariant 5: For each value v in the heap, its map entry contains the index of v in c. Thus: map.get(b[i]) = i.</li>
+                </ul>
+                </li>
+                <li>Implement <b>changeAccessibilityPriority</b> to change the priority of each node in the heap.</li>    
+                <li>Use your data structure to efficiently find the answers to the following questions. To do this, you will need to access your arraylist through your heap. Write out the answers to the following
+                    questions:
+                    <ol>
+                        <li>Does your heap contain a data point with the value "Consistent Navigation A"?</li>
+                        <li>What is the lowest priority entry in your heap? The highest?</li>
+                        <li>What data point is stored in the 15th position in your arraylist?</li>
+                        <li>What is the WCAG index value associated with the value "Focus Order A" (e.g., 1.1.1)?</li>
+                    </ol>
+                </li>
+            </ol>
         </p>
 
         <h3>3. Project Plan and Reflection</h3>
