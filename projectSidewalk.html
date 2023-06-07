@@ -118,14 +118,78 @@
     <h3>2. DBParser</h3>
     <p>
         This class is a parser specifically designed to parse CSV files for street information. Its purpose is to read a CSV file containing street data and create a graph representation of that data. It utilizes
-        a Scanner class to read the file, maps CSV headers to column indices, and constructs a graph representation of the data by creating 'Sidewalk' objects and adding edges between nodes. This class has been 
-        completed for you.
+        a Scanner class to read the file, maps CSV headers to column indices, and constructs a graph representation of the data by creating 'Sidewalk' objects and adding edges between nodes. Below is an example of
+        what you will find in the given CSV file. This class has been completed for you.
+        <style>
+            table {
+              border-collapse: collapse;
+              margin: 0 auto;
+            }
+        
+            th, td {
+              padding: 7px;
+            }
+          </style>
+        <table>
+            <thead>
+                <tr>
+                    <th>origin</th>
+                    <th>dest</th>
+                    <th>distance</th>
+                </tr>
+                <tr>
+                    <td>-122.31013347.6164493</td>
+                    <td>-122.309500947.6164515</td>
+                    <td>0.92414182</td>
+                </tr>
+                <tr>
+                    <td>-122.30614905344747.6172551505485</td>
+                    <td>-122.306157547.617266</td>
+                    <td>0.999841564</td>
+                </tr>
+                <tr>
+                    <td>-122.305829747.6171284</td>
+                    <td>-122.305966447.6171369</td>
+                    <td>0.999841564</td>
+                </tr>
+                <tr>
+                    <td>-122.290208947.6250006</td>
+                    <td>-122.290107947.6250004</td>
+                    <td>0.268941421</td>
+                </tr>
+                <tr>
+                    <td>-122.289557147.6249996</td>
+                    <td>-122.289234947.6249969</td>
+                    <td>0.5</td>
+                </tr>
+                <tr>
+                    <td>-122.293130747.6249564</td>
+                    <td>-122.292563547.6249587</td>
+                    <td>0.817574476</td>
+                </tr>
+                <tr>
+                    <td>-122293717847624721</td>
+                    <td>-122.293668447.6247664</td>
+                    <td>0.377540669</td>
+                </tr>
+                <tr>
+                    <td>-12229621446247604762281865920700</td>
+                    <td>-122.296195747.6228314</td>
+                    <td>0.97702263</td>
+                </tr>
+                <tr>
+                    <td>-122.29668147.6225018</td>
+                    <td>-122.29630647.6227565</td>
+                    <td>0.993307149</td>
+                </tr>
+                <tr>
+                    <td>-122.297069947.6222777</td>
+                    <td>-122.29668147.6225018</td>
+                    <td>0.851952802</td>
+                </tr>
+            </thead>
+        </table>
     </p>
-    <img src="assets/img/DBCrop.png" alt="A screenshot of an excel spreadsheet. There are three columns, orig, dest, and distance. The orig and dest column have coordinates and the distance is the 
-    accessibility score for the two points." style="width: 600px;height: 334px;">
-    <p>
-        (Figure 3) An example of what the CSV file looks like</a>.
-    </p> 
     
     <h3>3. Graph</h3>
     <p>
