@@ -694,6 +694,10 @@ progress {
   margin-left: auto;
 }
 
+.container-fluid .card-body{
+  text-align: center;
+}
+
 @media (min-width: 576px) {
   .container-sm, .container {
     max-width: 540px;
