@@ -29,29 +29,23 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 
-/* for dynamic filter section*/
 var LOButton = document.querySelectorAll("input[id*='checkLO']");
 for (let i = 0; i <= LOButton.length; i++) {
     LOButton[i].addEventListener("click", () => {
+
         var labelName = "label-" + LOButton[i].getAttribute("id");
         var inputName = "input-" + LOButton[i].getAttribute("id");
-        var filterLabels = document.querySelectorAll("label[name*=" + CSS.escape(labelName));
-        var filterInputs = document.querySelectorAll("input[name*=" + CSS.escape(inputName));
         if (LOButton[i].checked) {
-            document.getElementById("filter-section").style.display= "inline-block";
-            for (let k = 0; k < filterLabels.length; k++) {
-                filterLabels[k].style.display = "inline-block";
-            }
+            document.getElementById("display" + LOButton[i].getAttribute("id").slice(-5)).style.display = "inline-block";
+            document.getElementById("select-cat").style.display = "none";
+            document.getElementById("back-to-ressources").style.display = "inline-block";
         }
         else {
-            document.getElementById("filter-section").style.display= "none";
-                for (let l = 0; l < filterInputs.length; l++) {
-                      (filterInputs[l]).checked = false;
-                      filterLabels[l].style.display = "none";
-                     }
-                 
+            document.getElementById("display" + LOButton[i].getAttribute("id").slice(-5)).style.display = "none";
+            
+            document.getElementById("back-to-ressources").style.display = "none";
+            }
         }
-    }
     )
 }
 

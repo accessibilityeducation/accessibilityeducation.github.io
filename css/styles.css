@@ -623,25 +623,92 @@ progress {
   align-content: start;
 }
 
-input[type=checkbox] + label i {
-  display: none;
-  }
 
-  input[type=checkbox]:checked + label i {
-    display: inline-block;
-    }
+a:hover {
+  text-decoration: underline;
+}
+.description{
+  font-size: medium;
+  font-style: italic;
+}
 
-  .filters .btn{
-    font-size: .75rem;
-    margin:.375rem;
-    padding: 0.4em 1em ;
-    color:#00404e;
-    display: none;
+div[id^="display"]{
+  display:none;
+}
+
+
+.select-cat {
+  padding: 0 0 30px 0;
+  position: relative;
+  z-index: 3;
+}
+
+.select-cat .btn{
+  font-size: .85rem;
+  padding: 0.4em 1em ;
+  color:#00404e;
+  justify-content: center;
+  
 
 } 
-#filter-section{
-  display: none;
-} 
+.select-cat .content {
+  padding: 30px;
+  background: #6f42c1;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.select-cat .content h3 {
+  font-weight: 700;
+  font-size: 34px;
+  margin-bottom: 30px;
+}
+
+.select-cat .content p {
+  margin-bottom: 30px;
+}
+
+
+.select-cat .icon-boxes .icon-box {
+  text-align: center;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  width: 100%;
+}
+
+.select-cat .icon-boxes .icon-box i {
+  font-size: 40px;
+  color: #ff5821;
+  margin-bottom: 30px;
+}
+
+.select-cat .icon-boxes .icon-box h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 30px 0;
+}
+
+.select-cat .icon-boxes .icon-box p {
+  font-size: 15px;
+  color: #716f6f;
+}
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+#back-to-ressources{
+  display:none;
+}
+
+
+
+
+
+
+
 
 .list-unstyled {
   padding-left: 0;
