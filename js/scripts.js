@@ -32,20 +32,23 @@ window.addEventListener('DOMContentLoaded', () => {
 var LOButton = document.querySelectorAll("input[id*='checkLO']");
 for (let i = 0; i <= LOButton.length; i++) {
     LOButton[i].addEventListener("click", () => {
-
         var labelName = "label-" + LOButton[i].getAttribute("id");
         var inputName = "input-" + LOButton[i].getAttribute("id");
         if (LOButton[i].checked) {
             document.getElementById("display" + LOButton[i].getAttribute("id").slice(-5)).style.display = "inline-block";
-            document.getElementById("select-cat").style.display = "none";
+            document.getElementById("category-section").style.display = "none";
             document.getElementById("back-to-ressources").style.display = "inline-block";
-        }
-        else {
-            document.getElementById("display" + LOButton[i].getAttribute("id").slice(-5)).style.display = "none";
-            
-            document.getElementById("back-to-ressources").style.display = "none";
+            document.querySelector("input[id='back-btn']").addEventListener("click", () => {
+                if (document.querySelector("input[id='back-btn']").checked) {
+                    document.getElementById("test").innerHTML = document.getElementById("test").innerHTML + "1";
+                    document.getElementById("display" + LOButton[i].getAttribute("id").slice(-5)).style.display = "none";
+                    document.getElementById("category-section").style.display = "inline-block";
+                    document.querySelector("input[id='back-btn']").checked = false;
+                }
+                LOButton[i].checked = false;
             }
+            )
         }
+    }
     )
 }
-
