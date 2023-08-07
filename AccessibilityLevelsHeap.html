@@ -6,13 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Braille TTY Assignment</title>
+    <title> Assignment template </title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Include the plugin's CSS and JS: -->
+    <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css" />
     <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
 </head>
@@ -22,13 +32,14 @@
     <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="index.html">Including A11y in CS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="homepage.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
                 </ul>
@@ -42,174 +53,300 @@
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="post-heading">
                         <h1>Accessibility Level Heap</h1>
-                        <p class="subheading">Create a program using heap data structure to efficiently query Web Content Accessibility Guidelines success criteria.</p>
+                        <p class="subheading">Create a program using heap data structure to efficiently query Web
+                            Content
+                            Accessibility Guidelines success criteria.</p>
                     </div>
                 </div>
             </div>
         </div>
     </header>
+
     <!-- Post Content-->
-    <article class="mb-4">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <article>
+                    <!-- Learning Objectives-->
+                    <div id="learningObjectives">
+                        <h2 class="assignment-section">Learning Objectives</h2>
+                        <ol>
+                            <li>Understand how heaps are implemented.</li>
+                            <li>Understand how to use multiple data structures simultaneously.</li>
+                            <li>Understand what the WCAG guidelines are and how to implement them.</li>
+                        </ol>
+                    </div>
 
-<h2>Learning Objectives</h2>
-    <ol>
-        <li>Understand how heaps are implemented.</li>
-        <li>Understand how to use multiple data structures simultaneously.</li>
-        <li>Understand what the WCAG guidelines are and how to implement them.</li>
-    </ol>
-<h2>Assignment</h2>
+                    <br>
+                    <hr>
+                    <br>
 
-    <h3>1. Overview</h3>
-        <p>
-            In this assignment, you will create a program that uses the heap data structure to run queries on a file containing the success criteria of the Web Content Accessibility Guidelines (WCAG) 2.1.
-            These guidelines proved recommendations for making web content accessible to people with disabilities, such as blindness, deafness, limited movement, speech disabilities, photosensitivity,
-            and learning disabilities. The success criteria have three levels of conformance — A, AA, and AAA — with level A being the minimum level.
-        </p>
-        <p> 
-            For more information, you can refer to the official WCAG 2.1 guidelines on the <a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines (WCAG) 2.1</a> website.
-        </p>
-        <p>
-            As WCAG 2.1 has a long list of requirements (success criteria) that are referenced by numbers, you program will provide an efficient way to navigate this list. The program consists of three
-            phases, and it will allow you to easily query the WCAG success criteria by referencing their respective numbers. By the end of this assignment, you will have a useful tool for anyone looking
-            to ensure their website meets accessibility standards and is accessible to everyone, regardless of their disabilities.
-        </p>
-
-        <h3>2. Phases</h3>
-        <p>
-            Below is a list of phases that will help guide you to the completion of this assignment. There is a small introduction and several TODOs that need to be successfully implemented to get a working project. 
-        </p>
-
-        <h4>Phase 1</h4>
-        <p>
-            This phase involves completing the implementation of a min-heap in the Heap.java file that has been provided in the skeleton repository.
-            <h5>TODOs</h5>
-            <ol>
-                <li>
-                    Read and understand the class invariant specified in the comment at the top of the class. This will help you understand the properties that the Heap must satisfy. Remember, all 
-                    public methods are responsible for ensuring that the class invariants are true before the method returns.
-                </li>
-                <li>
-                    Implement the <b>add</b> method by using the <b>bubbleUp</b> helper method, which will be used in both bubbling routines.
-                </li>
-                <li>
-                    Implement the <b>swap</b> helper method, which will be used in both bubbling routines.
-                </li>
-                <li>
-                    Implement the <b>peek</b> method, which should return the minimum element without modifying the heap.
-                </li>
-                <li>
-                    Implement the <b>poll</b> using <b>bubbleDown</b>, which you will implement next.
-                </li>
-                <li>
-                    Implement the <b>bubbleDown</b> method. It is highly recommended to use on or more helper methods to keep the code clean. A suggested private method, <b>smallerChild</b>, has
-                    already been included. Along with its specification, that was used in our solution.
-                </li>
-            </ol>
-        </p>
-
-        <h4>Phase 2</h4>
-        <p>
-            This phase involves completing HeapTester.java by utilizing your code from the previous phases. You will use a min-heap to organize the data contained in AccessibilityGuidelines.txt, which is
-            a collection of data points based on the WCAG.
-        </p>
-        <p>
-            Each guideline within AccessibilityGuidelines.txt comprises an index, a title, and a conformance level rating. The data point grouping is indicated by a 3-decimal number called the index. For
-            instance, the first guideline is 1.1.1, followed by 1.1.2, and so on. The title provides a description of the contents. The conformance level, indicated by A, AA, or AAA, specifies the extent
-            to which meeting the guideline would enhance a website's accessibility. Level A indicates the minimum level of accessibility, while level AAA indicates the highest level of excellence.
-        </p>
-        <center><img src="assets/img/Conformance-level-table.png" alt="A table containing three columns: Index, Title, and Conformance Level Rating. There are five rows in the table, each one containing an example of
-        what the AccessibilityGuidelines.txt file will contain." style="width:587px;height: 302px;"></center>
-        <p>
-            (Figure 1) A sample of the data contained in AccessibilityGuidelines.txt.
-        </p>
-        <p>
-            The code to obtain these data points is already given in the <b>getAccessibilityGuidelines</b> function. It will return a 2D array and your task is to take the given data and apply it to your heap.
-            <h5>TODOs</h5>
-            <ol>
-                <li>Read and understand what <b>getAccessibilityGuidelines</b> does and returns.</li>
-                <li>Uncomment the <b>getAccessibilityGuidelines</b> function call in main in HeapTester.java. This will read the data from AccessibilityGuidelines.txt.</li>
-                <li>Specify the file path of AccessibilityGuidelines.txt as an argument for the <b>getAccessibilityGuidelines</b> function. You can find the path by right clicking on the text file in the file
-                explorer and copying it into your code. Alternatively, if the text file is in the same folder as your terminal, you can use its name directly. </li>
-                <li>Use the 2D string array returned by <b>getAccessibilityGuidelines</b> to create a heap.</li>
-                <li>Initialize a heap data structure to store the string array.</li>
-                <li>Create a loop in the main function to iterate through the 2D array.</li>
-            </ol>
-        </p>
-
-        <h4>Phase 3</h4>
-        <p>
-            This phase will utilize your heap to quickly access WCAG data.
-            <h5>TODOs</h5>
-            <ol>
-                <li>Check the invariants 3 - 5 and make sure they are completed. You will be updated methods: <b>add</b>, <b>swap</b>, and <b>poll</b>.
-                <ul>
-                    <li>Invariant 3: The tree cannot contain duplicate <i>values</i>; note that duplicate <i>priorities</i> are still allowed.</li>
-                    <li>Invariant 4: Map contains one entry for each element of the heap, so map.size() == c.size(). (Done in <b>contains</b>).</li>
-                    <li>Invariant 5: For each value v in the heap, its map entry contains the index of v in c. Thus: map.get(b[i]) = i.</li>
-                </ul>
-                </li>
-                <li>Implement <b>changeAccessibilityPriority</b> to change the priority of each node in the heap.</li>    
-                <li>Use your data structure to efficiently find the answers to the following questions. To do this, you will need to access your arraylist through your heap. Write out the answers to the following
-                    questions:
-                    <ol>
-                        <li>Does your heap contain a data point with the value "Consistent Navigation A"?</li>
-                        <li>What is the lowest priority entry in your heap? The highest?</li>
-                        <li>What data point is stored in the 15th position in your arraylist?</li>
-                        <li>What is the WCAG index value associated with the value "Focus Order A" (e.g., 1.1.1)?</li>
-                    </ol>
-                </li>
-            </ol>
-        </p>
-
-        <h3>3. Project Plan and Reflection</h3>
-        <p>
-            Each person must write both a project plan named plan.txt and a reflection named reflection.txt. plan.txt must be completed before the start of the project and reflection.txt must be completed before
-            submitting your project.
-        </p>
-        <p>
-            plan.txt should include the following information:
-            <ol>
-                <li>A one paragraph summary of the program in your own words. What is being asked of you? What will you implement in this assignment?</li>
-                <li>In 2-3 sentence, explain your thoughts on what you anticipate being the most challenging aspect(s) of the assignment.</li>
-                <li>A proposed schedule for when you will work on this assignment with your partner and where you will meet.</li>
-                <li>A list of at least 3 different resources you plan to use if you get stuck on something.</li>
-            </ol>
-            reflection.txt should include the following information:
-            <ol>
-                <li>Declare/discuss any aspects of your code that are not working. What are your intuitions about why they are not working? Acknowledge and discuss any parts of the program that appear to be
-                    inefficient.
-                </li>
-                <li>What are some of the most important lessons you learned while working on this assignment? Why do you think so?</li>
-                <li> What was the most challenging aspect of this assignment? Why?</li>
-            </ol>
-        </p>
+                    <div id="background">
+                        <h2 class="assignment-section">Background </h2>
+                        <p>
+                            In this assignment, you will create a program that uses the heap data structure to run
+                            queries on a file
+                            containing the success criteria of the Web Content Accessibility Guidelines (WCAG) 2.1.
+                            These guidelines proved recommendations for making web content accessible to people with
+                            disabilities,
+                            such
+                            as blindness, deafness, limited movement, speech disabilities, photosensitivity,
+                            and learning disabilities. The success criteria have three levels of conformance — A, AA,
+                            and AAA — with
+                            level A being the minimum level.
+                        </p>
+                        <p>
+                            For more information, you can refer to the official WCAG 2.1 guidelines on the <a
+                                href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines (WCAG) 2.1</a>
+                            website.
+                        </p>
+                        <p>
+                            As WCAG 2.1 has a long list of requirements (success criteria) that are referenced by
+                            numbers, you program
+                            will provide an efficient way to navigate this list. The program consists of three
+                            phases, and it will allow you to easily query the WCAG success criteria by referencing their
+                            respective
+                            numbers. By the end of this assignment, you will have a useful tool for anyone looking
+                            to ensure their website meets accessibility standards and is accessible to everyone,
+                            regardless of their
+                            disabilities.
+                    </div>
 
 
-       <h3>4. Instructions</h3>
-       <ol>
-            <li>Implement the phases</li>
-            <li>Test your code with the AccessibilityHeapTest.java file. </li>
-            <li>Push the final project, plan.txt, and reflection.txt to github.</li>
-        </ol>
+                    <hr>
 
-    <!-- Footer-->
-    <footer class="border-top">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div id="assignment">
+                        <h2 class="assignment-section">Assignment</h2>
+                        <p>
+                            Below is a list of phases that will help guide you to the completion of this assignment.
+                            There is a small
+                            introduction and several TODOs that need to be successfully implemented to get a working
+                            project.
+                        </p>
+                        <h4>Phase 1</h4>
+                        <p>
+                            This phase involves completing the implementation of a min-heap in the Heap.java file that
+                            has been
+                            provided
+                            in the skeleton repository.
+                        <h5>TODOs</h5>
+                        <ol>
+                            <li>
+                                Read and understand the class invariant specified in the comment at the top of the
+                                class. This will help
+                                you understand the properties that the Heap must satisfy. Remember, all
+                                public methods are responsible for ensuring that the class invariants are true before
+                                the method
+                                returns.
+                            </li>
+                            <li>
+                                Implement the <b>add</b> method by using the <b>bubbleUp</b> helper method, which will
+                                be used in both
+                                bubbling routines.
+                            </li>
+                            <li>
+                                Implement the <b>swap</b> helper method, which will be used in both bubbling routines.
+                            </li>
+                            <li>
+                                Implement the <b>peek</b> method, which should return the minimum element without
+                                modifying the heap.
+                            </li>
+                            <li>
+                                Implement the <b>poll</b> using <b>bubbleDown</b>, which you will implement next.
+                            </li>
+                            <li>
+                                Implement the <b>bubbleDown</b> method. It is highly recommended to use on or more
+                                helper methods to
+                                keep
+                                the code clean. A suggested private method, <b>smallerChild</b>, has
+                                already been included. Along with its specification, that was used in our solution.
+                            </li>
+                        </ol>
+                        </p>
 
-                    <div class="small text-center text-muted fst-italic">Copyright &copy; 2023</div>
-                </div>
+                        <h4>Phase 2</h4>
+                        <p>
+                            This phase involves completing HeapTester.java by utilizing your code from the previous
+                            phases. You will
+                            use
+                            a min-heap to organize the data contained in AccessibilityGuidelines.txt, which is
+                            a collection of data points based on the WCAG.
+                        </p>
+                        <p>
+                            Each guideline within AccessibilityGuidelines.txt comprises an index, a title, and a
+                            conformance level
+                            rating. The data point grouping is indicated by a 3-decimal number called the index. For
+                            instance, the first guideline is 1.1.1, followed by 1.1.2, and so on. The title provides a
+                            description of
+                            the contents. The conformance level, indicated by A, AA, or AAA, specifies the extent
+                            to which meeting the guideline would enhance a website's accessibility. Level A indicates
+                            the minimum
+                            level
+                            of accessibility, while level AAA indicates the highest level of excellence.
+                        </p>
+                        <img src="assets/img/Conformance-level-table.png" alt="A table containing three columns: Index, Title, and Conformance Level Rating. There are five rows in the table, each one containing an example of
+      what the AccessibilityGuidelines.txt file will contain." style="width:587px;height: 302px;">
+                        <p>
+                            (Figure 1) A sample of the data contained in AccessibilityGuidelines.txt.
+                        </p>
+                        <p>
+                            The code to obtain these data points is already given in the
+                            <b>getAccessibilityGuidelines</b> function.
+                            It
+                            will return a 2D array and your task is to take the given data and apply it to your heap.
+                        <h5>TODOs</h5>
+                        <ol>
+                            <li>Read and understand what <b>getAccessibilityGuidelines</b> does and returns.</li>
+                            <li>Uncomment the <b>getAccessibilityGuidelines</b> function call in main in
+                                HeapTester.java. This will
+                                read
+                                the data from AccessibilityGuidelines.txt.</li>
+                            <li>Specify the file path of AccessibilityGuidelines.txt as an argument for the
+                                <b>getAccessibilityGuidelines</b> function. You can find the path by right clicking on
+                                the text file in
+                                the file
+                                explorer and copying it into your code. Alternatively, if the text file is in the same
+                                folder as your
+                                terminal, you can use its name directly.
+                            </li>
+                            <li>Use the 2D string array returned by <b>getAccessibilityGuidelines</b> to create a heap.
+                            </li>
+                            <li>Initialize a heap data structure to store the string array.</li>
+                            <li>Create a loop in the main function to iterate through the 2D array.</li>
+                        </ol>
+                        </p>
+
+                        <h4>Phase 3</h4>
+                        <p>
+                            This phase will utilize your heap to quickly access WCAG data.
+                        <h5>TODOs</h5>
+                        <ol>
+                            <li>Check the invariants 3 - 5 and make sure they are completed. You will be updated
+                                methods: <b>add</b>,
+                                <b>swap</b>, and <b>poll</b>.
+                                <ul>
+                                    <li>Invariant 3: The tree cannot contain duplicate <i>values</i>; note that
+                                        duplicate
+                                        <i>priorities</i>
+                                        are still allowed.
+                                    </li>
+                                    <li>Invariant 4: Map contains one entry for each element of the heap, so map.size()
+                                        == c.size(). (Done
+                                        in <b>contains</b>).</li>
+                                    <li>Invariant 5: For each value v in the heap, its map entry contains the index of v
+                                        in c. Thus:
+                                        map.get(b[i]) = i.</li>
+                                </ul>
+                            </li>
+                            <li>Implement <b>changeAccessibilityPriority</b> to change the priority of each node in the
+                                heap.</li>
+                            <li>Use your data structure to efficiently find the answers to the following questions. To
+                                do this, you
+                                will
+                                need to access your arraylist through your heap. Write out the answers to the following
+                                questions:
+                                <ol>
+                                    <li>Does your heap contain a data point with the value "Consistent Navigation A"?
+                                    </li>
+                                    <li>What is the lowest priority entry in your heap? The highest?</li>
+                                    <li>What data point is stored in the 15th position in your arraylist?</li>
+                                    <li>What is the WCAG index value associated with the value "Focus Order A" (e.g.,
+                                        1.1.1)?</li>
+                                </ol>
+                            </li>
+                        </ol>
+                        <hr>
+                        <div id="planReflection">
+                            <h2 class="assignment-section">Project Plan and Reflection</h2>
+                            <p>
+                                Each person must write both a project plan named plan.txt and a reflection named
+                                reflection.txt. plan.txt
+                                must be completed before the start of the project and reflection.txt must be completed
+                                before
+                                submitting your project.
+                            </p>
+                            <p>
+                                plan.txt should include the following information:
+                            <ol>
+                                <li>A one paragraph summary of the program in your own words. What is being asked of
+                                    you?
+                                    What will you
+                                    implement in this assignment?</li>
+                                <li>In 2-3 sentence, explain your thoughts on what you anticipate being the most
+                                    challenging
+                                    aspect(s) of
+                                    the assignment.</li>
+                                <li>A proposed schedule for when you will work on this assignment with your partner and
+                                    where you will
+                                    meet.
+                                </li>
+                                <li>A list of at least 3 different resources you plan to use if you get stuck on
+                                    something.
+                                </li>
+                            </ol>
+                            reflection.txt should include the following information:
+                            <ol>
+                                <li>Declare/discuss any aspects of your code that are not working. What are your
+                                    intuitions
+                                    about why they
+                                    are not working? Acknowledge and discuss any parts of the program that appear to be
+                                    inefficient.
+                                </li>
+                                <li>What are some of the most important lessons you learned while working on this
+                                    assignment? Why do you
+                                    think so?</li>
+                                <li> What was the most challenging aspect of this assignment? Why?</li>
+                            </ol>
+                            </p>
+                            <hr>
+                            <div id="instructions">
+                                <h3>Instructions</h3>
+                                <ol>
+                                    <li>Implement the phases</li>
+                                    <li>Test your code with the AccessibilityHeapTest.java file. </li>
+                                    <li>Push the final project, plan.txt, and reflection.txt to github.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </article>
             </div>
-        </div>
-    </footer>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+            <!-- Side widgets-->
+            <div class="col-lg-4">
+                <div class="side-widget">
+                    <!-- Table of contents-->
+                    <div class="card mb-4">
+                        <div class="card-header">Table of contents</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#learningObjectives">Learning Objectives</a></li>
+                                        <li><a href="#background">Background</a></li>
+                                        <li><a href="#assignment">Assignement/Coding</a></li>
+                                        <li><a href="#planReflection">Project Plan and Reflection</a></li>
+                                        <li><a href="#instructions">Instructions</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Can add an additional category or tag widget-->
+                </div>
+
+
+                <script src="js/jquery.min.js"></script>
+                <script src="js/popper.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+                <!-- Bootstrap core JS-->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+                <!-- Core theme JS-->
+                <script src="js/scripts.js"></script>
+                <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+                <!-- * *                               SB Forms JS                               * *-->
+                <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+                <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+                <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 
 </html>

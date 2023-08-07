@@ -11,8 +11,11 @@
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
 </head>
@@ -22,13 +25,14 @@
     <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="index.html">Including A11y in CS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="homepage.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
                 </ul>
@@ -48,251 +52,312 @@
             </div>
         </div>
     </header>
+
     <!-- Post Content-->
-    <article class="mb-4">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
-
-<h2>Assignment</h2>
-    <h3>1. Objectives</h3>
-        <p>the objectives of this lab are to:</p>
-        <ul>
-            <li>Become familiar with binary trees;</li>
-            <li>Know how to traverse a binary tree;</li>
-            <li>Learn how to modify a binary tree; and</li>
-            <li>Use recursion to traverse and modify a binary tree.</li>
-        </ul>
-
-    <h3>2. Introduction</h3>
-        <p>Braille is a tactile writing system used by people with visual impairment. It is traditionally written with embossed paper. 
-            Today, people typically use a braille writer, such as a portable braille notetaker or computer that prints with a braille embosser. 
-            As for reading computer screens, braille users have the option of using refreshable braille displays. 
-            What makes it refreshable is whenever the user moves their cursor through keyboard or voice commands, the display updates the dots in the braille cells.</p>
-        <img src="assets/img/screen-reader.png" alt="A person sitting in front of a laptop and braille display. The person is wearing headphones connected to the laptop and is using their hands to touch and read the braille display.">
-        <p>(Figure 1) Person using a screen reader, by <a href="https://stock.adobe.com/contributor/200852236/elypse">Elypse at stock.adobe.com</a></p><br/>
-        <img src="assets/img/braille-display.png" alt="A braille display with keypads. The keypads are arranged in an ergonomic fashion such that the keys are angled the way hands naturally rest."style="width:500px;height: 334px;">
-        <p>(Figure 2) An example of a braille display, from <a href="https://www.pattan.net/Short-Term-Loan/BRAILLIANT-BI-14-BRAILLE-DISPLAY">PaTTAN</a></p><br/>
-        <p>In this lab, you will build a binary tree which translates braille into English letters.</p>
-
-    <h3>3. Braille Overview</h3>
-        <p>Braille was the first writing system with binary encoding. The system as devised by Louis Braille consists of two parts:
-        </p>
-        <ul>
-            <li>Character encoding that mapped characters of the alphabet to six bits (0's and 1's).</li>
-            <li>The physical representation of those six-bit characters with raised dots in a braille cell.</li>
-        </ul>
-        <p>Within an individual cell, the dot positions are arranged in a three by two grid. 
-        A raised dot can appear in any of the six positions, producing sixty-four possible patterns, including one in which there are no raised dots. </p>
-
-        <p>A braille letter is commonly described by listing the positions where dots are raised. 
-        The positions are universally numbered, from top to bottom, as 1 to 3 on the left column and 4 to 6 on the right column. 
-        For example, an "m" is represented with cells 1, 3, 4 raised and 2, 5, 6 lowered, ⡉.</p>
-        <table border="1">
-            <tr>
-                <td width="10">1</td>
-                <td width="10">4</td>
-            </tr>
-            <tr>
-                <td width="10">2</td>
-                <td width="10">5</td>
-            </tr>
-            <tr>
-                <td width="10">3</td>
-                <td width="10">6</td>
-            </tr>
-        </table>
-        <p>Braille cell numbering</p>
-
-        <img src="assets/img/braille.png" alt="Table showing the language of braille, color coded to demonstrate the differences between decades.">
-        <p>(Figure 3) </p><br/>
-        <p>In our program, we will represent a braille character as a string of 6 0's and 1's. A '1' represents a raised dot, a '0' represents a lowered dot.
-        For example, 'm' would be represented:</p>
-        <p>'m' → 101100</p>
-
-
-    <h3>4. Braille as a Binary Tree</h3>
-        <p>We can store braille encodings as paths through a binary tree. 
-            Each of the first 6 levels represents a position in a braille cell. 
-            The 7th level's leaf nodes will store the translated character of that path through the tree. 
-            If a position is raised, the path should take that position node's right child. 
-            If the position is lowered, it should travel to the left child. A partial tree is shown below.
-            A more complete tree for the full English alphabet can be found in alphabet_tree.txt.</p>
-
-            <img src="assets/img/braille-bt.png" alt="A partial binary tree representation of a braille translation. The english representation of a letter is the leafs of the tree.">
-            <p>(Figure 4) </p><br/>
-    <h3>5. Program Overview</h3>
-
-        <p>Your program will have these main functionalities:</p>
-
-        <ul>
-            <li>build a binary tree representing braille encoding of the English alphabet</li>
-            <li>add a braille translation to your binary tree</li>
-            <li>given a braille encoding (a string of six 0's and 1's), find the associated English letter</li>
-            <li>traverse the entire tree to produce a file mapping english letters to braille encodings</li>
-        </ul>
-
-        <p>In braille_translator.py you will find the following:</p>
-        <ul>
-            <li>BrailleTree class</li>
-            <ul>
-                <li>attributes:</li>
-                <ul>
-                    <li>root, a Node representing the first position braille cell</li>
-                </ul>
-            </ul>
-            <ul>
-                <li>print(self):</li>
-                <ul>
-                    <li>a method for printing the whole tree, useful for debugging</li>
-                </ul>
-            </ul>
-            <ul>
-                <li>read_file(self, filename):</li>
-                <ul>
-                    <li>a method that takes a file name of english letters and their braille representation</li>
-                </ul>
-            </ul>
-            <ul>
-                <li>check_braille(self, braille_string):</li>
-                <ul>
-                    <li>prints the English letter represented by the braille string, if it exists in the tree</li>
-                </ul>
-            </ul>
-            <ul>
-                <li>check_braille(self, braille_string, node):</li>
-                <ul>
-                    <li>a recursive helper function to find the english character given a partial braille string and a starting node</li>
-                </ul>
-            </ul>
-            <ul>
-                <li>add_value(self, braille_string, val):</li>
-                <ul>
-                    <li>function to add a new value to our tree represented by braille_string</li>
-                </ul>
-            </ul>
-            <ul>
-                <li>add_value(self, braille_string, node, val):</li>
-                <ul>
-                    <li>a private recursive function for adding a value to the tree by adding internal position nodes and value leaf nodes</li>
-                </ul>
-            </ul>
-            <ul>
-                <li>write_values(self, filepath):</li>
-                <ul>
-                    <li>write all English letters and their braille representations from the tree to a file</li>
-                </ul>
-            </ul>
-            <li>Node class</li>
-            <ul>
-                <li>attributes:</li>
-                <ul>
-                    <li>data; string or int. Interior nodes represent the braille cell position (1-6). 
-                        Final leaf nodes represent English characters represented by the path through the tree.</li>
-                    <li>left; left Node child of current node. 
-                        The left child represents the path where the current node position is set to lowered braille state</li>
-                    <li>right; right Node child of current node. 
-                        The right child represents the path where the current node position is set to raised braille state</li>
-                </ul>
-    
-                <li>is_leaf</li>
-                <ul>
-                    <li>returns if node has no children</li>
-                </ul>
-                <li>is_position</li>
-
-                <ul>
-                    <li>returns if Node represents braille cell position (as opposed to translated letter)</li>
-                </ul>
-
-
-                <li>print(), print_nomes(), print_lines()</li>
-                <ul>
-                    <li>helper methods for outputting tree</li>
-                </ul>
-
-            </ul>
-
-            <p>Other files:</p>
-                <ul>
-                    <li>alphabet.txt</li>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <div id="learningObjectives">
+                    <h2 class="assignment-section"> Learning Objectives</h2>
                     <ul>
-                        <li>file of braille translations written in the form <English character> <braille string></braille></li>
+                        <li>Become familiar with binary trees;</li>
+                        <li>Know how to traverse a binary tree;</li>
+                        <li>Learn how to modify a binary tree; and</li>
+                        <li>Use recursion to traverse and modify a binary tree.</li>
                     </ul>
-                    <li>alphabet_tree.txt</li>
+                </div>
+                <hr>
+                <div id="background">
+                    <h2 class="assignment-section">Background</h2>
+                    <h4>1. Introduction</h4>
+                    <p>Braille is a tactile writing system used by people with visual impairment. It is traditionally
+                        written with embossed paper.
+                        Today, people typically use a braille writer, such as a portable braille notetaker or computer
+                        that prints with a braille embosser.
+                        As for reading computer screens, braille users have the option of using refreshable braille
+                        displays.
+                        What makes it refreshable is whenever the user moves their cursor through keyboard or voice
+                        commands, the display updates the dots in the braille cells.</p>
+                    <img src="assets/img/screen-reader.png"
+                        alt="A person sitting in front of a laptop and braille display. The person is wearing headphones connected to the laptop and is using their hands to touch and read the braille display.">
+                    <p>(Figure 1) Person using a screen reader, by <a
+                            href="https://stock.adobe.com/contributor/200852236/elypse">Elypse at stock.adobe.com</a>
+                    </p><br />
+                    <img src="assets/img/braille-display.png"
+                        alt="A braille display with keypads. The keypads are arranged in an ergonomic fashion such that the keys are angled the way hands naturally rest."
+                        style="width:500px;height: 334px;">
+                    <p>(Figure 2) An example of a braille display, from <a
+                            href="https://www.pattan.net/Short-Term-Loan/BRAILLIANT-BI-14-BRAILLE-DISPLAY">PaTTAN</a>
+                    </p><br />
+                    <p>In this lab, you will build a binary tree which translates braille into English letters.</p>
+
+                    <h4>2. Braille Overview</h4>
+                    <p>Braille was the first writing system with binary encoding. The system as devised by Louis Braille
+                        consists of two parts:
+                    </p>
                     <ul>
-                        <li>shows what the final full binary tree should look like</li>
+                        <li>Character encoding that mapped characters of the alphabet to six bits (0's and 1's).</li>
+                        <li>The physical representation of those six-bit characters with raised dots in a braille cell.
+                        </li>
                     </ul>
-                    <li>traversal_soltn.txt</li>
+                    <p>Within an individual cell, the dot positions are arranged in a three by two grid.
+                        A raised dot can appear in any of the six positions, producing sixty-four possible patterns,
+                        including one in which there are no raised dots. </p>
+
+                    <p>A braille letter is commonly described by listing the positions where dots are raised.
+                        The positions are universally numbered, from top to bottom, as 1 to 3 on the left column and 4
+                        to 6 on the right column.
+                        For example, an "m" is represented with cells 1, 3, 4 raised and 2, 5, 6 lowered, ⡉.</p>
+                    <table border="1">
+                        <tr>
+                            <td width="10">1</td>
+                            <td width="10">4</td>
+                        </tr>
+                        <tr>
+                            <td width="10">2</td>
+                            <td width="10">5</td>
+                        </tr>
+                        <tr>
+                            <td width="10">3</td>
+                            <td width="10">6</td>
+                        </tr>
+                    </table>
+                    <p>Braille cell numbering</p>
+
+                    <img src="assets/img/braille.png"
+                        alt="Table showing the language of braille, color coded to demonstrate the differences between decades.">
+                    <p>(Figure 3) </p><br />
+                    <p>In our program, we will represent a braille character as a string of 6 0's and 1's. A '1'
+                        represents a raised dot, a '0' represents a lowered dot.
+                        For example, 'm' would be represented:</p>
+                    <p>'m' → 101100</p>
+                    <h4>3. Braille as a Binary Tree</h4>
+                    <p>We can store braille encodings as paths through a binary tree.
+                        Each of the first 6 levels represents a position in a braille cell.
+                        The 7th level's leaf nodes will store the translated character of that path through the tree.
+                        If a position is raised, the path should take that position node's right child.
+                        If the position is lowered, it should travel to the left child. A partial tree is shown below.
+                        A more complete tree for the full English alphabet can be found in alphabet_tree.txt.</p>
+
+                    <img src="assets/img/braille-bt.png"
+                        alt="A partial binary tree representation of a braille translation. The english representation of a letter is the leafs of the tree.">
+                    <p>(Figure 4) </p><br />
+                </div>
+                <hr>
+                <div id="assignment">
+                    <h2 class="assignment-section"> Assignment </h2>
+                    <p>Your program will have these main functionalities:</p>
+
                     <ul>
-                        <li>demonstrates what your write_values method should produce</li>
+                        <li>build a binary tree representing braille encoding of the English alphabet</li>
+                        <li>add a braille translation to your binary tree</li>
+                        <li>given a braille encoding (a string of six 0's and 1's), find the associated English letter
+                        </li>
+                        <li>traverse the entire tree to produce a file mapping english letters to braille encodings</li>
                     </ul>
-                    <li>main.py</li>
+                    <p>In braille_translator.py you will find the following:</p>
                     <ul>
-                        <li>runs interactive program that reads in alphabet file, writes your traversal to a file, 
-                            then is an interactive program for translating braille sequences</li>
+                        <li>BrailleTree class</li>
+                        <ul>
+                            <li>attributes:</li>
+                            <ul>
+                                <li>root, a Node representing the first position braille cell</li>
+                            </ul>
+                        </ul>
+                        <ul>
+                            <li>print(self):</li>
+                            <ul>
+                                <li>a method for printing the whole tree, useful for debugging</li>
+                            </ul>
+                        </ul>
+                        <ul>
+                            <li>read_file(self, filename):</li>
+                            <ul>
+                                <li>a method that takes a file name of english letters and their braille representation
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul>
+                            <li>check_braille(self, braille_string):</li>
+                            <ul>
+                                <li>prints the English letter represented by the braille string, if it exists in the
+                                    tree</li>
+                            </ul>
+                        </ul>
+                        <ul>
+                            <li>check_braille(self, braille_string, node):</li>
+                            <ul>
+                                <li>a recursive helper function to find the english character given a partial braille
+                                    string and a starting node</li>
+                            </ul>
+                        </ul>
+                        <ul>
+                            <li>add_value(self, braille_string, val):</li>
+                            <ul>
+                                <li>function to add a new value to our tree represented by braille_string</li>
+                            </ul>
+                        </ul>
+                        <ul>
+                            <li>add_value(self, braille_string, node, val):</li>
+                            <ul>
+                                <li>a private recursive function for adding a value to the tree by adding internal
+                                    position nodes and value leaf nodes</li>
+                            </ul>
+                        </ul>
+                        <ul>
+                            <li>write_values(self, filepath):</li>
+                            <ul>
+                                <li>write all English letters and their braille representations from the tree to a file
+                                </li>
+                            </ul>
+                        </ul>
+                        <li>Node class</li>
+                        <ul>
+                            <li>attributes:</li>
+                            <ul>
+                                <li>data; string or int. Interior nodes represent the braille cell position (1-6).
+                                    Final leaf nodes represent English characters represented by the path through the
+                                    tree.</li>
+                                <li>left; left Node child of current node.
+                                    The left child represents the path where the current node position is set to lowered
+                                    braille state</li>
+                                <li>right; right Node child of current node.
+                                    The right child represents the path where the current node position is set to raised
+                                    braille state</li>
+                            </ul>
+                            <li>is_leaf</li>
+                            <ul>
+                                <li>returns if node has no children</li>
+                            </ul>
+                            <li>is_position</li>
+                            <ul>
+                                <li>returns if Node represents braille cell position (as opposed to translated letter)
+                                </li>
+                            </ul>
+                            <li>print(), print_nomes(), print_lines()</li>
+                            <ul>
+                                <li>helper methods for outputting tree</li>
+                            </ul>
+
+                        </ul>
+                        <p>Other files:</p>
+                        <ul>
+                            <li>alphabet.txt</li>
+                            <ul>
+                                <li>file of braille translations written in the form <English character>
+                                        <braille string></braille>
+                                </li>
+                            </ul>
+                            <li>alphabet_tree.txt</li>
+                            <ul>
+                                <li>shows what the final full binary tree should look like</li>
+                            </ul>
+                            <li>traversal_soltn.txt</li>
+                            <ul>
+                                <li>demonstrates what your write_values method should produce</li>
+                            </ul>
+                            <li>main.py</li>
+                            <ul>
+                                <li>runs interactive program that reads in alphabet file, writes your traversal to a
+                                    file,
+                                    then is an interactive program for translating braille sequences</li>
+                            </ul>
+                        </ul>
                     </ul>
+                    <!--TODO: add fonts for methods-->
+                    <h4>Tasks</h4>
+                    <p>For this lab you should:</p>
+                    <ul>
+                        <li>complete the_check_braille() recursive helper method in BrailleTree</li>
+                        <ul>
+                            <li>Take time to really read and understand the _check_braille() docstring</li>
+                            <li>Look at how add_value() and check_braille() use _check_braille() to get additional
+                                information on its use</li>
+                        </ul>
+                        <li>complete the _add_value() recursive helper method in BrailleTree</li>
+                        <ul>
+                            <li>see add_value() and read_file() to get additional information on its use</li>
+                            <li>note how add_value() uses _check_braille() and what parameters it passes to _add_value()
+                            </li>
+                            <li>once add_value() is complete, you should be able to run the main program and see your
+                                tree printed out</li>
+                        </ul>
+                    </ul>
+                    <p>__</p>
+                </div>
+                <hr>
+                <div id="notes">
+                    <h2 class="assignment-section">Notes</h2>
+
+                </div>
+                <p><b>Note:</b> since our trees are large and hard to see, try piping console output into a file</p>
+                <ul>
+                    <li>comment out interactive_translator(braille_string) in main.py</li>
+                    <li>from the shell run: <br> python main.py > output.txt </li>
+                    <li>this sends all information that would have been printed to the console to a file</li>
                 </ul>
+                <p>__</p>
+                <p><b>Note: </b>if the call to the interactive translator (~line 23 in main.py),
+                    the program still expects input even though the prompt is printed to output.txt.
+                    If it seems like your program is hanging and that line is uncommented, you still need to type
+                    'Y' in the shell after running</p>
+                <ul>
+                    <li>complete write_values() method in BrailleTree</li>
+                    <ul>
+                        <li>this method should traverse your whole BrailleTree and create a file where each line is
+                            &lt;English letter&gt; &lt;braille string&gt;.
+                            See traversal_soltn.txt to see what your final output should be></li>
+                        <li>Consider the traversal orders we learned in class, which would be most appropriate?</li>
+                    </ul>
+                    <li>extend interactive_translator() in main.py to check for invalid input</li>
+                    <ul>
+                        <li>if the user enters an invalid braille (any string besides size 0's and 1's), the program
+                            should raise a ValueError, passing in a meaningful message, print the ValueError's error
+                            message, then prompt the user for another input.</li>
+                    </ul>
+                    <li>extend interactive_translator() to process multiple braille characters</li>
+                    <ul>
+                        <li>interactive_translator() currently only processes single braille characters. Extend the
+                            program to process full words.</li>
+                        <li>e.g.,<br>
+                            >> Give a braille sequence of 0's and 1's:<br>
+                            110010100010111000111000101010<br>
+                            Braille Translation: hello
+                        </li>
+                    </ul>
+                    <li>update your invalid input checking to allow longer valid submissions
+                        (hint: consider using the % operator for checking a valid number of characters)</li>
+                    <li>check that your name (and partner if applicable) is on top of your brailletree.py and
+                        main.py files and that your code is well documented.</li>
+                </ul>
+            </div>
 
+            <!-- Side widgets-->
+            <div class="col-lg-4">
+                <div class="side-widget">
+                    <!-- Table of contents-->
+                    <div class="card mb-4">
+                        <div class="card-header">Table of contents</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#learningObjectives">Learning Objectives</a></li>
+                                        <li><a href="#background">Background</a></li>
+                                        <li><a href="#assignment">Assignement</a></li>
+                                        <li><a href="#notes">Notes</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-        </ul>
-        <!--TODO: add fonts for methods-->
-    <h3>Tasks</h3>
-        <p>For this lab you should:</p>
-        <ul>
-            <li>complete the_check_braille() recursive helper method in BrailleTree</li>
-            <ul>
-                <li>Take time to really read and understand the _check_braille() docstring</li>
-                <li>Look at how add_value() and check_braille() use _check_braille() to get additional information on its use</li>
-            </ul>
-            <li>complete the _add_value() recursive helper method in BrailleTree</li>
-            <ul>
-                <li>see add_value() and read_file() to get additional information on its use</li>
-                <li>note how add_value() uses _check_braille() and what parameters it passes to _add_value()</li>
-                <li>once add_value() is complete, you should be able to run the main program and see your tree printed out</li>
-            </ul>
-        </ul>
-        <p>__</p>
-        <p><b>Note:</b> since our trees are large and hard to see, try piping console output into a file</p>
-        <ul>
-            <li>comment out interactive_translator(braille_string) in main.py</li>
-            <li>from the shell run: <br> python main.py > output.txt </li>
-            <li>this sends all information that would have been printed to the console to a file</li>
-        </ul>
-        <p>__</p>
-        <p><b>Note: </b>if the call to the interactive translator (~line 23 in main.py), 
-            the program still expects input even though the prompt is printed to output.txt. 
-            If it seems like your program is hanging and that line is uncommented, you still need to type 'Y' in the shell after running</p>
-        <ul>
-            <li>complete write_values() method in BrailleTree</li>
-            <ul>
-                <li>this method should traverse your whole BrailleTree and create a file where each line is &lt;English letter&gt; &lt;braille string&gt;. 
-                    See traversal_soltn.txt to see what your final output should be></li>
-                    <li>Consider the traversal orders we learned in class, which would be most appropriate?</li>
-            </ul>
-            <li>extend interactive_translator() in main.py to check for invalid input</li>
-            <ul>
-                <li>if the user enters an invalid braille (any string besides size 0's and 1's), the program should raise a ValueError, passing in a meaningful message, print the ValueError's error message, then prompt the user for another input.</li>
-            </ul>
-            <li>extend interactive_translator() to process multiple braille characters</li>
-            <ul>
-                <li>interactive_translator() currently only processes single braille characters. Extend the program to process full words.</li>
-                <li>e.g.,<br>
-                    >> Give a braille sequence of 0's and 1's:<br>
-                    110010100010111000111000101010<br>
-                    Braille Translation: hello
-                    </li>
-            </ul>
-            <li>update your invalid input checking to allow longer valid submissions 
-                (hint: consider using the % operator for checking a valid number of characters)</li>
-            <li>check that your name (and partner if applicable) is on top of your brailletree.py and main.py files and that your code is well documented.</li>
-        </ul>
-
-                    
+                    <!-- Can add an additional category or tag widget-->
                 </div>
             </div>
         </div>
-    </article>
+    </div>
+
     <!-- Footer-->
     <footer class="border-top">
         <div class="container px-4 px-lg-5">

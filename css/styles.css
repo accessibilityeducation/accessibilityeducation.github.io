@@ -703,6 +703,67 @@ div[id^="display"]{
   display:none;
 }
 
+.flex-1{
+  flex:1
+}
+.side-widget{
+  min-height: 200px;
+  overflow: auto;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 5%;
+}
+.assignment-section{
+  text-align: center;
+}
+
+
+.file-upload{
+  display:block;text-align:center;font-family: Helvetica, Arial, sans-serif;font-size: 12px;
+}
+.file-upload .file-select{
+   display:block;
+   border: 2px solid #dce4ec;
+   color: #34495e;
+   cursor:pointer;
+   height:40px;
+   line-height:40px;
+   text-align:left;
+   background:#FFFFFF;
+   overflow:hidden;
+   position:relative;
+  width: 200spx;}
+
+.search-box button {
+  height: 32px;
+  width: 32px;
+  margin-left: -5px;
+  background: LightGrey;
+  font-size: 17px;
+  border: none;
+  margin-top: 14px;
+  margin-right: 16px;
+}
+  
+.search-box input[type=text] {
+  text-align: center;
+  height: 32x;
+  font-size: 17px;
+  width: 400px;
+  margin-top: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -11,8 +11,11 @@
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
 </head>
@@ -22,13 +25,14 @@
     <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="index.html">Including A11y in CS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="homepage.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
                 </ul>
@@ -42,7 +46,8 @@
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="post-heading">
                         <h1>Project Sidewalk</h1>
-                        <p class="subheading">Implement Dijkstra's Single-Source Shortest Paths algorithm, reconstruct the shortest paths, and create a command-line program for computing the shortest paths
+                        <p class="subheading">Implement Dijkstra's Single-Source Shortest Paths algorithm, reconstruct
+                            the shortest paths, and create a command-line program for computing the shortest paths
                             on a graph from a test file.
                         </p>
                     </div>
@@ -50,266 +55,382 @@
             </div>
         </div>
     </header>
+
     <!-- Post Content-->
-    <article class="mb-4">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <div id="learningObjectives">
+                    <h2 class="assignment-section">Learning Objectives</h2>
+                    <ol>
+                        <li> Implement the Dijkstra's shortest path algorithm.</li>
+                        <li> Apply the shortest path concept to real-world accessibility.</li>
+                        <li> Understand data querying and cleaning.</li>
+                    </ol>
+                </div>
+                <hr>
+                <div id="background">
+                    <h2 class="assignment-section">Background</h2>
+                    <p>
+                        <a href="https://dl.acm.org/doi/10.1145/3290605.3300292">Project Sidewalk</a> is an open-source
+                        web-based <a href="https://sidewalk-sea.cs.washington.edu">tool</a> designed to collect
+                        street-level
+                        accessibility data through crowdsourcing, involving both volunteers and paid workers. Its
+                        primary function is to enable users to annotate "street segments" with valuable sidewalk
+                        accessibility
+                        information, including details about curb ramps, missing or present, obstacles, surface
+                        problems, and the absence of sidewalks.
+                    </p>
+                    <p>
+                        To facilitate easy access to the collected dataset, Project Sidewalk provides an <a
+                            href="https://sidewalk-sea.cs.washington.edu/api">API</a>. This allows users to retrieve the
+                        dataset, which consists
+                        of Accessibility Scores for streets within a specified region. These scores are determined based
+                        on a comprehensive scoring model that takes into account the number of accessibility issues
+                        present. The
+                        score ranges from 0 to 1, where 0 indicates inadequate accessibility and 1 denotes full
+                        accessibility. In the dataset, street segments are represented as a <a
+                            href="https://datatracker.ietf.org/doc/html/rfc7946#section-3.3">Feature Collection</a>
+                        of <a href="https://datatracker.ietf.org/doc/html/rfc7946#appendix-A.2">LineString features</a>,
+                        with each LineString having an array of coordinate positions.
+                    <p>
+                        For easier data manipulation, the dataset has been extracted into a CSV file. More about this
+                        later.
+                    </p>
 
-<h2>Learning Objectives</h2>
-    <ol>
-        <li> Implement the Dijkstra's shortest path algorithm.</li>
-        <li> Apply the shortest path concept to real-world accessibility.</li>
-        <li> Understand data querying and cleaning.</li>
-    </ol>
-<h2>Introduction</h2>
-    <p>
-        <a href="https://dl.acm.org/doi/10.1145/3290605.3300292">Project Sidewalk</a> is an open-source web-based <a href="https://sidewalk-sea.cs.washington.edu">tool</a> designed to collect street-level
-        accessibility data through crowdsourcing, involving both volunteers and paid workers. Its primary function is to enable users to annotate "street segments" with valuable sidewalk accessibility
-        information, including details about curb ramps, missing or present, obstacles, surface problems, and the absence of sidewalks.
-    </p>
-    <p>
-        To facilitate easy access to the collected dataset, Project Sidewalk provides an <a href="https://sidewalk-sea.cs.washington.edu/api">API</a>. This allows users to retrieve the dataset, which consists
-        of Accessibility Scores for streets within a specified region. These scores are determined based on a comprehensive scoring model that takes into account the number of accessibility issues present. The 
-        score ranges from 0 to 1, where 0 indicates inadequate accessibility and 1 denotes full accessibility. In the dataset, street segments are represented as a <a href="https://datatracker.ietf.org/doc/html/rfc7946#section-3.3">Feature Collection</a>
-        of <a href="https://datatracker.ietf.org/doc/html/rfc7946#appendix-A.2">LineString features</a>, with each LineString having an array of coordinate positions. 
-    <p>
-        For easier data manipulation, the dataset has been extracted into a CSV file. More about this later.
-    </p>
-
-<h2>Dijkstra's Shortest Path Algorithm</h2>
-    <center><img src="assets/img/Dijkstra-Alg.jpeg" alt="A graph with nodes and directed edges, visualizing the process of Dijkstra's shortest path algorithm from node A to other nodes, highlighting the
+                    <h2>Dijkstra's Shortest Path Algorithm</h2>
+                    <center><img src="assets/img/Dijkstra-Alg.jpeg" alt="A graph with nodes and directed edges, visualizing the process of Dijkstra's shortest path algorithm from node A to other nodes, highlighting the
         the visited nodes and the shortest path found." style="width:600px;height: 334px;"></center>
-    <p>
-        (Figure 1) Dijkstra's Shortest Path Graph.
-    </p>
-    <p>
-        Dijkstra's shortest path algorithm is a method used to find the shortest path between two nodes in a graph. Imagine you have a map with multiple locations and you want to determine the most
-        efficient way to travel from one location to another. Dijkstra's algorithm helps you find this optimal path by considering the distances between nodes and gradually exploring the graph.
-    </p>
-    <p>
-        The algorithm starts by assigning a tentative distance value to each node in the graph, with the initial node having a distance of 0 and all other nodes having an initial distance of infinity.
-        Then, it selects the node with the smallest tentative distance and examines its neighboring nodes.
-    </p>
-    <p>
-        For each neighboring node, the algorithm calculates the total distance from the initial node through the current node. If this calculated distance is smaller than the current tentative distance
-        assigned to the neighboring node, the tentative distance is updated with the smaller value.
-    </p>
-    <p>
-        The algorithm continues this process, iteratively selecting the node with the smallest tentative distance and exploring its neighbors, updating the tentative distances as necessary, until all nodes
-        in the graph have been visited or the destination node has been reached.
-    </p>
-    <p>
-        Once the algorithm completes, the shortest path from the initial node to any other node in the graph can be determined by following the sequence of nodes with the smallest tentative distances.
-    </p>
+                    <p>
+                        (Figure 1) Dijkstra's Shortest Path Graph.
+                    </p>
+                    <p>
+                        Dijkstra's shortest path algorithm is a method used to find the shortest path between two nodes
+                        in a graph. Imagine you have a map with multiple locations and you want to determine the most
+                        efficient way to travel from one location to another. Dijkstra's algorithm helps you find this
+                        optimal path by considering the distances between nodes and gradually exploring the graph.
+                    </p>
+                    <p>
+                        The algorithm starts by assigning a tentative distance value to each node in the graph, with the
+                        initial node having a distance of 0 and all other nodes having an initial distance of infinity.
+                        Then, it selects the node with the smallest tentative distance and examines its neighboring
+                        nodes.
+                    </p>
+                    <p>
+                        For each neighboring node, the algorithm calculates the total distance from the initial node
+                        through the current node. If this calculated distance is smaller than the current tentative
+                        distance
+                        assigned to the neighboring node, the tentative distance is updated with the smaller value.
+                    </p>
+                    <p>
+                        The algorithm continues this process, iteratively selecting the node with the smallest tentative
+                        distance and exploring its neighbors, updating the tentative distances as necessary, until all
+                        nodes
+                        in the graph have been visited or the destination node has been reached.
+                    </p>
+                    <p>
+                        Once the algorithm completes, the shortest path from the initial node to any other node in the
+                        graph can be determined by following the sequence of nodes with the smallest tentative
+                        distances.
+                    </p>
+                </div>
+                <hr>
+                <div id="assignment">
 
-<h2>Assignment</h2>
-    <p>
-        In this assignment, your task is to implement Dijkstra's Single-Source Shortest Paths algorithm using a Graph class provided to you. Below is a walkthrough of the six provided classes to get a
-        better understanding of the assignment. Some of these have been completed for you and some of them have skeleton code to help you get started. 
-    </p>
+                    <h2 class="assignment-section">Assignment</h2>
+                    <p>
+                        In this assignment, your task is to implement Dijkstra's Single-Source Shortest Paths algorithm
+                        using a Graph class provided to you. Below is a walkthrough of the six provided classes to get a
+                        better understanding of the assignment. Some of these have been completed for you and some of
+                        them have skeleton code to help you get started.
+                    </p>
 
-    <h3>1. BasicParser</h3>
-    <p>
-        This class represents a basic parser for sidewalk information. Its purpose is to parse a text file containing street data and create a graph representation of that data. The class follows a specific
-        format where each line represents a street and contains the following information separated by a single space: ORIG, DEST, and DISTANCE. The ORIG and DEST are parsed as Strings, and DISTANCE is parsed
-        as a double. Any content after DISTANCE on each line is ignored. This class has been completed for you.
-    </p>
-    <h3>2. DBParser</h3>
-    <p>
-        This class is a parser specifically designed to parse CSV files for street information. Its purpose is to read a CSV file containing street data and create a graph representation of that data. It utilizes
-        a Scanner class to read the file, maps CSV headers to column indices, and constructs a graph representation of the data by creating 'Sidewalk' objects and adding edges between nodes. Below is an example of
-        what you will find in the given CSV file. This class has been completed for you.
-        <style>
-            table {
-              border-collapse: collapse;
-              margin: 0 auto;
-            }
-        
-            th, td {
-              padding: 7px;
-            }
-          </style>
-        <table>
-            <thead>
-                <tr>
-                    <th>origin</th>
-                    <th>dest</th>
-                    <th>distance</th>
-                </tr>
-                <tr>
-                    <td>-122.31013347.6164493</td>
-                    <td>-122.309500947.6164515</td>
-                    <td>0.92414182</td>
-                </tr>
-                <tr>
-                    <td>-122.30614905344747.6172551505485</td>
-                    <td>-122.306157547.617266</td>
-                    <td>0.999841564</td>
-                </tr>
-                <tr>
-                    <td>-122.305829747.6171284</td>
-                    <td>-122.305966447.6171369</td>
-                    <td>0.999841564</td>
-                </tr>
-                <tr>
-                    <td>-122.290208947.6250006</td>
-                    <td>-122.290107947.6250004</td>
-                    <td>0.268941421</td>
-                </tr>
-                <tr>
-                    <td>-122.289557147.6249996</td>
-                    <td>-122.289234947.6249969</td>
-                    <td>0.5</td>
-                </tr>
-                <tr>
-                    <td>-122.293130747.6249564</td>
-                    <td>-122.292563547.6249587</td>
-                    <td>0.817574476</td>
-                </tr>
-                <tr>
-                    <td>-122293717847624721</td>
-                    <td>-122.293668447.6247664</td>
-                    <td>0.377540669</td>
-                </tr>
-                <tr>
-                    <td>-12229621446247604762281865920700</td>
-                    <td>-122.296195747.6228314</td>
-                    <td>0.97702263</td>
-                </tr>
-                <tr>
-                    <td>-122.29668147.6225018</td>
-                    <td>-122.29630647.6227565</td>
-                    <td>0.993307149</td>
-                </tr>
-                <tr>
-                    <td>-122.297069947.6222777</td>
-                    <td>-122.29668147.6225018</td>
-                    <td>0.851952802</td>
-                </tr>
-            </thead>
-        </table>
-    </p>
-    
-    <h3>3. Graph</h3>
-    <p>
-        This class represents a graph data structure. It allows for the creation of nodes. addition of edges, retrieval of nodes and their neighbors, and reporting of graph statistics. The graph is implemented
-        using an adjacency-list style format, where each node maintains a list of its neighbors. This class has been completed for you.
-    </p>
-    <h3>4. GraphParser</h3>
-    <p>
-        This class serves as a blueprint for creating specific graph parsers by defining the required methods for opening a file a parsing its contents into a graph representation. By extending this class and 
-        implementing the 'open()' and 'parse()' methods, you can create parsers for different file formats and customize the parsing logic according to their needs.
-    </p>
-    <h3>5. Node</h3>
-    <p>
-        This class is used in the adjacency-list representation of a graph. It defines a node in a graph with a unique identifier and stores its neighboring nodes along with the weights of the edges connecting them.
-        This class has been completed for you.
-    </p>
-    <h3>6. ShortestPaths</h3>
-    <p>
-        This class provides an implementation of Dijkstra's Single-Source Shortest Paths algorithm. It allows computing the shortest path from a given node to all other nodes in a graph and provides methods to retrieve
-        the shortest path length and path itself. This code includes several TODO comments that indicate tasks to be completed:
-        <ol>
-            <li>
-                Implement Dijkstra's algorithm to fill the paths HashMap with the shortest-path data for each node reachable from the origin. Dijkstra's algorithm is used to find the shortest paths in a weighted
-                graph.
-            </li>
-            <li>
-                Implement the shortestPathLength method to fetch the shortest path length from the paths data computed earlier.
-            </li>
-            <li>
-                Implement the shortestPath method to reconstruct the sequence of nodes along the shortest path from the origin to the specified destination using the paths data computed earlier.
-            </li>
-            <li>
-                Create a ShortestPaths object and use it to compute the shortest paths data from the origin node by origCode.
-            </li>
-            <li>
-                This TODO is located inside the main method and if destCode was not given as a command line argument, it needs to print each reachable node followed by the length of the shortest path to it from the origin.
-            </li>
-            <li>
-                This TODO is also located inside the main method and if destCode was given as a command line argument, it should print the nodes in the path from origCode and destCode, followed by the total path length. If 
-                no path exists, print a message indicating that no path is found.
-            </li>
-        </ol>
-    </p>
-<h2>Advice</h2>
-    <p>
-        <ul>
-            <li>You should test your code using both the JUnit test cases provided and the command line program implemented in the main method.</li>
-            <li>Three simple graphs (Simple0.txt, Simple1.txt, Simple2.txt) are provided. Run the algorithm by hand to determine the correct answers for these graphs and verify that your implementation arrives at the correct
-                paths and path lengths.
-            </li>
-            <li><b>The sample graphs given are not sufficient to test you algorithm's correctness</b>. It's your responsibility to write tests that cover all possible cases that the algorithm could encounter.</li>
-            <li>Make sure your algorithm handles edge cases correctly, including behaving as specified when the destination node is unreachable. Test this using the simplest possible test cases
-                <ul>
-                    <li>For example, this edge case could be tested using a two-node graph with only an edge from destination to origin.</li>
-                </ul>
-            </li>
-            <li>The <i>BasicParser</i> class parses a simple edge list from a text file, such as Simple1.txt and Simple2.txt. The DBParser class parses a CSV file, such as DBCrop.csv. Feel free to write and test 
-            using additional graph files in these formats. You may get more CSV files from the Sidewalk API. You provide lat/lng bounds for the ares that you want to query.</li>
-            <li>Some cleaning will be needed for the new CSV files.
-                <ol>
-                    <li>Split the coordinates in the "coordinates" column to extract "origin" and "destination". Consider the first coordinate as the "origin", the second coordinate as the "destination", and ignore any 
-                        extra coordinates. 
-                    </li>
-                    <li>Rename the column headers accordingly. The below steps will be useful:
-                        <ol type="a">
-                            <li>Select the cell or column that contains the text you want to split</li>
-                            <li>Select Data > Text to Columns</li>
-                            <li>In the Convert Text to Columns Wizard, select Delimited > Next</li>
-                            <li>Select the Delimiters for your data. Use ')' as a delimiter</li>
-                            <li>Select Next</li>
-                            <li>Select the Destination in your worksheet which is where you want the split data to appear</li>
-                        </ol>
-                    </li>
-                    <li>Select the accessibility attribute you want to consider as the "distance" for your shortest path algorithm.</li>
-                    <li>Rename your selected column as "distance". In the CSV sample file given to you, "distance" is considered to be the access score.</li>
-                </ol>
-            </li>
-        </ul>
-    </p>
+                    <h3>1. BasicParser</h3>
+                    <p>
+                        This class represents a basic parser for sidewalk information. Its purpose is to parse a text
+                        file containing street data and create a graph representation of that data. The class follows a
+                        specific
+                        format where each line represents a street and contains the following information separated by a
+                        single space: ORIG, DEST, and DISTANCE. The ORIG and DEST are parsed as Strings, and DISTANCE is
+                        parsed
+                        as a double. Any content after DISTANCE on each line is ignored. This class has been completed
+                        for you.
+                    </p>
+                    <h3>2. DBParser</h3>
+                    <p>
+                        This class is a parser specifically designed to parse CSV files for street information. Its
+                        purpose is to read a CSV file containing street data and create a graph representation of that
+                        data. It utilizes
+                        a Scanner class to read the file, maps CSV headers to column indices, and constructs a graph
+                        representation of the data by creating 'Sidewalk' objects and adding edges between nodes. Below
+                        is an example of
+                        what you will find in the given CSV file. This class has been completed for you.
+                        <style>
+                            table {
+                                border-collapse: collapse;
+                                margin: 0 auto;
+                            }
 
-<h2>Project Plan and Reflection</h2>
-    <p>
-        Each person must write both a project plan named plan.txt and a reflection named reflection.txt. plan.txt must be completed before the start of the project and reflection.txt must be completed before
-        submitting your project.
-    </p>
-    <p>
-        plan.txt should include the following information:
-        <ol>
-            <li>A one paragraph summary of the program in your own words. What is being asked of you? What will you implement in this assignment?</li>
-            <li>In 2-3 sentence, explain your thoughts on what you anticipate being the most challenging aspect(s) of the assignment.</li>
-            <li>A proposed schedule for when you will work on this assignment with your partner and where you will meet.</li>
-            <li>A list of at least 3 different resources you plan to use if you get stuck on something.</li>
-        </ol>
-    </p>
-    <p>
-        reflection.txt should include the following information:
-        <ol>
-            <li>Declare/discuss any aspects of your code that are not working. What are your intuitions about why they are not working? Acknowledge and discuss any parts of the program that appear to be
-                inefficient.
-            </li>
-            <li>What are some of the most important lessons you learned while working on this assignment? Why do you think so?</li>
-            <li> What was the most challenging aspect of this assignment? Why?</li>
-        </ol>
-    </p>
+                            th,
+                            td {
+                                padding: 7px;
+                            }
+                        </style>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>origin</th>
+                                <th>dest</th>
+                                <th>distance</th>
+                            </tr>
+                            <tr>
+                                <td>-122.31013347.6164493</td>
+                                <td>-122.309500947.6164515</td>
+                                <td>0.92414182</td>
+                            </tr>
+                            <tr>
+                                <td>-122.30614905344747.6172551505485</td>
+                                <td>-122.306157547.617266</td>
+                                <td>0.999841564</td>
+                            </tr>
+                            <tr>
+                                <td>-122.305829747.6171284</td>
+                                <td>-122.305966447.6171369</td>
+                                <td>0.999841564</td>
+                            </tr>
+                            <tr>
+                                <td>-122.290208947.6250006</td>
+                                <td>-122.290107947.6250004</td>
+                                <td>0.268941421</td>
+                            </tr>
+                            <tr>
+                                <td>-122.289557147.6249996</td>
+                                <td>-122.289234947.6249969</td>
+                                <td>0.5</td>
+                            </tr>
+                            <tr>
+                                <td>-122.293130747.6249564</td>
+                                <td>-122.292563547.6249587</td>
+                                <td>0.817574476</td>
+                            </tr>
+                            <tr>
+                                <td>-122293717847624721</td>
+                                <td>-122.293668447.6247664</td>
+                                <td>0.377540669</td>
+                            </tr>
+                            <tr>
+                                <td>-12229621446247604762281865920700</td>
+                                <td>-122.296195747.6228314</td>
+                                <td>0.97702263</td>
+                            </tr>
+                            <tr>
+                                <td>-122.29668147.6225018</td>
+                                <td>-122.29630647.6227565</td>
+                                <td>0.993307149</td>
+                            </tr>
+                            <tr>
+                                <td>-122.297069947.6222777</td>
+                                <td>-122.29668147.6225018</td>
+                                <td>0.851952802</td>
+                            </tr>
+                        </thead>
+                    </table>
+                    </p>
 
-    <!-- Footer-->
-    <footer class="border-top">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <h3>3. Graph</h3>
+                    <p>
+                        This class represents a graph data structure. It allows for the creation of nodes. addition of
+                        edges, retrieval of nodes and their neighbors, and reporting of graph statistics. The graph is
+                        implemented
+                        using an adjacency-list style format, where each node maintains a list of its neighbors. This
+                        class has been completed for you.
+                    </p>
+                    <h3>4. GraphParser</h3>
+                    <p>
+                        This class serves as a blueprint for creating specific graph parsers by defining the required
+                        methods for opening a file a parsing its contents into a graph representation. By extending this
+                        class and
+                        implementing the 'open()' and 'parse()' methods, you can create parsers for different file
+                        formats and customize the parsing logic according to their needs.
+                    </p>
+                    <h3>5. Node</h3>
+                    <p>
+                        This class is used in the adjacency-list representation of a graph. It defines a node in a graph
+                        with a unique identifier and stores its neighboring nodes along with the weights of the edges
+                        connecting them.
+                        This class has been completed for you.
+                    </p>
+                    <h3>6. ShortestPaths</h3>
+                    <p>
+                        This class provides an implementation of Dijkstra's Single-Source Shortest Paths algorithm. It
+                        allows computing the shortest path from a given node to all other nodes in a graph and provides
+                        methods to retrieve
+                        the shortest path length and path itself. This code includes several TODO comments that indicate
+                        tasks to be completed:
+                    <ol>
+                        <li>
+                            Implement Dijkstra's algorithm to fill the paths HashMap with the shortest-path data for
+                            each node reachable from the origin. Dijkstra's algorithm is used to find the shortest paths
+                            in a weighted
+                            graph.
+                        </li>
+                        <li>
+                            Implement the shortestPathLength method to fetch the shortest path length from the paths
+                            data computed earlier.
+                        </li>
+                        <li>
+                            Implement the shortestPath method to reconstruct the sequence of nodes along the shortest
+                            path from the origin to the specified destination using the paths data computed earlier.
+                        </li>
+                        <li>
+                            Create a ShortestPaths object and use it to compute the shortest paths data from the origin
+                            node by origCode.
+                        </li>
+                        <li>
+                            This TODO is located inside the main method and if destCode was not given as a command line
+                            argument, it needs to print each reachable node followed by the length of the shortest path
+                            to it from the origin.
+                        </li>
+                        <li>
+                            This TODO is also located inside the main method and if destCode was given as a command line
+                            argument, it should print the nodes in the path from origCode and destCode, followed by the
+                            total path length. If
+                            no path exists, print a message indicating that no path is found.
+                        </li>
+                    </ol>
+                    </p>
 
-                    <div class="small text-center text-muted fst-italic">Copyright &copy; 2023</div>
+                </div>
+                <hr>
+                <div id="advice">
+                    <h2 class="assignment-section">Advice</h2>
+                    <p>
+                    <ul>
+                        <li>You should test your code using both the JUnit test cases provided and the command line
+                            program implemented in the main method.</li>
+                        <li>Three simple graphs (Simple0.txt, Simple1.txt, Simple2.txt) are provided. Run the algorithm
+                            by hand to determine the correct answers for these graphs and verify that your
+                            implementation arrives at the correct
+                            paths and path lengths.
+                        </li>
+                        <li><b>The sample graphs given are not sufficient to test you algorithm's correctness</b>. It's
+                            your responsibility to write tests that cover all possible cases that the algorithm could
+                            encounter.</li>
+                        <li>Make sure your algorithm handles edge cases correctly, including behaving as specified when
+                            the destination node is unreachable. Test this using the simplest possible test cases
+                            <ul>
+                                <li>For example, this edge case could be tested using a two-node graph with only an edge
+                                    from destination to origin.</li>
+                            </ul>
+                        </li>
+                        <li>The <i>BasicParser</i> class parses a simple edge list from a text file, such as Simple1.txt
+                            and Simple2.txt. The DBParser class parses a CSV file, such as DBCrop.csv. Feel free to
+                            write and test
+                            using additional graph files in these formats. You may get more CSV files from the Sidewalk
+                            API. You provide lat/lng bounds for the ares that you want to query.</li>
+                        <li>Some cleaning will be needed for the new CSV files.
+                            <ol>
+                                <li>Split the coordinates in the "coordinates" column to extract "origin" and
+                                    "destination". Consider the first coordinate as the "origin", the second coordinate
+                                    as the "destination", and ignore any
+                                    extra coordinates.
+                                </li>
+                                <li>Rename the column headers accordingly. The below steps will be useful:
+                                    <ol type="a">
+                                        <li>Select the cell or column that contains the text you want to split</li>
+                                        <li>Select Data > Text to Columns</li>
+                                        <li>In the Convert Text to Columns Wizard, select Delimited > Next</li>
+                                        <li>Select the Delimiters for your data. Use ')' as a delimiter</li>
+                                        <li>Select Next</li>
+                                        <li>Select the Destination in your worksheet which is where you want the split
+                                            data to appear</li>
+                                    </ol>
+                                </li>
+                                <li>Select the accessibility attribute you want to consider as the "distance" for your
+                                    shortest path algorithm.</li>
+                                <li>Rename your selected column as "distance". In the CSV sample file given to you,
+                                    "distance" is considered to be the access score.</li>
+                            </ol>
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+                <hr>
+                <div id="planReflection">
+                    <h2 class="assignment-section">Project Plan and Reflection</h2>
+                    <p>
+                        Each person must write both a project plan named plan.txt and a reflection named reflection.txt.
+                        plan.txt must be completed before the start of the project and reflection.txt must be completed
+                        before
+                        submitting your project.
+                    </p>
+                    <p>
+                        plan.txt should include the following information:
+                    <ol>
+                        <li>A one paragraph summary of the program in your own words. What is being asked of you? What
+                            will you implement in this assignment?</li>
+                        <li>In 2-3 sentence, explain your thoughts on what you anticipate being the most challenging
+                            aspect(s) of the assignment.</li>
+                        <li>A proposed schedule for when you will work on this assignment with your partner and where
+                            you will meet.</li>
+                        <li>A list of at least 3 different resources you plan to use if you get stuck on something.</li>
+                    </ol>
+                    </p>
+                    <p>
+                        reflection.txt should include the following information:
+                    <ol>
+                        <li>Declare/discuss any aspects of your code that are not working. What are your intuitions
+                            about why they are not working? Acknowledge and discuss any parts of the program that appear
+                            to be
+                            inefficient.
+                        </li>
+                        <li>What are some of the most important lessons you learned while working on this assignment?
+                            Why do you think so?</li>
+                        <li> What was the most challenging aspect of this assignment? Why?</li>
+                    </ol>
+                    </p>
+                </div>
+            </div>
+            <!-- Side widgets-->
+            <div class="col-lg-4">
+                <div class="side-widget">
+                    <!-- Table of contents-->
+                    <div class="card mb-4">
+                        <div class="card-header">Table of contents</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#learningObjectives">Learning Objectives</a></li>
+                                        <li><a href="#background">Background</a></li>
+                                        <li><a href="#assignment">Assignement</a></li>
+                                        <li><a href="#advice">Advice</a></li>
+                                        <li><a href="#planReflection">Project Plan and Reflection</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Can add additional category or tag widget-->
                 </div>
             </div>
         </div>
-    </footer>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; 2023</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
 </body>
 
 </html>

@@ -11,8 +11,11 @@
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
 </head>
@@ -22,13 +25,14 @@
     <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="index.html">Including A11y in CS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="homepage.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
                 </ul>
@@ -48,68 +52,147 @@
             </div>
         </div>
     </header>
+
+
     <!-- Post Content-->
-    <article class="mb-4">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Learning objectives-->
+                <div id="learningObjectives">
+                    <h2 class="assignment-section">Learning Objectives</h2>
+                    <p>In this assignment, you will learn about writing bash scripts, parsing files, and regular
+                        expressions.
+                        You will also learn about the system configuration file of an assistive technology.</p>
+                </div>
+                <hr>
+                <!-- Background-->
+                <div id="background">
+                    <h2 class="assignment-section"> Background </h2>
+                    <p>A <a href="https://wcblind.org/2018/02/what-is-refreshable-braille-anyway/">refreshable braille
+                            display</a> is a
+                        computer hardware which has a series of refreshable, or fluid, braille cells on its surface.
+                        Most displays contain a
+                        single line with anywhere from fourteen to eighty braille cells. Instead of small holes in a
+                        piece of paper, each braille
+                        dot in these cells is represented by a tiny pin which can be raised or lowered. This allows
+                        individuals who are blind to read
+                        information in braille by running their fingers over the refreshable braille cells and then
+                        advancing the display to show the
+                        next set of characters. </p>
+                    <p><a href="https://en.wikipedia.org/wiki/Screen_reader">Screen readers</a> are assistive technology
+                        that are frequently
+                        used by people with visual impairments or learning disabilities. It is also helpful for people
+                        learning English (or another
+                        language) and for the elderly. Typically, a screen reader will start at the top of a website or
+                        document and read any text
+                        (including alternate text for images). </p>
+                    <p>This <a
+                            href="https://www.afb.org/blindness-and-low-vision/using-technology/assistive-technology videos/screen-reading-technology">
+                            video</a> illustrates both screen reading technology and refreshable braille display.</p>
+                    <p><a href="https://brltty.app">BRLTTY</a> (https://brltty.app) is a background process providing
+                        access to the console screen
+                        (when in text mode) for a blind person using a refreshable braille display. BRLTTY expects to
+                        find its configuration file
+                        in "/etc/brltty.conf”. Each configuration entry consists of a keyword followed by its operand.
+                        An arbitrary amount of
+                        white space, (blanks and/or tabs), may occur before the keyword, as well as before and after the
+                        operand. Keyword
+                        processing is not case sensitive.</p>
+                </div>
+                <hr>
+                <!-- Assignment-->
+                <div id="assignment">
+                    <h2 class="assignment-section"> Assignemnent </h2>
+                    <p>Write a bash script which will use regular expressions to perform the following function: It will
+                        run like so: <br />
+                        >./brltty.sh /etc/brltty.conf
+                        <br />The script should parse the brltty configuration file and print information about the
+                        braille refreshable display or the screen reader settings. You will work with a group of
+                        students, each group will be assigned a number. Based on your group number, your script should
+                        find the corresponding information.
+                    </p>
+                    <h4>1. Groups with an odd number</h4>
+                    <p>A deaf blind person can use a computer, if it is accessible, using Braille. Create a script that
+                        summarizes the available Braille settings on the linux lab machine The script should report the
+                        following:</p>
+                    <ol>
+                        <li>The number of braille-drivers</li>
+                        <li>The list of braille-devices</li>
+                        <li>The number of text-tables</li>
+                        <li>The number of contraction-tables</li>
+                    </ol>
+                    <h4>2. Groups with an even number</h4>
+                    <p>
+                        A blind person may access the computer screen content using a screen reader. Create a script
+                        that summarizes the available speech and keyboard settings on the linux lab machine The script
+                        should report the following:
+                    </p>
+                    <ol>
+                        <li>The list of speech drivers</li>
+                        <li>The number of speech drivers</li>
+                        <li>The list of speech driver parameters</li>
+                        <li>The list of keyboard-tables</li>
+                    </ol>
+                    <hr>
+                    <!-- Instructions-->
+                    <div id="instructions">
+                        <h2 class="assignment-section"> Instructions/Output</h3>
+                            <br>
+                            <ol>
+                                <li> Your implementation must be named brltty.sh</li>
+                                <li>Implement the requirements</li>
+                                <li> Test your code with the conf file </li>
+                                <li> Check the results to make sure that your script is producing the correct output
+                                </li>
+                            </ol>
+                            <p>Hint: <a href="https://man7.org/linux/man-pages/man1/grep.1.html">grep</a> and <a
+                                    href="https://man7.org/linux/man-pages/man1/awk.1p.html">awk</a> will be useful in
+                                parsing
+                                the file.</p>
 
-<h2>Assignment</h2>
+                            <p>Submit the following to Canvas:</p>
+                            <ol>
+                                <li>Upload your file brltty.sh</li>
+                                <li>Select one of the brltty settings assigned to your group and describe it in more
+                                    detail,
+                                    e.g., its usefulness, and the various values it accepts. </li>
+                            </ol>
+                            <h4>Output</h4>
+                            <p><a
+                                    href="https://github.com/accessibilityeducation/accessibilityeducation.github.io/blob/master/brlltyassignment/brltty.conf.txt">Sample
+                                    tty file</a></p>
+                            <p><a
+                                    href="https://github.com/accessibilityeducation/accessibilityeducation.github.io/blob/master/brlltyassignment/brltty_sample_output.txt">Sample
+                                    output</a></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Side widgets-->
+            <div class="col-lg-4 ">
+                <div class="side-widget">
+                    <!-- Table of contents-->
+                    <div class="card mb-4">
+                        <div class="card-header">Table of contents</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#learningObjectives">Learning Objectives</a></li>
+                                        <li><a href="#background">Background</a></li>
+                                        <li><a href="#assignment">Assignement</a></li>
+                                        <li><a href="#instructions">Instructions/Output</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Can add additional category or tag widget-->
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <h3>1. Overview</h3>
-        <p>In this assignment, you will learn about writing bash scripts, parsing files, and regular expressions. You will also learn about the system configuration file of an assistive technology.</p>
-
-
-        <p>A <a href="https://wcblind.org/2018/02/what-is-refreshable-braille-anyway/">refreshable braille display</a> is a computer hardware which has a series of refreshable, or fluid, braille cells on its surface. Most displays contain a single line with anywhere from fourteen to eighty braille cells. Instead of small holes in a piece of paper, each braille dot in these cells is represented by a tiny pin which can be raised or lowered. This allows individuals who are blind to read information in braille by running their fingers over the refreshable braille cells and then advancing the display to show the next set of characters. </p>
-
-
-        <p><a href="https://en.wikipedia.org/wiki/Screen_reader">Screen readers</a> are assistive technology that are frequently used by people with visual impairments or learning disabilities. It is also helpful for people learning English (or another language) and for the elderly. Typically, a screen reader will start at the top of a website or document and read any text (including alternate text for images). </p>
-
-        <p>This <a href="https://www.afb.org/blindness-and-low-vision/using-technology/assistive-technology videos/screen-reading-technology">video</a> illustrates both screen reading technology and refreshable braille display.</p>
-
-        <p><a href="https://brltty.app">BRLTTY</a> (https://brltty.app) is a background process providing access to the console screen (when in text mode) for a blind person using a refreshable braille display. BRLTTY expects to find its configuration file in "/etc/brltty.conf”. Each configuration entry consists of a keyword followed by its operand. An arbitrary amount of white space, (blanks and/or tabs), may occur before the keyword, as well as before and after the operand. Keyword processing is not case sensitive.</p>
-        <h3>2. Requirements</h3>
-        <p>Write a bash script which will use regular expressions to perform the following function: It will run like so: <br/>
-        >./brltty.sh /etc/brltty.conf 
-        <br/>The script should parse the brltty configuration file and print information about the braille refreshable display or the screen reader settings. You will work with a group of students, each group will be assigned a number. Based on your group number, your script should find the corresponding information. </p>
-
-        <h3>3. Groups with an odd number</h3>
-        <p>A deaf blind person can use a computer, if it is accessible, using Braille. Create a script that summarizes the available Braille settings on the linux lab machine The script should report the following:</p>
-        <ol>
-            <li>The number of braille-drivers</li>
-            <li>The list of braille-devices</li>
-            <li>The number of text-tables</li>
-            <li>The number of contraction-tables</li>
-        </ol>
-        <h3>4. Groups with an even number</h3>
-        <p>
-            A blind person may access the computer screen content using a screen reader. Create a script that summarizes the available speech and keyboard settings on the linux lab machine The script should report the following:
-        </p>
-        <ol>
-            <li>The list of speech drivers</li>
-            <li>The number of speech drivers</li>
-            <li>The list of speech driver parameters</li>
-            <li>The list of keyboard-tables</li>
-        </ol>
-
-       <h3>4. Instructions</h3>
-       <ol>
-            <li> Your implementation must be named brltty.sh</li>
-            <li>Implement the requirements</li>
-            <li> Test your code with the conf file </li>
-            <li> Check the results to make sure that your script is producing the correct output</li>
-        </ol>
-        <p>Hint: <a href="https://man7.org/linux/man-pages/man1/grep.1.html">grep</a> and <a href="https://man7.org/linux/man-pages/man1/awk.1p.html">awk</a> will be useful in parsing the file.</p>
-
-       <h3>5. Submission</h3>
-       <p>Submit the following to Canvas:</p>
-       <ol>
-        <li>Upload your file brltty.sh</li>
-        <li>Select one of the brltty settings assigned to your group and describe it in more detail, e.g., its usefulness, and the various values it accepts. </li>
-       </ol>
-         <h3>6. Output</h3>
-         <p><a href="https://github.com/accessibilityeducation/accessibilityeducation.github.io/blob/master/brlltyassignment/brltty.conf.txt">Sample tty file</a></p>
-         <p><a href="https://github.com/accessibilityeducation/accessibilityeducation.github.io/blob/master/brlltyassignment/brltty_sample_output.txt">Sample output</a></p>
 
     <!-- Footer-->
     <footer class="border-top">
@@ -127,5 +210,4 @@
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
 </body>
-
 </html>

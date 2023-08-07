@@ -11,8 +11,11 @@
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
 </head>
@@ -22,13 +25,14 @@
     <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="index.html">Including A11y in CS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="homepage.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
                 </ul>
@@ -48,21 +52,33 @@
             </div>
         </div>
     </header>
+
     <!-- Post Content-->
-    <article class="mb-4">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
-
-                    <p>Braille is a tactile writing system used by people with visual impairment. It is traditionally written with embossed paper and on signage. Braille users can read computer screens using refreshable braille displays. They can write braille
-                        with the original slate and stylus or type it on a braille writer, such as a portable braille notetaker or computer that prints with a braille embosser. </p>
-
-
-
-                    <h2>Assignment</h2>
-                    <p>This assignment will require you to write a program that takes a filename as a command line argument, opens and reads the file, then translates the file from ASCII to Braille. It will create an output file to write the Braille to.
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <div id="learningObjectives">
+                </div>
+                <div id="background">
+                    <h2 class="assignment-section">Background</h2>
+                    <p>Braille is a tactile writing system used by people with visual impairment. It is traditionally
+                        written with
+                        embossed paper and on signage. Braille users can read computer screens using refreshable braille
+                        displays.
+                        They can write braille with the original slate and stylus or type it on a braille writer, such
+                        as a
+                        portable braille notetaker or computer that prints with a braille embosser. </p>
+                </div>
+                <hr>
+                <div id="assignment">
+                    <h2 class="assignment-section">Assignment</h2>
+                    <p>This assignment will require you to write a program that takes a filename as a command line
+                        argument, opens and reads the file, then translates the file from ASCII to Braille. It will
+                        create an output file to write the Braille to.
                         You will write all your code from scratch using the stdio library.</p>
-                    <p>You will need to write the software to meet the requirements (below). You are provided 2 text files which will be used for testing. Note that other files that represent other test cases can be used for grading.</p>
+                    <p>You will need to write the software to meet the requirements (below). You are provided 2 text
+                        files which will be used for testing. Note that other files that represent other test cases can
+                        be used for grading.</p>
 
                     <p>You will write a program(braille_translator) which will perform the following:</p>
                     <p>It will run from the command line with this usage:</p>
@@ -87,39 +103,53 @@
 
                     <p>hello.txt.output should contain:</p>
 
-                    <p> 1 0  1 0  1 0  1 0  1 0  0 0  0 1  1 0  1 0  1 0  1 1 <br>
-                        1 1  0 1  1 0  1 0  0 1  0 0  1 1  0 1  1 1  1 0  0 1 <br>
-                        0 0  0 0  1 0  1 0  1 0  0 0  0 1  1 0  1 0  1 0  0 0 
+                    <p> 1 0 1 0 1 0 1 0 1 0 0 0 0 1 1 0 1 0 1 0 1 1 <br>
+                        1 1 0 1 1 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 0 1 <br>
+                        0 0 0 0 1 0 1 0 1 0 0 0 0 1 1 0 1 0 1 0 0 0
                     </p>
 
 
 
                     <h3>Part 1: Braille Breakdown</h3>
-                    <p>Braille was the first writing system with binary encoding. The system as devised by Braille consists of two parts:</p>
+                    <p>Braille was the first writing system with binary encoding. The system as devised by Braille
+                        consists of two parts:</p>
                     <ul>
                         <li>Character encoding that mapped characters of the alphabet to arrays of six bits.</li>
-                        <li>The physical representation of those six-bit characters with raised dots in a braille cell.</li>
+                        <li>The physical representation of those six-bit characters with raised dots in a braille cell.
+                        </li>
                     </ul>
 
                     <ol>
-                        <li>Within an individual cell, the dot positions are arranged in two columns of three positions. 
-                            A raised dot can appear in any of the six positions, producing sixty-four (2<sup>6</sup>) possible patterns, including one in which there are no raised dots.</li>
-                        <li>A pattern is commonly described by listing the positions where dots are raised, the positions being universally numbered, from top to bottom, as 1 to 3 on the left and 4 to 6 on the right. 
-                                For example, dot pattern 1-3-4 describe a cell with three dots raised, at the top and bottom in the left column and at the top of the right column: that is, the letter ⡉   m</li>
+                        <li>Within an individual cell, the dot positions are arranged in two columns of three positions.
+                            A raised dot can appear in any of the six positions, producing sixty-four (2<sup>6</sup>)
+                            possible patterns, including one in which there are no raised dots.</li>
+                        <li>A pattern is commonly described by listing the positions where dots are raised, the
+                            positions being universally numbered, from top to bottom, as 1 to 3 on the left and 4 to 6
+                            on the right.
+                            For example, dot pattern 1-3-4 describe a cell with three dots raised, at the top and bottom
+                            in the left column and at the top of the right column: that is, the letter ⡉ m</li>
                         <li>The first ten letters of the alphabet, a–j, use the upper four dot positions:
                             ⠁⠃⠉⠙⠑⠋⠛⠓⠊⠚ (black dots in the table below).</li>
-                        <li>The next ten letters, k–t, are identical to a–j, respectively, apart from the addition of a dot at position 3 (red dots in the table):
+                        <li>The next ten letters, k–t, are identical to a–j, respectively, apart from the addition of a
+                            dot at position 3 (red dots in the table):
                             ⠅⠇⠍⠝⠕⠏⠟⠗⠎⠞</li>
-                        <li>The next ten letters (the next "decade") are the same again, but with dots also at positions both 3 and 6 (green dots). 
-                            Here w was left out as not being a part of the official French alphabet at the time of Braille's life.</li>
+                        <li>The next ten letters (the next "decade") are the same again, but with dots also at positions
+                            both 3 and 6 (green dots).
+                            Here w was left out as not being a part of the official French alphabet at the time of
+                            Braille's life.</li>
                         <li>Space in Braille is represented by a cell with no dots raised. </li>
                     </ol>
 
-                    <img src="assets/img/braille.png" alt="Table showing the language of braille, color coded to demonstrate the differences between decades.">
-                    <p>Output should be recognizable as Braille. In your output, you can use 0’s and 1’s, with 1’s representing raised dots and 0’s representing flat dots.</p>
-                    <p>Only the 26 alphabet characters, upper and lowercase, and space are required for a minimal solution. All input characters not supported by your solution should be ignored. 
-                        You are not allowed to use Unicode Braille characters. Vertical display of letters in Braille is acceptable. Bonus points for displaying Braille letters horizontally.</p>
-                    <p>In our program, a Braille letter will be an array of six integers, representing each dot as such:</p>
+                    <img src="assets/img/braille.png"
+                        alt="Table showing the language of braille, color coded to demonstrate the differences between decades.">
+                    <p>Output should be recognizable as Braille. In your output, you can use 0’s and 1’s, with 1’s
+                        representing raised dots and 0’s representing flat dots.</p>
+                    <p>Only the 26 alphabet characters, upper and lowercase, and space are required for a minimal
+                        solution. All input characters not supported by your solution should be ignored.
+                        You are not allowed to use Unicode Braille characters. Vertical display of letters in Braille is
+                        acceptable. Bonus points for displaying Braille letters horizontally.</p>
+                    <p>In our program, a Braille letter will be an array of six integers, representing each dot as such:
+                    </p>
                     <p class="px-3"> 0 3 <br>
                         1 4 <br>
                         2 5
@@ -128,43 +158,76 @@
 
 
                     <h3>Part 2: Handling ASCII</h3>
-                    
-                    <p>Since only the characters a-z and A-Z are supported in our implementation, the method ASCII_to_braille will need to first check if the character can be translated to a valid Braille letter. 
-                        We can refer to an ASCII chart, and come up with acceptable ranges of characters. Don’t forget about spaces: “ ”.</p>
 
-                    <img src="assets/img/ascii.png" alt="a chart of all ASCII letters and their numeric values, from decimal value 1 to 127">
+                    <p>Since only the characters a-z and A-Z are supported in our implementation, the method
+                        ASCII_to_braille will need to first check if the character can be translated to a valid Braille
+                        letter.
+                        We can refer to an ASCII chart, and come up with acceptable ranges of characters. Don’t forget
+                        about spaces: “ ”.</p>
+
+                    <img src="assets/img/ascii.png"
+                        alt="a chart of all ASCII letters and their numeric values, from decimal value 1 to 127">
                     <p>If not, it should return as null and otherwise be ignored by your program.</p>
-                    <p>For each range of characters, upper and lower, subtracting a or A respectively from the character will give the character’s place in the alphabet. 
-                        Using modulo on that value will tell which decade each character is and what dots in that character are raised.</p>
+                    <p>For each range of characters, upper and lower, subtracting a or A respectively from the character
+                        will give the character’s place in the alphabet.
+                        Using modulo on that value will tell which decade each character is and what dots in that
+                        character are raised.</p>
                     <p>For example:</p>
-                    <p class="px-3">input: ‘C’ <br> ‘C’ - 'A' = 2   (starting at 0, aka ‘A’ - ‘A’)</p>
+                    <p class="px-3">input: ‘C’ <br> ‘C’ - 'A' = 2 (starting at 0, aka ‘A’ - ‘A’)</p>
 
-                    <p>Remember that w and W are special cases. 
-                        Refer to the Braille chart and see that what we get here is off by one from the Braille chart. Account for this by instead valuing a/A as 0 and incrementing from there.</p>
-                    
+                    <p>Remember that w and W are special cases.
+                        Refer to the Braille chart and see that what we get here is off by one from the Braille chart.
+                        Account for this by instead valuing a/A as 0 and incrementing from there.</p>
+
 
 
                     <h3>Part 3: Assignment Instructions</h3>
 
                     <ol>
-                        <li><a href="https://github.com/accessibilityeducation/braille_translator" style="color:blue;border-bottom:dashed;">Clone the Braille translator repo.</a></li>
-                        <li>Create an ActivityJournal.txt and estimate the time you will need to complete the program.</li>
+                        <li><a href="https://github.com/accessibilityeducation/braille_translator"
+                                style="color:blue;border-bottom:dashed;">Clone the Braille translator repo.</a></li>
+                        <li>Create an ActivityJournal.txt and estimate the time you will need to complete the program.
+                        </li>
                         <li>Your implementation MUST be named braille_translator.c</li>
                         <li>Implement your code for the functionality described above.</li>
-                        <li>Use standard I/O functions e.g. fopen(), fread(), fwrite(), etc. Remember the man pages!</li>
+                        <li>Use standard I/O functions e.g. fopen(), fread(), fwrite(), etc. Remember the man pages!
+                        </li>
                         <li>DO NOT use system calls such as open, read, etc.</li>
                         <li>DO NOT use a dictionary for all of the Braille characters.</li>
                         <li>DO NOT use the Unicode Braille.</li>
                         <li>Make sure to test your code using the supplied txt files and your own test files.</li>
-                        <li>Make sure to validate your output. You can compare the output to this <a href="http://www.byronknoll.com/braille.html" style="color:blue;border-bottom:dashed;">Online Braille Generator</a>’s output.</li>
-                        <li>Check for memory leaks. Remember that tools like valgrind and gdb can help diagnose errors.</li>
+                        <li>Make sure to validate your output. You can compare the output to this <a
+                                href="http://www.byronknoll.com/braille.html"
+                                style="color:blue;border-bottom:dashed;">Online Braille Generator</a>’s output.</li>
+                        <li>Check for memory leaks. Remember that tools like valgrind and gdb can help diagnose errors.
+                        </li>
                     </ol>
+                </div>
+            </div>
+            <!-- Side widgets-->
+            <div class="col-lg-4">
+                <div class="side-widget">
+                    <!-- Table of contents-->
+                    <div class="card mb-4">
+                        <div class="card-header">Table of contents</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#background">Background</a></li>
+                                        <li><a href="#assignment">Assignement</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                    
+                    <!-- Can add an addition category or tag widget -->
                 </div>
             </div>
         </div>
-    </article>
+    </div>
+
     <!-- Footer-->
     <footer class="border-top">
         <div class="container px-4 px-lg-5">

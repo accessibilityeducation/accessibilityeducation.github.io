@@ -11,8 +11,11 @@
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
 </head>
@@ -22,13 +25,14 @@
     <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="index.html">Including A11y in CS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="homepage.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
                 </ul>
@@ -42,215 +46,305 @@
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="post-heading">
                         <h1>Braille Text Analysis</h1>
-                        <p class="subheading">Students will use string manipulations, turtles, lists, and dictionaries to collect and analyze braille text.</p>
+                        <p class="subheading">Students will use string manipulations, turtles, lists, and dictionaries
+                            to collect and analyze braille text.</p>
                     </div>
                 </div>
             </div>
         </div>
     </header>
     <!-- Post Content-->
-    <article class="mb-4">
+    <!-- Post Content-->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <div id="learningObjectives">
+                    <h2 class="assignment-section"> Learning Objectives</h2>
+                    <ol>
+                        <li>Develop proficiency in handling text files by applying various techniques for file reading
+                            and writing.</li>
+                        <li>Refine string manipulation skills by implementing string operations to extract and modify
+                            information from files.</li>
+                        <li>Gain expertise in using the turtle graphics library to create interactive visual displays of
+                            information.</li>
+                        <li>Master the creation and manipulation of lists, a fundamental data structure in Python, to
+                            store and organize information.</li>
+                        <li>Acquire proficiency in working with dictionaries, another essential data structure, to
+                            efficiently collect and retrieve information in a structured manner.</li>
+                        <li>Apply the aforementioned skills to collect and display information from files using Python
+                            programming.</li>
+                    </ol>
+                </div>
+                <hr>
+                <div id="overview">
+                    <h2 class="assignment-section"> Overview </h2>
+                    <p><b>This assignment should be done as individual work.</b> Be sure the work is your own.</p>
+                    <ul>
+                        <li><b>Do not </b>seek out solutions online, but <b>do </b>look online for how to use the Python
+                            commands you need.
+                            Stick to commands we've covered in class.</li>
+                        <li><b>Do </b>ask for help from me or our preceptors. </li>
+                        <li><b>Do </b>talk about solutions in general with classmates, and get minor debugging help from
+                            classmates.
+                            <b>Do not </b>work out whole programs with classmates or friends.
+                        </li>
+                        <li><b>Do </b>write down any people or websites where you get some measure of help.</li>
+                    </ul>
+                    <p>For this assignment, you are expected to include a <i>summary descriptive comment</i> for each
+                        function or script you write.
+                        You will lose 1 point per function if you leave the summary comment out.
+                        If you're not sure what I want: ask me! I am providing you with a test file for testing the
+                        functions you write.
+                        Read it carefully.</p>
+                    </ul>
+                    <h3>Preparing and handing in the assignment</h3>
+                    <p>Be sure that each function you write is preceded by a hash-marked comment that indicates the
+                        problem number,
+                        and inside it a triple-quoted comment that describes the function's purpose and its inputs and
+                        outputs.</p>
+
+                    <p>Any non-code answers may be included in a Python file as either triple-quoted strings or
+                        comments.</p>
+
+                    <p>Any script elements that you want to test your programs should be placed at the bottom of the
+                        file, inside the if __name__ == '__main__'conditional.</p>
+                </div>
+                <hr>
+                <div id="background">
+                    <h2 class="assignment-section">Background </h2>
+                    <h4>Braille Background</h4>
+                    <p>Braille is a tactile writing system used by people with visual impairment. It is traditionally
+                        written with embossed paper.
+                        Today, people typically use a braille writer, such as a portable braille notetaker or computer
+                        that prints with a braille embosser.
+                        As for reading computer screens, braille users have the option of using refreshable braille
+                        displays.
+                        What makes it refreshable is whenever the user moves their cursor through keyboard or voice
+                        commands,
+                        the display updates the dots in the braille cells.</p>
+                    <h4>The Importance of Building for All</h4>
+                    <ul>
+                        <li>An estimated 1 Billion people report to have a disability. (source: World Health
+                            Organization)</li>
+                        <li>85% of adults use the Internet (source: Pew Research Center)</li>
+                        <li>Proving technology’s prevalence in modern-day society</li>
+                        <li>Websites, mobile apps, common Internet usage becomes inaccessible to people with
+                            disabilities, preventing a large portion of society to gain knowledge of important services
+                            and information</li>
+                        <li>2021 survey claimed that in 2000 websites, 98% of them are not accessible (WebAIM)</li>
+                    </ul>
+                    <p>Learn Python and be part of the change on making technology more accessible!</p>
+                    <p><a href="textanalysisinfo.html">Additional Braille info</a></p>
+                </div>
+                <hr>
+                <div id="assignment">
+                    <h2 class="assignment-section">Assignment</h2>
+                    <p>You will need to complete the following tasks that are labeled as TODO in the given code file:
+                    </p>
+                    <ol>
+                        <li>translator()</li>
+                        <li>upgrade braille to grade 1 to grade 2 braille</li>
+                        <li>draw_braille_character()</li>
+                        <li>addCommon()</li>
+                    </ol>
+                    <ol>
+                        <li>
+                            (_ pts) <strong>translator():</strong>
+                            Define a function called translator that takes two input parameters, a string and the
+                            braille_dictionary.
+                            The string should be a normal English sentence that is readable by humans.
+                            The dictionary should be the one described above. <br><br>
+                            The function should first use the split() function to divide the string into a list of
+                            words,
+                            it should then iterate through the list of words.
+                            If the word is contained in the dictionary (e.g. the Grade 2 Braille words), it should
+                            substitute it with
+                            the associated Braille character. If the word is not in the dictionary, you should iterate
+                            through
+                            the word string, character by character. It should find each character in the dictionary and
+                            replace it with
+                            the substituted braille character in a new list (each original character is the key and the
+                            replacement
+                            braille character is the value associated with that key in the dictionary).
+                            Anything that is not contained in the dictionary (e.g. punctuation marks), should be
+                            ignored.
+                            The function should return a nested list of Braille characters, with raised dots represented
+                            as 1's and flat dots represented as 0's.
+                            For example, the function should print the nested list below when given this call:
+                            <blockquote style="border: 2px solid #212529; padding: 10px; background-color: #b3d7f8;">
+                                <p style="color:black">
+                                    braille_string = translator(“Hi!”, braille_dictionary) <br>
+                                    print(braille_string) <br>
+                                    ---------------------------------------------------<br>
+                                    [[1,1,0,0,1,0], [0,1,0,1,0,0]]
+                                </p>
+                            </blockquote>
+
+                        </li>
+
+                        <li>
+                            (_ pts) <strong>draw_braille_character():</strong>I've given you the skeleton of a function
+                            called draw_braille_character
+                            that takes one parameter, a list of 0's and 1's corresponding to a Braille character.
+                            The function currently iterates through the list and uses a turtle to draw six circles
+                            corresponding to the six circles in a Braille character.
+                            Update the function to fill in the appropriate circles depending on the input.
+                            The raised dots should be represented by filled-in circles and the flat dots should be
+                            represented as empty circles.
+                        </li>
+
+                        <li>
+                            (_ pts) <strong>addCommon()</strong>
+                            <p>You are given a braille dictionary with numbers 1-9, the alphabet, the words
+                                but, can, do, every, from, go, have, just, knowledge, like, more, not, people, quite,
+                                rather, so, that, us, very, it, you, as, will. Convert the English to braille, grade 2
+                                representations. Refer online for examples and cite any outside source used. Here is an
+                                example:<br />
+                                In Grade 1 Braille: <br />
+                                b e c a u s e
+                                In Grade 2 Braille: <br />
+                                b (contraction for "be") c (contraction for "cause")
+                                In Grade 1 Braille, each letter of the word "because" is represented individually with
+                                its corresponding Braille cell. However, in Grade 2 Braille, the word "because" is
+                                contracted to a shorter form. The letter "e" is omitted, and the contraction "be" and
+                                "cause" are used instead.
+                                Here's another example for the word "can't":
+                                In Grade 1 Braille: <br />
+                                c a n ' t
+                                In Grade 2 Braille: <br />
+                                c (contraction for "can") ' (contraction for "not") t
+                                --
+                                NOTE: There is a testing function in hw4Tests.py. Use it to check your work.</p>
+                        </li>
+
+                    </ol>
+                    <h4>Helper Functions</h4>
+                    <p>You can use the helper function print_braille that will format the returned nested list as
+                        braille to the console.
+                        See below for an example:</p>
+                    <blockquote style="border: 2px solid #212529; padding: 10px; background-color: #b3d7f8;">
+                        <p style="color:black">
+                            braille_string = translator(“Hello, world!”, braille_dictionary) <br>
+                            print(braille_string) <br>
+                            ---------------------------------------------------<br>
+                            1 0 1 0 1 0 1 0 1 0 0 0 0 1 1 0 1 0 1 0 1 1<br>
+                            1 1 0 1 1 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 0 1<br>
+                            0 0 0 0 1 0 1 0 1 0 0 0 0 1 1 0 1 0 1 0 0 0
+                        </p>
+                    </blockquote>
+                    <p>There is a testing function in hw4Tests.py. Use it to check your work.</p>
+                    <p><strong>draw_word()</strong> is also provided for you to help gain an understanding on drawing
+                        text to the screen using the turtle library. Read more on the turtle documentation online if you
+                        are stuck.</p>
+                    <h4>What you need to turn in</h4>
+                    <ul>
+                        <li>hw4Code.py file for this part of the assignment with a confirmation that your program will
+                            work with the test function.</li>
+                        <li>.py file for this part of the assignment with a confirmation that your program will work
+                            with several text sentences of different lengths (1 sentence, 3 sentences, 1 paragraph).
+                        </li>
+                        <li>Note:</li>
+                        <ul>
+                            <li>Be sure that each function you write is preceded by a hash-marked comment (# comment)
+                                that indicates the problem number, and inside it a triple-quoted comment that describes
+                                the function’s purpose and its inputs and outputs.</li>
+                            <li>Any non-code answers may be included in a Python file as either triple-quoted strings or
+                                comments.</li>
+                            <li>Any script elements that you want to test your programs should be placed at the bottom
+                                of the file, inside the if __name__ == ‘__main__’ conditional.</li>
+                            <li>Refer to the Python documentation if this does not make sense.</li>
+                        </ul>
+                    </ul>
+                    <h4>Test Case Explanation</h4>
+                    <p>Consider the following test case:</p>
+                    <!--    <img width="600" height="200" alt="Test case explanation of translator() function" src="assets/research.png" /> -->
+                    <blockquote style="border: 2px solid #212529; padding: 10px; background-color: #b3d7f8;">
+                        <p style="color:black">
+                            s1 = "the quick brown fox jumps over the lazy dog" <br />
+                            print(s1) <br />
+                            print(translator(s1, braille_dictionary)) <br />
+                            print() <br />
+                            assert translator(s1, braille_dictionary) == [[[0, 1, 1, 1, 1, 0], [1, 1, 0, 0, 1, 0], [1,
+                            0, 0, 0, 1, 0]], [[1, 1, 1, 1, 1, 0], [1, 0, 1, 0, 0, 1], [0, 1, 0, 1, 0, 0], [1, 0, 0, 1,
+                            0, 0], [1, 0, 1, 0, 0, 0]], [[1, 1, 0, 0, 0, 0], [1, 1, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0], [0,
+                            1, 0, 1, 1, 1], [1, 0, 1, 1, 1, 0]], [[1, 1, 0, 1, 0, 0], [1, 0, 1, 0, 1, 0], [1, 0, 1, 1,
+                            0, 1]], [[0, 1, 0, 1, 1, 0], [1, 0, 1, 0, 0, 1], [1, 0, 1, 1, 0, 0], [1, 1, 1, 1, 0, 0], [0,
+                            1, 1, 1, 0, 0]], [[1, 0, 1, 0, 1, 0], [1, 1, 1, 0, 0, 1], [1, 0, 0, 0, 1, 0], [1, 1, 1, 0,
+                            1, 0]], [[0, 1, 1, 1, 1, 0], [1, 1, 0, 0, 1, 0], [1, 0, 0, 0, 1, 0]], [[1, 1, 1, 0, 0, 0],
+                            [1, 0, 0, 0, 0, 0], [1, 0, 1, 0, 1, 1], [1, 0, 1, 1, 1, 1]], [[1, 0, 0, 1, 1, 0], [1, 0, 1,
+                            0, 1, 0], [1, 1, 0, 1, 1, 0]]]
+                        </p>
+                    </blockquote>
+                    <p>Image description: test case explanation of the translator() function</p>
+                    <p><strong>assert()</strong> is a special function in Python that checks the equality against the
+                        function implemented output and the expected output. This will return true if it's the same
+                        output and false if otherwise.</p>
+                    <h4>Extra Credit</h4>
+                    <p>Extensions are your opportunity to customize your project, learn something else of interest to
+                        you, and improve your grade. The following are some suggested extensions, but you are free to
+                        choose your own. Be sure to describe any extensions you complete in your report.<br /> Include
+                        pictures of the extension.</p>
+                    <ul>
+                        <li>Translate one of the in-class txt files into Digital Braille.</li>
+                        <li>Implement an interactive user interface for translating Digital Braille from text to symbols
+                            and vice versa. See examples of online braille translators below.</li>
+                        <ul>
+                            <li><a href="https://www.brailletranslator.org/">Braille Translator
+                                    (https://www.brailletranslator.org/)</a></li>
+                            <li><a href="https://twoblindbrothers.com/pages/braille">Two Blind Brothers Braille
+                                    Translator (https://twoblindbrothers.com/pages/braille)</a></li>
+                        </ul>
+                        <li>Implement a secret message clue generator that gives the messages in digital braille for the
+                            person to solve the mystery using your translator to find the text clue solutions.</li>
+                    </ul>
+                    <h4>Sample Output</h4>
+                    <p>Please see <a href="textAnalysisExampleOutput.html">this link</a> to check for a sample output.
+                    </p>
+
+                </div>
+            </div>
+            <!-- Side widgets-->
+            <div class="col-lg-4">
+                <div class="side-widget">
+                    <!-- Table of contents-->
+                    <div class="card mb-4">
+                        <div class="card-header">Table of contents</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#learningObjectives">Learning Objectives</a></li>
+                                        <li><a href="#overview">Overview</a></li>
+                                        <li><a href="#background">Background</a></li>
+                                        <li><a href="#assignment">Assignement</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Can add additional category or tag widget-->
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer-->
+    <footer class="border-top">
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
 
-    <h2>Overview</h2>
-        <p><b>This assignment should be done as individual work.</b> Be sure the work is your own.</p>
-        <ul>
-            <li><b>Do not </b>seek out solutions online, but <b>do </b>look online for how to use the Python commands you need. 
-                Stick to commands we've covered in class.</li>
-            <li><b>Do </b>ask for help from me or our preceptors. </li>
-            <li><b>Do </b>talk about solutions in general with classmates, and get minor debugging help from classmates. 
-                <b>Do not </b>work out whole programs with classmates or friends.</li>
-            <li><b>Do </b>write down any people or websites where you get some measure of help.</li>
-        </ul>
-        <p>For this assignment, you are expected to include a <i>summary descriptive comment</i> for each function or script you write. 
-            You will lose 1 point per function if you leave the summary comment out. 
-            If you're not sure what I want: ask me!  I am providing you with a test file for testing the functions you write.  
-            Read it carefully.</p>  
-
-        <h3>Learning Goals</h3>
-            <ol>
-              <li>Develop proficiency in handling text files by applying various techniques for file reading and writing.</li>
-              <li>Refine string manipulation skills by implementing string operations to extract and modify information from files.</li>
-              <li>Gain expertise in using the turtle graphics library to create interactive visual displays of information.</li>
-              <li>Master the creation and manipulation of lists, a fundamental data structure in Python, to store and organize information.</li>
-              <li>Acquire proficiency in working with dictionaries, another essential data structure, to efficiently collect and retrieve information in a structured manner.</li>
-              <li>Apply the aforementioned skills to collect and display information from files using Python programming.</li>
-</ol>
-
-        </ul>
-
-        <h3>Preparing and handing in the assignment</h3>
-            <p>Be sure that each function you write is preceded by a hash-marked comment that indicates the problem number, 
-                and inside it a triple-quoted comment that describes the function's purpose and its inputs and outputs.</p>
-            
-            <p>Any non-code answers may be included in a Python file as either triple-quoted strings or comments.</p>
-
-            <p>Any script elements that you want to test your programs should be placed at the bottom of the file, inside the if __name__ == '__main__'conditional.</p>
-
-
-    <h2>Braille Background</h2>
-        <p>Braille is a tactile writing system used by people with visual impairment. It is traditionally written with embossed paper. 
-            Today, people typically use a braille writer, such as a portable braille notetaker or computer that prints with a braille embosser. 
-            As for reading computer screens, braille users have the option of using refreshable braille displays. 
-            What makes it refreshable is whenever the user moves their cursor through keyboard or voice commands, 
-            the display updates the dots in the braille cells.</p>
-        <h3>The Importance of Building for All</h3>
-                <ul>
-          <li>An estimated 1 Billion people report to have a disability. (source: World Health Organization)</li>
-          <li>85% of adults use the Internet (source: Pew Research Center)</li>
-          <li>Proving technology’s prevalence in modern-day society</li>
-          <li>Websites, mobile apps, common Internet usage becomes inaccessible to people with disabilities, preventing a large portion of society to gain knowledge of important services and information</li>
-          <li>2021 survey claimed that in 2000 websites, 98% of them are not accessible (WebAIM)</li>
-        </ul>
-
-        <p>Learn Python and be part of the change on making technology more accessible!</p>
-
-        <p><a href="textanalysisinfo.html">Additional Braille info</a></p>
-
-      
-    <h2>Getting Started with the Assignment</h2>
-        <p>You will need to complete the following tasks that are labeled as TODO in the given code file:</p>
-        <ol>
-            <li>translator()</li>
-            <li>upgrade braille to grade 1 to grade 2 braille</li>
-            <li>draw_braille_character()</li>
-            <li>addCommon()</li>
-        </ol>
-        <ol>
-            <li>
-                (_ pts) <strong>translator():</strong>
-                Define a function called translator that takes two input parameters, a string and the braille_dictionary. 
-                The string should be a normal English sentence that is readable by humans. 
-                The dictionary should be the one described above. <br><br>
-                The function should first use the split() function to divide the string into a list of words, 
-                it should then iterate through the list of words. 
-                If the word is contained in the dictionary (e.g. the Grade 2 Braille words), it should substitute it with 
-                the associated Braille character. If the word is not in the dictionary, you should  iterate through 
-                the word string, character by character.  It should find each character in the dictionary and replace it with 
-                the substituted braille character in a new list (each original character is the key and the replacement 
-                braille character is the value associated with that key in the dictionary). 
-                Anything that is not contained in the dictionary (e.g. punctuation marks), should be ignored. 
-                The function should return a nested list of Braille characters, with raised dots represented as 1's and flat dots represented as 0's. 
-                For example, the function should print the nested list below when given this call:
-                <blockquote style="border: 2px solid #212529; padding: 10px; background-color: #b3d7f8;"> 
-                    <p style="color:black">
-                        braille_string = translator(“Hi!”, braille_dictionary) <br>
-                        print(braille_string) <br>
-                        ---------------------------------------------------<br>
-                        [[1,1,0,0,1,0], [0,1,0,1,0,0]]
-                    </p>
-                </blockquote>
-              
-            </li>
-
-            <li>
-                (_ pts) <strong>draw_braille_character():</strong>I've given you the skeleton of a function called draw_braille_character
-                 that takes one parameter, a list of 0's and 1's corresponding to a Braille character. 
-                 The function currently iterates through the list and uses a turtle to draw six circles corresponding to the six circles in a Braille character. 
-                 Update the function to fill in the appropriate circles depending on the input. 
-                 The raised dots should be represented by filled-in circles and the flat dots should  be represented as empty circles.
-            </li>
-
-            <li>
-                (_ pts) <strong>addCommon()</strong>
-                <p>You are given a braille dictionary with numbers 1-9, the alphabet, the words 
-but, can, do, every, from, go, have, just, knowledge, like, more, not, people, quite, rather, so, that, us, very, it, you, as, will. Convert the English to braille, grade 2 representations. Refer online for examples and cite any outside source used. Here is an example:<br/>
- In Grade 1 Braille: <br/>
-b e c a u s e
-In Grade 2 Braille: <br/>
-b (contraction for "be") c (contraction for "cause")
-In Grade 1 Braille, each letter of the word "because" is represented individually with its corresponding Braille cell. However, in Grade 2 Braille, the word "because" is contracted to a shorter form. The letter "e" is omitted, and the contraction "be" and "cause" are used instead.
-Here's another example for the word "can't":
-In Grade 1 Braille: <br/>
-c a n ' t
-In Grade 2 Braille: <br/>
-c (contraction for "can") ' (contraction for "not") t
---
-NOTE: There is a testing function in hw4Tests.py. Use it to check your work.</p>
-            </li>
-            
-        </ol>
-            <h2>Helper Functions</h2>
-              <p>You can use the helper function print_braille that will format the returned nested list as braille to the console. 
-                    See below for an example:</p>
-                <blockquote style="border: 2px solid #212529; padding: 10px; background-color: #b3d7f8;"> 
-                    <p style="color:black">
-                        braille_string = translator(“Hello, world!”, braille_dictionary) <br>
-                        print(braille_string) <br>
-                        ---------------------------------------------------<br>
-                        1 0 1 0 1 0 1 0 1 0 0 0 0 1 1 0 1 0 1 0 1 1<br>
-                        1 1 0 1 1 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 0 1<br>
-                        0 0 0 0 1 0 1 0 1 0 0 0 0 1 1 0 1 0 1 0 0 0
-                    </p>
-                </blockquote>
-                <p>There is a testing function in hw4Tests.py. Use it to check your work.</p>
-                <p><strong>draw_word()</strong> is also provided for you to help gain an understanding on drawing text to the screen using the turtle library. Read more on the turtle documentation online if you are stuck.</p>
-                 <h2>What you need to turn in</h2>
-                 <ul>
-                      <li>hw4Code.py file for this part of the assignment with a confirmation that your program will work with the test function.</li>
-                      <li>.py file for this part of the assignment with a confirmation that your program will work with several text sentences of different lengths (1 sentence, 3 sentences, 1 paragraph).</li>
-                      <li>Note:</li>
-                      <ul>
-                        <li>Be sure that each function you write is preceded by a hash-marked comment (# comment) that indicates the problem number, and inside it a triple-quoted comment that describes the function’s purpose and its inputs and outputs.</li>
-                        <li>Any non-code answers may be included in a Python file as either triple-quoted strings or comments.</li>
-                        <li>Any script elements that you want to test your programs should be placed at the bottom of the file, inside the if __name__ == ‘__main__’ conditional.</li>
-                        <li>Refer to the Python documentation if this does not make sense.</li>
-                      </ul>
-                    </ul>
-
-              <h2>Test Case Explanation</h2>
-              <p>Consider the following test case:</p>
-           <!--    <img width="600" height="200" alt="Test case explanation of translator() function" src="assets/research.png" /> -->
-             <blockquote style="border: 2px solid #212529; padding: 10px; background-color: #b3d7f8;"> 
-                    <p style="color:black">
-                        s1 = "the quick brown fox jumps over the lazy dog" <br />
-                        print(s1) <br />
-                        print(translator(s1, braille_dictionary)) <br />
-                        print() <br />
-                        assert translator(s1, braille_dictionary) == [[[0, 1, 1, 1, 1, 0], [1, 1, 0, 0, 1, 0], [1, 0, 0, 0, 1, 0]], [[1, 1, 1, 1, 1, 0], [1, 0, 1, 0, 0, 1], [0, 1, 0, 1, 0, 0], [1, 0, 0, 1, 0, 0], [1, 0, 1, 0, 0, 0]], [[1, 1, 0, 0, 0, 0], [1, 1, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 1, 1], [1, 0, 1, 1, 1, 0]], [[1, 1, 0, 1, 0, 0], [1, 0, 1, 0, 1, 0], [1, 0, 1, 1, 0, 1]], [[0, 1, 0, 1, 1, 0], [1, 0, 1, 0, 0, 1], [1, 0, 1, 1, 0, 0], [1, 1, 1, 1, 0, 0], [0, 1, 1, 1, 0, 0]], [[1, 0, 1, 0, 1, 0], [1, 1, 1, 0, 0, 1], [1, 0, 0, 0, 1, 0], [1, 1, 1, 0, 1, 0]], [[0, 1, 1, 1, 1, 0], [1, 1, 0, 0, 1, 0], [1, 0, 0, 0, 1, 0]], [[1, 1, 1, 0, 0, 0], [1, 0, 0, 0, 0, 0], [1, 0, 1, 0, 1, 1], [1, 0, 1, 1, 1, 1]], [[1, 0, 0, 1, 1, 0], [1, 0, 1, 0, 1, 0], [1, 1, 0, 1, 1, 0]]] 
-                    </p>
-                </blockquote>
-              <p>Image description: test case explanation of the translator() function</p>
-              <p><strong>assert()</strong> is a special function in Python that checks the equality against the function implemented output and the expected output. This will return true if it's the same output and false if otherwise.</p>
-
-
-              <h2>Extra Credit</h2>
-              <p>Extensions are your opportunity to customize your project, learn something else of interest to you, and improve your grade. The following are some suggested extensions, but you are free to choose your own. Be sure to describe any extensions you complete in your report.<br/> Include pictures of the extension.</p>
-              <ul>
-                  <li>Translate one of the in-class txt files into Digital Braille.</li>
-                  <li>Implement an interactive user interface for translating Digital Braille from text to symbols and vice versa. See examples of online braille translators below.</li>
-                  <ul>
-                    <li><a href="https://www.brailletranslator.org/">Braille Translator (https://www.brailletranslator.org/)</a></li>
-                    <li><a href="https://twoblindbrothers.com/pages/braille">Two Blind Brothers Braille Translator (https://twoblindbrothers.com/pages/braille)</a></li>
-                  </ul>
-                  <li>Implement a secret message clue generator that gives the messages in digital braille for the person to solve the mystery using your translator to find the text clue solutions.</li>
-                </ul>
-
-                <h2>Sample Output</h2>
-                <p>Please see <a href="textAnalysisExampleOutput.html">this link</a> to check for a sample output.</p>
-
-
-    </div>
-
+                    <div class="small text-center text-muted fst-italic">Copyright &copy; 2023</div>
                 </div>
             </div>
-        </article>
-        <!-- Footer-->
-        <footer class="border-top">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        
-                        <div class="small text-center text-muted fst-italic">Copyright &copy; 2023</div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+
 </html>
