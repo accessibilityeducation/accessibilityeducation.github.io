@@ -22,13 +22,22 @@ $mail->Port = 587;
 
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 $mail->SMTPAuth = true;
-$mail->Username = 'arianamondiri@gmail.com';
-$mail->Password = 'gvlvrryiulqfjgpm';
+
+
+//use gmail account. This can help -> https://help.accredible.com/smtp-setup-in-gmail-inbox
+
+$mail->Username = 'email@gmail.com';
+$mail->Password = 'password';
 
 $mail -> setFrom($email,$name);
+$mail -> addAddress("receiver@email.com");
+
+/* 
 $mail -> addAddress("catherinebaker@creighton.edu");
 $mail -> addAddress("elglaly@wwu.edu");
 $mail -> addAddress("kristen.shinohara@rit.edu");
+*/
+
 $mail -> Subject = $subject;
 $mail -> Body = $message;
 $mail -> send();
