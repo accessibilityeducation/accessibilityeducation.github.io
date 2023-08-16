@@ -27,28 +27,46 @@ window.addEventListener('DOMContentLoaded', () => {
         scrollPos = currentTop;
     });
 })
-
-
 var LOButton = document.querySelectorAll("input[id*='checkLO']");
+
 for (let i = 0; i <= LOButton.length; i++) {
     LOButton[i].addEventListener("click", () => {
         var labelName = "label-" + LOButton[i].getAttribute("id");
         var inputName = "input-" + LOButton[i].getAttribute("id");
         if (LOButton[i].checked) {
+            search();
             document.getElementById("display" + LOButton[i].getAttribute("id").slice(-5)).style.display = "inline-block";
             document.getElementById("category-section").style.display = "none";
-            document.getElementById("back-to-ressources").style.display = "inline-block";
+            document.getElementById("back-to-resources").style.display = "inline-block";
+            document.getElementById("search-bar").style.display = "inline-block";
             document.querySelector("input[id='back-btn']").addEventListener("click", () => {
-                if (document.querySelector("input[id='back-btn']").checked) {
-                    document.getElementById("test").innerHTML = document.getElementById("test").innerHTML + "1";
-                    document.getElementById("display" + LOButton[i].getAttribute("id").slice(-5)).style.display = "none";
-                    document.getElementById("category-section").style.display = "inline-block";
-                    document.querySelector("input[id='back-btn']").checked = false;
-                }
+                document.getElementById("category-section").style.display = "inline-block";
+                document.getElementById("display" + LOButton[i].getAttribute("id").slice(-5)).style.display = "none";
+                document.getElementById("back-btn").checked = false;
+                document.getElementById("back-to-resources").style.display = "none";
+                document.getElementById("search-bar").style.display = "none";
+                document.getElementById("searchbar").value = "";
                 LOButton[i].checked = false;
-            }
-            )
+            })
+        }
+    })
+}
+
+function search() {
+    document.getElementById("test").innerHTML="activated";
+    let input = document.getElementById("searchbar").value;
+    var resourceSection = document.getElementById("resource-section");
+    var descriptionslink = resourceSection.querySelectorAll("a");
+    var descriptions = document.querySelectorAll(".description");
+    for (i = 0; i < descriptionslink.length; i++) {
+        if (!descriptions[i].innerHTML.toLowerCase().includes(input) || !descriptionslink[i].innerHTML.toLowerCase().includes(input)) {
+            descriptions[i].style.display = "none";
+            descriptionslink[i].style.display = "none";
+        }
+        else {
+            descriptionslink[i].style.display = "inline-block";
+            descriptions[i].style.display = "inline-block";
         }
     }
-    )
 }
+

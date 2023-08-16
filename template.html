@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Clean Blog - Start Bootstrap Theme</title>
+    <title> Template </title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
-
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
         type="text/css" />
@@ -22,7 +21,6 @@
 </head>
 
 <body>
-
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
         <div class="container px-4 px-lg-5">
@@ -38,67 +36,80 @@
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="resources.html">Resources</a>
-                    </li>
                 </ul>
             </div>
         </div>
     </nav>
-
     <!-- Page Header-->
     <header class="masthead">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
-                    <div class="site-heading" style="vertical-align: top;">
-                        <h1>Contact us</h1>
+                    <div class="post-heading">
+                        <h1> Title </h1>
+                        <p class="subheading">Subtitle</p>
                     </div>
                 </div>
             </div>
         </div>
     </header>
+    <!-- Post Content-->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <!--Learning objectives section-->
+                <div id="learningObjectives">
+                    <h2 class="assignment-section">Learning Objectives</h2>
+                    <ol>
+                        <li> 1.Learning Objective  </li>
+                        <li> 2.Learning Objective </li>
+                        <li> 3.Learning Objective</li>
+                    </ol>
+                </div>
+                <hr>
+                <!-- Background/Introduction section-->
+                <div id="background">
+                    <h2 class="assignment-section">Background</h2>
+                </div>
+                <hr>
+                <!--Assignment-->
+                <div id="assignment">
+                    <h2 class="assignment-section">Assignment</h2>
+                </div>
+                <hr>
+                <!-- Notes for instructor -->
+                <div id="notes">
+                    <h2 class="assignment-section">Notes</h2>
+                </div>
+                <!--Possibility to add more sections. Just need to be added to the table of contents as well-->
+            </div>
 
-    <p><i> Do you have an idea, assignment, suggestion etc. that you would like to share?
-            Reach out for any inquiry by filling this form.</i></p>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col mt-5 bg-light rounded">
-                <h1 class="text-center font-weight-bold text-primary">Contact Form</h1>
-                <hr class="bg-light">
-                <h5 class="text-center text-success"></h5>
-                <form method="post" id="form-box" class="p-2" action="send-email.php">
-                    <div class="form-group input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+            <!-- Side widgets-->
+            <div class="col-lg-4">
+                <div class="side-widget">
+                    <!-- Table of contents-->
+                    <div class="card mb-4">
+                        <div class="card-header">Table of contents</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#learningObjectives">Learning Objectives</a></li>
+                                        <li><a href="#background">Background</a></li>
+                                        <li><a href="#assignment">Assignment</a></li>
+                                        <li><a href="#notes">Notes</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required>
                     </div>
-                    <div class="form-group input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                        </div>
-                        <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required>
-                    </div>
-                    <div class="form-group input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-at"></i></span>
-                        </div>
-                        <input type="text" name="subject" id="subject" class="form-control" placeholder="Enter subject" required>
-                    </div>
-                    <div class="form-group input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-comment-alt"></i></span>
-                        </div>
-                        <textarea name="message" id="message" class="form-control" placeholder="Write your message" cols="30"
-                            rows="4" required></textarea>
-                    </div>
-                    <br>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                    <!-- Can add an addition category or tag widget -->
+                </div>
             </div>
         </div>
     </div>
-    <!-- Footer-->
 
+    <!-- Footer-->
     <footer class="border-top">
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
@@ -108,16 +119,10 @@
             </div>
         </div>
     </footer>
-
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <!-- * * SB Forms JS * *-->
-    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-
 </body>
 </html>
+
