@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Braille TTY Assignment</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">Including A11y in CS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header-->
+    <header class="masthead">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="post-heading">
+                        <h1>Understanding Color Blindness Using OOP Concepts</h1>
+                        <p class="subheading">Explore and model the intricacies of color blindness through Object-Oriented Programming, focusing on class inheritance and interface implementation to
+                                deepen understanding and awareness of color blindness.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Post Content-->
+    <article class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+
+<h2>Learning Objectives</h2>
+    <ol>
+        <li> Learn the different types of color blindness.</li>
+        <li> Implement the Object-Oriented concept: class inheritance</li>
+        <li> Implement the Object-Oriented concept: interfaces</li>
+    </ol>
+<h2>Introduction</h2>
+    <p>
+        Delve into the world of color blindness, a condition that affects how individuals perceive and interact with the visual world. The core of this assignment revolves around creating statements
+        explaining color blindness using Java. Students will utilize Object-Oriented Programming concepts such as class inheritance and interfaces to model different types of color blindness accurately.
+    </p>
+    <h3>Understanding Types of Color Blindness</h3>
+        <p>
+            We encourage students to explore the diverse spectrum of color blindness types. It's essential to have a comprehensive understanding of these conditions to effectively model them in code. You
+            can find valuable resources with detailed information on different types of color blindness below but feel free to find other reputable sources on your own as well.
+            <ul>
+                <li> <a href="https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/color-blindness/types-color-vision-deficiency">National Eye Institute</a></li>
+                <li> <a href="https://www.allaboutvision.com/conditions/color-blindness/types-of-color-blindness/">All About Vision</a></li>
+            </ul>
+        </p>
+    <h3>The Impact of Technology</h3>
+        <p>
+            Color blindness can pose unique challenges when it comes to technology. Many aspects of our digital world rely on color cues, from user interface to data visualizations. Students should consider
+            the difficulties that individuals with color blindness might encounter when using technology.
+        </p>
+    <h3>Awareness</h3>
+        <p>
+            It is crucial to consider how color blindness can impact daily life. Including reading, interpreting data, and using technology. At the end of the assignment, you should reflect on questions
+            like "How does color blindness affect people's ability to code?" and "What is something that can be improved upon in Computer Science classes to make it easier for people with color blindness to 
+            learn?" to appreciate the real-world implications of their work.
+        </p>
+        <p>
+            As you embark on this assignment, you will not only gain valuable technical skills in Java but also develop a deeper awareness of the challenges faced by those with color vision deficiencies. By
+            the end of this assignment, you will be well-equipped to model and understand the diverse world of color blindness and its impact on technology and everyday life.
+        </p>
+
+
+<h2>Object-Oriented Concepts</h2>
+    <h3>Class Inheritance</h3>
+        <p>
+            Class inheritance is a fundamental concept in Object-Oriented Programming. It allows a new class to reuse the code of an existing class. The new class is known as the subclass, and the existing
+            class is called the based class. The subclass inherits all of the attributes and methods of the base class, but it can also have its own, unique attributes and methods as well. Inheriting 
+            the attributes and methods of the base class allows for the creation of hierarchical structure classes, with each class extending the functionality of the class before it.
+        </p>
+        <p>
+            Inheritance is also useful because it can make your code more reusable and it also reduces the amount of code duplication between two subclasses. There are two main types of inheritance in
+            Object-Oriented Programming: single inheritance and multiple inheritance. In single inheritance, a subclass can only inherit from one base class. In multiple inheritance, a subclass inherits
+            from multiple base classes. In this assignment, you should only worry about single inheritance.
+        </p>
+        <p>
+            In this assignment, we use class inheritance to create a hierarchy of color blindness types. This hierarchy allows us to model various forms of color blindness accurately, building upon a 
+            common foundation while customizing attributes and methods for each specific type.
+        </p>
+        <h4>Why is Inheritance important for this assignment?</h4>
+            <ol>
+                <li> Code Reusability: By using class inheritance, we can reuse the code and attributes from a base class for various types of disabilities. This avoids redundancy, making the code more 
+                    efficient and easier to maintain.
+                </li>
+                <li> Hierarchical Structure: Inheritance enables the creation of a hierarchical structure. Each color blindness type inherits characteristics from the base class and extends them to represent
+                    its unique features. This ensures a logical and structured representation of the different conditions.
+                </li>
+                <li> Uniform Interface: Inheritance enforces a consistent interface for the color blindness type. The methods and attributes inherited from the base class maintain a common structure, making
+                    it easier for developers to work with and understand the various type.
+                </li>
+                <li>
+                    Scalability: If we wanted to add more disabilities or make modification, inheritance simplifies the process. We can create new subclasses without altering the base class, which is critical
+                    for maintaining the integrity of the codebase.
+                </li>
+            </ol>
+        <p>At the end of this assignment, please answer the following questions and turn it in with your project.
+            <ol>
+                <li> What is the purpose of class inheritance in this assignment?</li>
+                <li> How does inheritance enhance code reusability and maintainability in the context of this assignment?</li>
+                <li>What are the advantages of maintaining a hierarchical structure of classes for the various color blindness types?</li>
+            </ol>
+        </p>
+    <h3>Interfaces</h3>
+        <p>
+            Interfaces are also a fundamental part of Object-Oriented Programming. In this assignment, you use interfaces to define a contract that specifies what methods must be implemented by classes that
+            implement the interface. Specifically, you have <b>AssistiveTechnology</b>, <b>DigitalAccessibility</b>, and <b>EnvironmentalAssistance</b>.
+        </p>
+        <h4>Wht are Interfaces Important for This Assignment?</h4>
+            <ol>
+                <li>
+                    Forcing Method Implementation: Interfaces ensure that any class implementing them must provide specific methods. In this assignment, these methods define behaviors associated with 
+                    recommendations for color blindness assistance, making sure that they are consistent across all classes. 
+                </li>
+                <li>
+                    Achieving Multiple Inheritance-like Behavior: Java supports multiple interfaces, allowing a class to implement more than one interface. In the context of your assignment, this is crucial 
+                    because it enables classes to inherit and provide behaviors from multiple sources, without the complexity of multiple inheritance.
+                </li>
+                <li>
+                    Polymorphism and Flexibility: Interfaces support polymorphism, allowing objects of different classes to be treated as objects of a common interface. This flexibility is vital when you 
+                    want to work with diverse color blindness types in a uniform way. 
+                </li>
+            </ol>
+            <p>At the end of this assignment, please answer the following questions and turn it in with your project.
+                <ol>
+                    <li> What is the purpose of interfaces in this assignment?</li>
+                    <li> How do interfaces enforce consistency in method implementation across different classes in your assignment?</li>
+                    <li>Give an example of how interfaces enhance code modularity and maintainability in this assignment.</li>
+                </ol>
+            </p>
+
+<h2>Assignment</h2>
+    <p>
+        In this assignment, your task is to model and simulate accessibility considerations for individuals with color blindness. You will work with a set of classes and interfaces designed to represent
+        disabilities, specifically color blindness, and to explore the impact of various types of color blindness on individuals' daily lives. This includes simulating the adaptation and assistance required
+        for navigating both physical and digital environments. Below is a walkthrough of the eight provided classes/interfaces to get a better understanding of the assignment. <b>main</b> been 
+        completed for you and the rest of them have skeleton code to help you get started. 
+    </p>
+
+    <h3>1. EnvironmentalAssistance</h3>
+    <p>
+        This interface is intended for defining methods related to providing support in physical environments. Your task is to implement methods that suggest environmental modifications or aids to 
+        assist individuals with disabilities.
+    </p>
+    <h3>2. DigitalAccessibility</h3>
+    <p>
+        This interface focuses on the digital aspect of accessibility. You will implement a method that recommends digital tools and software enhancements to aid users with disabilities in navigating 
+        digital content effectively.
+    </p>
+    <h3>3. AssistiveTechnology</h3>
+    <p>
+        Dedicated to assistive devices and technologies, this interface requires you to outline a method for suggesting various technological aids that can improve the quality of life for individuals 
+        with disabilities.
+    </p>
+    <h3>4. Disability</h3>
+    <p>
+        A base class that models a generic disability with attributes for name and definition. You are provided with a constructor and getters that need to be implemented to initialize and return
+        the respective attributes.
+    </p>
+    <h3>5. ColorBlindness</h3>
+    <p>
+        Extending <b>Disability</b>, this class represented a specific type of disability. It adds attributes to describe the impact of color blindness and its type. Implement the constructor, getters, 
+        and static methods to define and understand the effects of different types of color blindness.
+    </p>
+    <h3>6. AccessibilityRequirements</h3>
+    <p>
+        Aimed at implementing the three interfaces, this class should provide concrete recommendations for assistive technologies, digital tools, and environmental aids suitable for individuals with 
+        disabilities. Implement the methods to return useful suggestions and simulate a random assistance generator.
+    </p>
+    <h3>7. Human</h3>
+    <p>
+        Represents a person with a set of characteristics, including a type of color blindness. It uses <b>AccessibilityRequirements</b> to model necessary support. Your job is to complete the constructor and
+        methods that assign a color blindness type, hobbies, and challenges, adding depth to the persona.
+    </p>
+    <h3>8. Main</h3>
+    <p>
+        The entry point of your simulation. This class involves interacting with the user to create a persona, assign them a color blindness type, and generate a narrative that illustrates the persona's 
+        daily experiences and the assistance they receive. This class has been completed for you.
+    </p>
+<h2>Project Plan and Reflection</h2>
+    <p>
+        You must write both a project plan named plan.txt and a reflection named reflection.txt. plan.txt must be completed before the start of the project and reflection.txt must be completed before
+        submitting your project.
+    </p>
+    <p>
+        plan.txt should include the following information:
+        <ol>
+            <li>A one paragraph summary of the program in your own words. What is being asked of you? What will you implement in this assignment?</li>
+            <li>In 2-3 sentence, explain your thoughts on what you anticipate being the most challenging aspect(s) of the assignment.</li>
+            <li>A proposed schedule for when you will work on this assignment with your partner and where you will meet.</li>
+            <li>A list of at least 3 different resources you plan to use if you get stuck on something.</li>
+        </ol>
+    </p>
+    <p>
+        reflection.txt should include the following information:
+        <ol>
+            <li>Declare/discuss any aspects of your code that are not working. What are your intuitions about why they are not working? Acknowledge and discuss any parts of the program that appear to be
+                inefficient.
+            </li>
+            <li>What are some of the most important lessons you learned while working on this assignment? Why do you think so?</li>
+            <li> What was the most challenging aspect of this assignment? Why?</li>
+        </ol>
+    </p>
+
+    <!-- Footer-->
+    <footer class="border-top">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+
+                    <div class="small text-center text-muted fst-italic">Copyright &copy; 2023</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
