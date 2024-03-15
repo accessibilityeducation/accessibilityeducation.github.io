@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Implementing Impact: a Lesson on mySQL Databases and Accessibility</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">Including A11y in CS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header-->
+    <header class="masthead">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="post-heading">
+                        <h1>Implementing Impact: a Lesson on mySQL Databases and Accessibility</h1>
+                        <p class="subheading">An introduction to the underlying data models and theory of database systems and the design, implementation and manipulation of relational databases. Use mySQL programming to query database of different cases for accessibility: ethical, legal, and business.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <body>
+        <h1>Important Notes</h1>
+    <p>This assignment is an individual assignment because the goal is to help you personally understand the impacts of having or not having accessibility guidelines.</p>
+    <p>Document your code with an inline comment with the task number.</p>
+    <p>Remember to also submit the reflection questions with the zip file of your code.</p>
+
+    <h2>Learning Goals</h2>
+    <p>Upon completing this individual assignment, you will gain:</p>
+    <ul>
+        <li>Fundamental understanding of the importance of having digital accessibility in the real-world.</li>
+        <li>Programming in mySQL that you can apply beyond this class.</li>
+        <li>Basic and intermediate mySQL commands including but not limited to SELECT, INNER JOIN, EXISTS, COUNT, WHERE, AND, NOT, AS.</li>
+    </ul>
+
+    <h2>Overview</h2>
+    <p>Imagine you are a software engineer at a software company that wants to build technology that is inclusive and accessible. In this programming assignment, you will learn about important cases and statistics around people with disabilities.</p>
+
+    <h2>Getting Started with the Assignment</h2>
+    <ul>
+        <li><a href="https://www.mysql.com/products/workbench/">Download mySQL workbench (https://www.mysql.com/products/workbench/)</a></li>
+        <li>Download the skeleton code called databaseassignmentSKELETON.sql </li>
+    </ul>
+
+
+
+        <h2>Database Schema</h2>
+          <p>Tables:</p>
+    <ul>
+        <li>The Human_Ethical_Cases_Table explains various cases specifically talking about the different inequalities people with disabilities may experience.</li>
+        <li>The Legal_Cases_Table explains various cases containing statistics about legal guidelines around accessibility requirements for ICT products.</li>
+        <li>The Business_Cases_Table details different cases containing statistics about people with disabilities’ experiences in the workforce.</li>
+    </ul>
+    <p>Columns:</p>
+    <p>Each table contains the CaseID, the description of the case (Human_Ethical_Case, Legal_Case, Business_Case), the source of the case, and the url of the source.</p>
+
+    <h3>Primary Key</h3>
+    <p>The primary key is the CaseID which helps us differentiate between different cases.</p>
+
+    <h3>Foreign Key</h3>
+    <p>The foreign key is the ContextID which maps to the CaseID in the Human_Ethical_Cases_Table to help us derive new insights from the motivations of needing accessibility.</p>
+
+
+        <table>
+            <tr>
+                <th>Table Name</th>
+                <th>Columns</th>
+                <th>Primary Key</th>
+                <th>Foreign Key</th>
+            </tr>
+            <tr>
+                <td>Human_and_Ethical_Cases_Table</td>
+                <td>
+                    CaseID<br>
+                    Human_Ethical_Case_Data<br>
+                    SourceTitle<br>
+                    SourceURL
+                </td>
+                <td>CaseID</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Legal_Cases_Table</td>
+                <td>
+                    CaseID<br>
+                    Legal_Case_Data<br>
+                    SourceTitle<br>
+                    SourceURL
+                </td>
+                <td>CaseID</td>
+                <td>ContextID</td>
+            </tr>
+            <tr>
+                <td>Business_Cases_Table</td>
+                <td>
+                    CaseID<br>
+                    Business_Case_Data<br>
+                    SourceTitle<br>
+                    SourceURL
+                </td>
+                <td>CaseID</td>
+                <td>ContextID</td>
+            </tr>
+        </table>
+            <h2>Tasks</h2>
+   <h3>Task 1</h3>
+    <ul>
+        <li>a. How many acts regarding web accessibility exist in the dataset?</li>
+        <li>b. What are the factors that contribute to health inequities?</li>
+        <li>c. Does this database have any information about the American with Disabilities Act (ADA)?</li>
+    </ul>
+
+    <h3>Task 2</h3>
+    <ul>
+        <li>a. What does the database say about the definition of “Disabled Access Tax Credit”?</li>
+        <li>b. What did the study that Accenture did on people with disabilities in the workforce?</li>
+        <li>c. ____ of people with disabilities who are unemployed desire to work, but are unable to find jobs.</li>
+        <li>d. How many sources in total are from the Pew Research Center?</li>
+        <li>e. Sort them in ascending order and write the most interesting fact.</li>
+    </ul>
+
+    <h3>Task 3 Questions</h3>
+    <ul>
+        <li>a. Please write the query and its corresponding output that you used to find this information.</li>
+        <li>b. Despite the amount of health inequities that exist that already make it harder for people with disabilities to rise the ranks, only ___% of companies have someone on their leadership team with a disability.</li>
+        <li>c. How does the EEOC prevent discrimination against women with disabilities?</li>
+        <li>d. What percentage of websites have issues with accessibility?</li>
+        <li>e. What is the cost of not having an accessible website?</li>
+        <li>f. What is the difference in earnings between people with disabilities versus neurotypical people?</li>
+        <li>g. Why is this a problem? Find a contrasting statement to this from the United States Department of Labor.</li>
+    </ul>
+
+    <h3>Reflection Questions</h3>
+    <p>There are statistics about the prevalence of disabilities. In order to reflect on what you learn, please write 1-2 paragraphs for the following questions:</p>
+    <ul>
+        <li>a. What was the most surprising data you found on disability and why?</li>
+        <li>b. How has your perspective changed about people with disabilities and their experiences?</li>
+        <li>c. Why do you think learning about these statistics helps build inclusion? Brainstorm some ways you can be more inclusive to people with disabilities.</li>
+    </ul>
+
+    <p>Write these in a document called reflection.txt and turn it in along with your solution code.</p>
+
+
+    <h2>What to Turn In</h2>
+    <p>Turn in your source code file and title it “Lastname_Assignment” and reflection.txt</p>
+
+    <h2>Need some Help?</h2>
+     <ul>
+        <li><a href="https://docs.oracle.com/en/java/" target="_blank">Java documentation (https://docs.oracle.com/en/java/)</a></li>
+        <li><a href="https://dev.mysql.com/doc/" target="_blank">Official mySQL documentation (https://dev.mysql.com/doc/)</a></li>
+        <li><a href="https://www.w3schools.com/mysql/" target="_blank">mySQL examples (https://www.w3schools.com/mysql/)</a></li>
+        <li><a href="https://www.w3schools.com/java/" target="_blank">Java examples  (https://www.w3schools.com/java/)</a></li>
+    </ul>
+
+    <h2>References</h2>
+    <ul>
+        <li><a href="http://www.who.int/classifications/icf/en/">World Health Organization, International Classification of Functioning, Disability and Health (ICF) - Geneva: 2001, WHO</a></li>
+        <li><a href="http://www.ncbi.nlm.nih.gov/books/NBK44667/">US Department of Health and Human Services. The Surgeon General’s Call to Action to Improve the Health and Wellness of Persons with Disabilities - Washington, DC: US Department of Health and Human Services, Office of the Surgeon General; 2005.</a></li>
+        <li><a href="https://odpc.ucsf.edu/clinical/patient-centered-care/medical-and-social-models-of-disability" target="_blank">Social Model of Disability</a></li>
+        <li><a href="https://www.cdc.gov/ncbddd/disabilityandhealth/disability-inclusion.html" target="_blank">Disability inclusion</a></li>
+        <li><a href="https://www.law.georgetown.edu/your-life-career/campus-services/information-systems-technology/digital-accessibility/" target="_blank">Digital accessibility</a></li>
+        <li><a href="https://www.cdc.gov/ncbddd/disabilityandhealth/disability.html" target="_blank">Disability and health overview</a></li>
+        <li><a href="https://reyabogado.com/us/whats-the-difference-between-an-act-and-law/" target="_blank">Act vs Law</a></li>
+        <li><a href="https://www.medicalnewstoday.com/articles/health-inequity" target="_blank">Health inequities</a></li>
+    </ul>
+
+
+
+
+
+     <!-- Footer-->
+    <footer class="border-top">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+
+                    <div class="small text-center text-muted fst-italic">Copyright &copy; 2024</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
