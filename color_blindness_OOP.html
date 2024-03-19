@@ -138,7 +138,7 @@
     <h3>Interfaces</h3>
         <p>
             Interfaces are also a fundamental part of Object-Oriented Programming. In this assignment, you use interfaces to define a contract that specifies what methods must be implemented by classes that
-            implement the interface. Specifically, you have <b>AssistiveTechnology</b>, <b>DigitalAccessibility</b>, and <b>EnvironmentalAssistance</b>.
+            implement the interface. Specifically, you have <b>AssistiveTechnology</b>, <b>AccessibleDesign</b>, and <b>EnvironmentalAssistance</b>.
         </p>
         <h4>Wht are Interfaces Important for This Assignment?</h4>
             <ol>
@@ -171,45 +171,90 @@
         completed for you and the rest of them have skeleton code to help you get started. 
     </p>
 
-    <h3>1. EnvironmentalAssistance</h3>
+    <h3>1. Main</h3>
     <p>
-        This interface is intended for defining methods related to providing support in physical environments. Your task is to implement methods that suggest environmental modifications or aids to 
-        assist individuals with disabilities.
+        The entry point of your simulation. This class involves interacting with the user to create a persona, assign them a color blindness type, and generate a narrative that illustrates the persona's 
+        daily experiences and the assistance they receive. This class has been completed for you.
     </p>
-    <h3>2. DigitalAccessibility</h3>
-    <p>
-        This interface focuses on the digital aspect of accessibility. You will implement a method that recommends digital tools and software enhancements to aid users with disabilities in navigating 
-        digital content effectively.
-    </p>
-    <h3>3. AssistiveTechnology</h3>
+    <h3>2. AssistiveTechnology</h3>
     <p>
         Dedicated to assistive devices and technologies, this interface requires you to outline a method for suggesting various technological aids that can improve the quality of life for individuals 
         with disabilities.
     </p>
-    <h3>4. Disability</h3>
+    <p>
+        <b>TODO 1.1:</b> Implement the AssistiveTechnology interface.
+    </p>
+    <h3>3. AccessibleDesign</h3>
+    <p>
+        This interface focuses on the digital aspect of accessibility. You will implement a method that recommends digital tools and software enhancements to aid users with disabilities in navigating 
+        digital content effectively.
+    </p>
+    <p>
+        <b>TODO 1.2:</b> Implement the AccessibleDesign interface.
+    </p>
+    <h3>4. EnvironmentalAssistance</h3>
+    <p>
+        This interface is intended for defining methods related to providing support in physical environments. Your task is to implement methods that suggest environmental modifications or aids to 
+        assist individuals with disabilities.
+    </p>
+    <p>
+        <b>TODO 1.3:</b> Implement the EnvironmentalAssistance interface.
+    </p>
+    <h3>5. Disability</h3>
     <p>
         A base class that models a generic disability with attributes for name and definition. You are provided with a constructor and getters that need to be implemented to initialize and return
         the respective attributes.
     </p>
-    <h3>5. ColorBlindness</h3>
+    <p>
+        <b>TODO 2.0:</b> Implement the constructor and methods in the Disability class.
+    </p>
+    <h3>6. ColorBlindness</h3>
     <p>
         Extending <b>Disability</b>, this class represented a specific type of disability. It adds attributes to describe the impact of color blindness and its type. Implement the constructor, getters, 
         and static methods to define and understand the effects of different types of color blindness.
     </p>
-    <h3>6. AccessibilityRequirements</h3>
+    <p>
+        <b>TODO 3.0:</b> Implement the constructor in the ColorBlindness class.<br>
+        <b>TODO 3.1:</b> Implement the getImpactOnVision() method in the ColorBlindness class.<br>
+        <b>TODO 3.2:</b> Implement the getType() method in the ColorBlindness class.<br>
+        <b>TODO 4.0:</b> Give the definition of each type of color blindness in the ColorBlindness class.<br>
+        <b>TODO 4.1:</b> Explain how each type of color blindness affects someone's vision in the ColorBlindness class.<br>
+    </p>
+    <h3>7. AccessibilityRequirements</h3>
     <p>
         Aimed at implementing the three interfaces, this class should provide concrete recommendations for assistive technologies, digital tools, and environmental aids suitable for individuals with 
         disabilities. Implement the methods to return useful suggestions and simulate a random assistance generator.
     </p>
-    <h3>7. Human</h3>
+    <p>
+        <b>TODO 5.0:</b> Make it so AccessibilityRequirements implements the three interfaces.<br>
+        <b>TODO 5.1:</b> Implement the recommendedAssistiveTechnologies() method in the AccessibilityRequirements class.<br>
+        <b>TODO 5.2:</b> Implement the digitalTools() method in the AccessibilityRequirements class.<br>
+        <b>TODO 5.3:</b> Implement the environmentalAssistance() method in the AccessibilityRequirements class.<br>
+    </p>
+    <h3>8. Human</h3>
     <p>
         Represents a person with a set of characteristics, including a type of color blindness. It uses <b>AccessibilityRequirements</b> to model necessary support. Your job is to complete the constructor and
         methods that assign a color blindness type, hobbies, and challenges, adding depth to the persona.
     </p>
-    <h3>8. Main</h3>
     <p>
-        The entry point of your simulation. This class involves interacting with the user to create a persona, assign them a color blindness type, and generate a narrative that illustrates the persona's 
-        daily experiences and the assistance they receive. This class has been completed for you.
+        <b>TODO 6.0:</b> Implement Constructor in the Human class.<br>
+        <b>TODO 6.1:</b> Implement the getName() method in the Human class.<br>
+        <b>TODO 6.2:</b> Implement the getDisabilityType() method in the Human class.<br>
+        <b>TODO 6.3:</b> Implement the setDisability() method in the Human class.<br>
+        <b>TODO 6.4:</b> Implement the generateNarrative() method in the Human class.<br>
+        <b>TODO 6.5:</b> Implement the setHobby() method in the Human class.<br>
+        <b>TODO 6.6:</b> Implement the setChallenge() method in the Human class.<br>
+    </p>
+<h2>Sample Output</h2>
+    <p>
+        This output will not be about Color Blindness as it is your job to read and find the definitions, impacts on vision, and accessibility suggestions for each type of color blindness. Below is an example
+        of how the output should be formatted and how in-depth you should be with each explanation.
+    </p>
+    <center><img src="assets/img/Color-Blindness-OOP-Output.png" alt="Console output of a program where a user named Jane creates a persona with Phonological Dyslexia. The output lists types of Dyslexia,
+        confirms the creation of the persona, and provides a detailed description of Jane's experience with phonological Dyslexia and the assistive technologies that help her." 
+        style="width:700px;height: 300px;"></center>
+    <p>
+        <center>(Figure 1) Sample Output using different types of Dyslexia. </center>
     </p>
 <h2>Project Plan and Reflection</h2>
     <p>
