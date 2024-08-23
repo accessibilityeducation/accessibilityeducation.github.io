@@ -91,12 +91,12 @@ As such, this is the fault of the technology, not the person. Consequently, peop
         <h2>Database Schema</h2>
           <p>Tables:</p>
     <ul>
-        <li>The Human_Ethical_Cases_Table explains various cases specifically talking about the different inequalities people with disabilities may experience.</li>
-        <li>The Legal_Cases_Table explains various cases containing statistics about legal guidelines around accessibility requirements for ICT products.</li>
-        <li>The Business_Cases_Table details different cases containing statistics about people with disabilities’ experiences in the workforce.</li>
+        <li>The Social_and_Societal_Table explains various cases specifically talking about the different inequalities people with disabilities may experience.</li>
+        <li>The Laws_and_Regulations_Table explains various cases containing statistics about legal guidelines around accessibility requirements for ICT products.</li>
+        <li>The Industry_Employment_Table details different cases containing statistics about people with disabilities’ experiences in the workforce.</li>
     </ul>
     <p>Columns:</p>
-    <p>Each table contains the CaseID, the description of the case (Human_Ethical_Case, Legal_Case, Business_Case), the source of the case, and the url of the source.</p>
+    <p>Each table contains the CaseID, the description of the case data (Social_and_Societal, Laws_and_Regulations, Industry_Employment), the source of the case, and the url of the source.</p>
 
     <h3>Primary Key</h3>
     <p>The primary key is the CaseID which helps us differentiate between different cases.</p>
@@ -113,10 +113,10 @@ As such, this is the fault of the technology, not the person. Consequently, peop
                 <th>Foreign Key</th>
             </tr>
             <tr>
-                <td>Human_and_Ethical_Cases_Table</td>
+                <td>Social_and_Societal_Table</td>
                 <td>
                     CaseID<br>
-                    Human_Ethical_Case_Data<br>
+                    Social_and_Societal_Data<br>
                     SourceTitle<br>
                     SourceURL
                 </td>
@@ -124,10 +124,10 @@ As such, this is the fault of the technology, not the person. Consequently, peop
                 <td>-</td>
             </tr>
             <tr>
-                <td>Legal_Cases_Table</td>
+                <td>Laws_and_Regulations_Table</td>
                 <td>
                     CaseID<br>
-                    Legal_Case_Data<br>
+                    Laws_and_Regulations_Data<br>
                     SourceTitle<br>
                     SourceURL
                 </td>
@@ -135,10 +135,10 @@ As such, this is the fault of the technology, not the person. Consequently, peop
                 <td>ContextID</td>
             </tr>
             <tr>
-                <td>Business_Cases_Table</td>
+                <td>Industry_Employment_Table</td>
                 <td>
                     CaseID<br>
-                    Business_Case_Data<br>
+                    Industry_Employment_Data<br>
                     SourceTitle<br>
                     SourceURL
                 </td>
@@ -146,40 +146,57 @@ As such, this is the fault of the technology, not the person. Consequently, peop
                 <td>ContextID</td>
             </tr>
         </table>
-            <h2>Tasks</h2>
+<h2>Tasks</h2>
+        Write the SQL query, along with the answer to each question below:
    <h3>Task 1</h3>
     <ul>
-        <li>a. How many acts regarding web accessibility exist in the dataset?</li>
+        <li>a. Count the different web accessibility acts that exist in the dataset.
+        Note: An act refers to a measure passed by a legislative body, such as the United States Congress or a state legislature. Acts usually introduce new laws or amend existing ones.
+        </li>
         <li>b. What are the factors that contribute to health inequities?</li>
-        <li>c. Does this database have any information about the American with Disabilities Act (ADA)?</li>
+        <li>c. List the four factors that contribute to the health inequities that people with disabilities face
+            Note: Health inequity refers to systematic differences in the health status of different population groups. This results in worse health and increased difficulty accessing healthcare for certain groups.  
+        </li>
     </ul>
 
     <h3>Task 2</h3>
     <ul>
-        <li>a. What does the database say about the definition of “Disabled Access Tax Credit”?</li>
-        <li>b. What did the study that Accenture did on people with disabilities in the workforce?</li>
-        <li>c. ____ of people with disabilities who are unemployed desire to work, but are unable to find jobs.</li>
-        <li>d. How many sources in total are from the Pew Research Center?</li>
-        <li>e. Sort them in ascending order and write the most interesting fact.</li>
+        <li>a. In the database, find the definition of “Disabled Access Tax Credit”? 
+            (Hint: You will need to use the REGEXP expression to locate the definition.) 
+        </li>
+        <li>b. What did Accenture discover in their study about companies that hire people with disabilities? 
+            (Hint: Search in the Industry_Employment_Table using the relevant keyword.) 
+        </li>
+        <li>c. c)	What fraction of unemployed respondents with disabilities want to work but are unable to find jobs? 
+            (Hint: You’ll also need REGEXP.) 
+        </li>
+        <li>d. Count all the sources that are from the Pew Research Center. 
+            (Hint: Use the COUNT function on the "SourceTitle" column in the relevant tables)</li>
+            Then, sort all the sources you find in ascending order by source title.
+            AND  write the most interesting fact that you found from a Pew Research Center source.
     </ul>
 
     <h3>Task 3 Questions</h3>
     <ul>
-        <li>a. Please write the query and its corresponding output that you used to find this information.</li>
-        <li>b. Despite the amount of health inequities that exist that already make it harder for people with disabilities to rise the ranks, only ___% of companies have someone on their leadership team with a disability.</li>
-        <li>c. How does the EEOC prevent discrimination against women with disabilities?</li>
-        <li>d. What percentage of websites have issues with accessibility?</li>
-        <li>e. What is the cost of not having an accessible website?</li>
-        <li>f. What is the difference in earnings between people with disabilities versus neurotypical people?</li>
-        <li>g. Why is this a problem? Find a contrasting statement to this from the United States Department of Labor.</li>
+        <li>a. What percentage of companies have someone with a disability as a board director?  </li>
+        <li>b. What is the Equal Employment Opportunity Commission (EEOC) responsible for?  </li>
+        <li>c. What fraction of images on websites have accessibility issues?  </li>
+        <li>d. How much money per year are companies without accessible sites losing to their competitors? 
+            (Hint: Check out the Industry_Employment_Table) </li>
+        <li>e. What is the difference in the 2021 median earnings between people with disabilities and people without disabilities? 
+            (Hint: Use the ‘$’ symbol in your string-matching expression.) </li>
+        <li>f. Note: The answer to this is not in the database and doesn’t require a query.
+            Why is the difference in earnings between people with disabilities and people without disabilities a problem? Find a statement from the United States Department of Labor that addresses this issue. Why is this a problem? Find a contrasting statement to this from the United States Department of Labor. (Hint: Check out the Industry_Employment_Table.  
+            Additionally, check out this fact sheet for more help finding the contrasting statement: https://www.un.org/development/desa/disabilities/resources/factsheet-on-persons-with-disabilities.html).
+</li>
     </ul>
 
     <h3>Reflection Questions</h3>
     <p>There are statistics about the prevalence of disabilities. In order to reflect on what you learn, please write 1-2 paragraphs for the following questions:</p>
     <ul>
         <li>a. What was the most surprising data you found on disability and why?</li>
-        <li>b. How has your perspective changed about people with disabilities and their experiences?</li>
-        <li>c. Why do you think learning about these statistics helps build inclusion? Brainstorm some ways you can be more inclusive to people with disabilities.</li>
+        <li>b. How has your perspective about people with disabilities and their experiences changed?</li>
+        <li>c. 1.	Why does learning about these statistics helpdo you think learning about these statistics helps build inclusion? Think about Brainstorm some ways you can be more inclusive to people with disabilities.</li>
     </ul>
 
     <p>Write these in a document called reflection.txt and turn it in along with your solution code.</p>
