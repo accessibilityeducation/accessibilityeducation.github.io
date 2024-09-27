@@ -90,10 +90,10 @@
 <p>In the file, the first line will represent the category. It will have the file location first (will be one "word") and then the category name. Then each of the items that is in the category will follow and the line will start with a "&gt;". The line will then have the file location (will be one "word") and then the text to speak.&nbsp;</p>
 <ul>
     <li><code>constructor -&nbsp;</code>this method should read in the file and create the relevant mappings from images to categories and add all the items to each category. It should also start the AAC on the home screen</li>
-    <li><code>add</code> - should add the image and text to the category that is currently selected. If it is on the home screen, it should create a new category with the given image and name. If it is in a category, it should add the image and text to speak to the currently shown category</li>
-    <li><code>getCurrentCategory&nbsp;</code>- it should return which is the current category the page is on or the empty string if the page is empty</li>
+    <li><code>addItem</code> - should add the image and text to the category that is currently selected. If it is on the home screen, it should create a new category with the given image and name. If it is in a category, it should add the image and text to speak to the currently shown category</li>
+    <li><code>getCategory&nbsp;</code>- it should return which is the current category the page is on or the empty string if the page is empty</li>
     <li><code>getImageLocs -&nbsp;</code>it should return an array of the images for the currently selected category or the home page</li>
-    <li><code>getText -&nbsp;</code>given an image, it will either return the name of the category associated with that image if on the home screen and update the current category to that category or if in a category, it will return the text to be spoken that is associated with that image. If the image is not found in the expected area, it will throw the ElementNotFoundException</li>
+    <li><code>select -&nbsp;</code>given an image, it will either return the name of the category associated with that image if on the home screen and update the current category to that category or if in a category, it will return the text to be spoken that is associated with that image. If the image is not found in the expected area, it will throw the ElementNotFoundException</li>
     <li><code>isCategory -&nbsp;</code>given an image, it will return true if it is a category image and false otherwise</li>
     <li><code>reset -</code>&nbsp;resets the current category to the home screen ("")</li>
     <li><code>writeToFile -&nbsp;</code>writes the AACMappings in the same format that they are read in</li>
